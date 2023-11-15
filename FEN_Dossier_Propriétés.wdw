@@ -1,0 +1,177 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : FEN_Dossier_Propriétés
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : FEN_Dossier_Propriétés
+ identifier : 0x2613e8f224198b6b
+ internal_properties : CAAAAAgAAABBStESwNX0kBqsnmTH+FGKb/j4wt3iVmexhzI/IvfZOGiBpBS9thUJwiRBj8UqcpUVZUOCnGdOOnPTlk7Iw4XPWe/VWBhltn0mkZOe8lXy7JLF3NynA5Dz5aF7Bjgr9Q5Tnhyl5co6gfNcmBF1/dnHUD2LEQYWTzXmShWBaQKGW31ix3IVWTiPukAVrdU4HMwndJtLw7XBeizswrslO/whiH2liCunwOK8Dlv9mUqFA/EPqVA8Vd8Vs7PLwxAPTZOvSdkmwfDks7XxWfSsm8LZjC9PGrGLdFHVKzvYnDSWL26EjKNdmKJXeTTGsrsHaaHfm3Q8A35zBQFX6wr7+nkGwhXvhQLOfb1n2vjWv/8DfnOp95uTFFkVIsUcQCLpb6bnJYJyxpGQK18dihJqWMpUUSAPK81/u5MeKoC4eMVkD2Gc8eNV9TCaOActmhLEbENU/DzsdwBgZrSh3tpnJ925Mw0r0R/cbe/V3AcgBfOsW3xRdjJakEpEwz/pauv0wxvD1+MRfC7TImRuyfuupufjdsmiBB6ctWhERc8R+tmp3h5ogpJZOkhIWrk0Wv7WUHfoldsVmAbXsN1dW8AiErzMo3U/8Xb3L7coALv/yiZI0drhBVMARpAzk9PVK+QGlv1SEHjY9qpjXwK3aXrXFYEJeoY+IrDqJQdpGPFcD2UjynmvlZ0DOGocaIQwBAlNAOZVMFjZhyjUERG4XRsunmD5+cSlJ892wPC4VTJO1qQugeJxt1fdr2Eqo1pMZvUpmxTKNA52W23Ao+aJXfEuomEfrBJBGepuSMk=
+ properties :
+  width : 369
+  height : 113
+  widthClient : 367
+  heightClient : 81
+ controls :
+  -
+    name : SAI_Libellé
+    identifier : 0x2613e8f92430a81b
+    internal_properties : CAAAAAgAAAAPQwJS+WYqKtZ/Khlh3lZr7ZMU2Jbf4MUUGIhDViiDfLX8ryyoOdgvHSISQYEHl0S7KOECQo8sesTUEc36s6WjK9OEtDE2U0Ur/EJxR6S6OJSwRK/f763NM1VI2E3nADThyDxC5zyMqjKNTrkjF0dH4d1yqxGv2rL8oaKQGtzo6Fw56yazMPK3EiOzXk6jXFC2tGyyK5q6XqXdJSbB3xdz4JvVSdU5l71V6gNoWM4TiNNahkNd+Wokath5uLTQShS4ACkAzRkfEfWmq2Upc4Hp3UieGJjHSCTJ1Bqk8a38k7A1pwS7jm7/UeBqsBIvr4tDwefg7Uz6jjjmWD4+LTXzGLDeRhuqWGb33RFuQ8EK9NLJriZOkRYW3f5X+CQEAKCjhfe377s6qKYoLJ7nYKAJNtPkQBW2dLG3JcRCK5AjlCkeFBSwSws5DIDMK2j4Q1FvGezbhdlELjOnjL6sBexrerrkb2YVQ7DjvNNukO/rq0zx56a0WiLdKavyagAYqtWbw16haC+lG5QWRySAs0IWLWTt3Mo0sCCIEI8CQuWy9gnz9NEfCwVcOAVdnWkJkUp9p8k2ggkgE0WYGO5av6m4CgVCLIoxh83zkHQUxjaX0EKx0mIdZOCRyCMs52b1zjtyTKawt6qbuNVyugs7TTbXr1ytjp/hV5h3t34kHEJjXzhcb8cVKwTOqlpTlTE1ZlpkGRV9qZNhLZ7kXW+Ycl7I3x3RBEvdlPkXc6Xu1NODz5Tigr6XeGGU+UbU/E6oblz3PEtQ82wnn8CeQbNlT2jj6ucXqDhJp1y1wO9cpRNNhjhhikQwuIalkfLXUcG7HMuWxVbfKbPtBGLMcnBerUaMW6RjjjNgJzkIjRz3GkKAZ8gN0rikZY+zbYEgQk/7t4HdMJ4QsNBPtqMwU4wXzllrQZUYqEG0bU7XYKiAFjkMt66+5t7k9dEt9qeAveib/MZnFJTh+6rdjZDPN+DHVqxZAmfe2g3gwIly2ByfrO9kjOHGkHDSuZcQB+n39LBRr06FXpu5mEhAWwghYeePX6KdtXjOu3oHM22iSEImPk2TcCwXx1HLE51AH9vHrZaPGsj7m7aH60JttA84EGyl6924eNAHJ8lb29oU21GCVWW1uSqOMoeHDrZzEo9ScpI=
+    properties :
+     x : 6
+     y : 6
+     width : 355
+     height : 34
+    type : 2
+    code_elements :
+     type_code : 3
+     p_codes :
+      -
+        type : 276
+        enabled : false
+      -
+        type : 277
+        enabled : false
+      -
+        type : 278
+        enabled : false
+  -
+    name : BTN_Annuler
+    identifier : 0x2613e905243fd593
+    internal_properties : CAAAAAgAAACV6rxAxwQQNVeCQSEfGZa4LmIef+3FlBUVr+R2Cez1bXTZRoKCWoGHCD9lnC3+Q4BmjKYxeyDkLLT8AXgi+sdZTPDbP3zAxUg2CpJtnX+yXLj6IpyDwxOInAMUZfjOsnzp1EhdR1BDkLSMaBmVgadQOf8JTneiwe0U/MJei+cWBYtwK51dJ2EtXSqIOP2MWcU24ccnTVSBX2rn5grmRDZbPa7ZZP/JkKGlV5eYp8z/YUpGjlkZltDQdh5L3id8XozkKN9nVqtxytvgtfpH5aqO8pgkk9nXQskjrc8H4He2ItY/cXiVl5Ok0giV0c5/FKxwxPD7dLgctwfsRq+Wyrga6ZTAmmBFDw64S0YbWrt1nRmTLht/zn/b4xyRmlxeHXvJfklLK757PIod8Q9HvBecmtTVua6AK7vYfqKr9epPVuAdyoo5zz9Uvuq5UuesfZy8MAqw123pjWzrtuXsxkzkAQsJpuRuXqCMOc/IoKKTdl2U0kIddSM3G0S2IdaKiI/LPJozZPfojBMfj8acRS1JkFTsbPkuuES7Mf55n1RNK7zFfnHE8haIu59it7j9Vnb1BflEjdCVnwqb6Yb50P4BXJ1mZ/Y7W3NphmtqoeKjfrWHjO8HB2lW7nNe26znO2COoQO7mrVXfOEfrdK4yK02nUwiKC+RbrucgrIlBeztnrjTHRBrzbfmJXYYsfcYsHGphsaBgcvJz0crmGGt/WSOQ9J/2sqcMmLxtm0fMrdtSRA9JaJNTtkaLnEUjS40WU8QKVH6oRIz88MD0Fcaqpc5V8ocV0luIbeGBrjcX2wrJcf2PjmBCHY0rMRAGtW7DmfheJNBLMEztkS2NM8rND7VqXOysfeAmyNVlNrsTXuj6Rxu58nvy2Wr/XsnrGjAm/HbB+9Cgifvo0rzHaHGDetq49TylB3Rxr6adOrqMYqgP+Zyjg==
+    properties :
+     x : 261
+     y : 45
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         
+        type : 14
+      -
+        code : |1+
+         // Ferme la fenêtre
+         Ferme()
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Valider
+    identifier : 0x2613e9052441d5a3
+    internal_properties : CAAAAAgAAAB/+9BO7vqkhgWO2LLeCaRgebEKdwBBhHc8LwmzhNp+BY3wsihM8qs1X5d+99HOJFsi+Wmqg3F451zMczgQoVXw9q5MqAJ7jMuuRxSl2x7ACA6jqWtzSlzLR5BaT510hIOlNz431NvEI+hVuoqKovv/uTXtLyTD8LRw+dSQj8p2BXoxdENLroFjKvqnAn7/a/YhxQp9Fr24zioUWYraeKiyXENnFKWuIPu5anKGPTc+GQOjBd5O7/UGQvfyLlDittZTBhvgTQlEvjunBL/Nkdnd9tEeKNdd7sRdwCDk40t0OQ585aljaaZbCMWRADO4wKf3mRdEFGoNl+DTWq/Jca/Kcrabic87zsaGUIR9iYfpb+I+81OGYjbhsOoOTbR8/qoKCUiIMedB+jbP8qOWMwQl4qINRQYmFGCRefSVGeVLyNR/ZSXKZU4CjtT8nNOh3K+okweQ8i3Gj+GNEKBDsvXY/LRFLWFsnyORZKiYFCz2Wpnb2y8nfEQ9GASD56xylAm9qe7M6pl5sIEX87EWRSao/1SOUAtYp2vij/Cv5EByapKjhvhowIIDKUivvxmgcgTSwTSKR4hSEKcigGvoqwzlwabZlJvQsNZhSgZvNKjfQbecqVB62K27lGAqCfnxhy226RwM/EaiwksPVjp1S6yDvIvrdfEodVFHMhY7troB61sKeY0EsRCiPFsDTcCt6rCo3Oozz6Aj3Ovze5XNEva4aGTubakN22gmF/vt60eOJ9cvBLn3+dse1UE5xnJ2GLS6VKXVfd0aRfJA4KPGG4WYWRXWoFy5K8vB7tfbypF7dInuaUNdYStbRNWj12sncbvoX5+Q3h+4eTtzAy2vDX2OWxe+URmOTo2Qrp2yzTH0pWczVp+7zhv0N0GogpalsbZhXslRNkFdZS2ZH3Rx8MduDkKvYgjK4x93zeWc1MM=
+    properties :
+     x : 155
+     y : 45
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         // Le libellé doit être renseigné
+         si SAI_Libellé ~= "" alors
+         	Erreur("Vous devez saisir un nom de dossier valide (non vide)")
+         	reprisesaisie(sai_libellé)
+         FIN
+         
+         // Mémorise les informations du dossier
+         ecranversfichier(mafenetre, dossier)
+         si hmodifie(Dossier) = faux ALORS
+         	Erreur(<§$0001§>, herreurinfo(herrmessage))
+         	retour
+         FIN
+         
+         // Ferme la fenêtre en validation
+         ferme("", Vrai)
+        type : 18
+      -
+        type : 161
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAADAfZ27Q+jJ/MBXHLGCb7PyE2Yqjvuo9mAX2ZN+LLuyQtzms1431znXR0sNCCeLESXZp1gqmo+m2mUhb2ELR2phZ8VOgUSyXddfQyxpxffipvH/iiFuFkCLgpjx1Ah9/9/ndeRpWb0s9Qcjy8oPtW3aMcRtuglgDe5Ch9/jnC/Drp19/hhf+qz96diLw5T0yWlzg33c/E8hhMwUBdSOV69/8iDQGLfTvLoTvV3YkiQ5Dce7dxB2gUx1AVvVTykQMm7G+0haIOV568KMGgPEJluRN2XjgQ11Tb8vVxt6P2g=
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      PROCEDURE MaFenêtre(gnIDDossier est un entier sur 8)
+      
+      // Valeur de retour par défaut
+      MaFenêtre..ValeurRenvoyée = Faux
+   -
+     code : |1-
+      
+      // Lit l'enregistrement
+      HLitRecherchePremier(Dossier, IDDossier, gnIDDossier)
+      SI HTrouve(Dossier) = Faux ALORS
+      	Erreur(<§$0000§>)
+      	Ferme()
+      FIN
+      
+      // Affiche les informations du flux
+      FichierVersEcran(mafenetre, dossier)
+     type : 34
+   -
+     code : |1-
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1-
+      
+     type : 2
+ code_parameters :
+  internal_properties : CAAAAAgAAAAspXRQsX4kpYpRJzI8SMGEUfXYJhQeqig0H9mPZLI9hoPnkeFEnSQ8t7JVd8VUY9eLyST/2DyAYB+9rK7lbHVOclfSdkhgAQ9dNjlmStKMpPl9
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x1613e8e90a626768
+  internal_properties : CAAAAAgAAACyXVFaObH4lOGSEHJoZf1MD49w+XTw2LScZCP/urkWFwy+HYJdyQ3umA==
+  strings :
+   -
+     text :
+      fr-FR : Le dossier demandé n'a pas été trouvé en base
+     index : 0
+   -
+     text :
+      fr-FR : Impossible de modifier les informations du dossier
+     index : 1
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

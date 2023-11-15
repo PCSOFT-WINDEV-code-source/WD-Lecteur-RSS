@@ -1,0 +1,472 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : FEN_Export
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : FEN_Export
+ identifier : 0x25a3bf59116bf90e
+ internal_properties : CAAAAAgAAADLHKHeeFQUesG047pfVyxCSeHn06OaxyY9mkY9s/lZqxR6ZJZi/rquJRxWuLMQ6Dgw0XcFsOqJFCEhkEpX0jYsXnHxVT01AnxAHVk93pZWIO5RWPoYMovm9rwVnj6TxF+MmR1oGhELGqMmCvBjA0f6I+K9LLz7VVoFe3VazePJ+Z0YZ0ln4NEAASiUDnWeNWvEB8yjpIDTLfYZyEg8tn9qk674gt9HRou/U1fVM8blYtAnxA96YoFypmQQGWHAb8ZV5SCNmtXTT7CZ5G3CieMI93ORPBCzeNuECth//AhlfpH54C+BUhbLW9+tu2fW/SpMgEnIM6RDSDKEEc7qi4X4Lrb29zsXzYxOf+dfunSb8W/p24x0S9skxpKciWKPlQ/R0TrXUSr66grmf8GXBFoNSm3itK2wkeRxgUZk7wcGJKIRUJiX3njDaaQ7Wn8scvLdQYnjFVWOw+/YuGqCKbE8ABayLsdVq+wyjZueuDsgYJ1uu6FkrXzJTiYfXvLMXTwERMCwNkMlpcPpk7N5pMWoOXjXSLHkDmKko2DmlCf12xPIHmpbRUgcpB2ba6XGUPO0mLxbY0QFS2dyB+4rGgCpVBOiwwy9pOrk1aCmxAnvooO21F++XYRoybvmJOueKnobe+Hx+tO7Jv6anFo8kU1rJMoFC5z6u4pe3XJ2UEUnodVUeqZH+UdSL8kVXcqwoLttjBoszTwsnokP0mJSuMNfuosbn+h0tjFV7CERMX90RPqB3o6DOvahM5rkATOVmkN5GkQDLKc=
+ properties :
+  width : 646
+  height : 453
+  widthClient : 644
+  heightClient : 421
+ controls :
+  -
+    name : BTN_Annuler
+    identifier : 0x25a3bf59116ef91d
+    internal_properties : CAAAAAgAAAAYtruaHUyHgb6wGs3Obw0Gf2QIjZRPOqyAJrIZ9U1rWimbTlH3M+X1BglcZ5Sie0+1iBV5iM4H/t34moNicezG/k2ABLGaYdRgVxu+V5duyDkieeZQ9+XBcwXssLBncV7G9dDPaszIaG343o0oPCGVzzN+XxjIZ/YSjRGylYLOcUE7RbHFg/WkNDqtvOfwVEBqSHrQ7dpGXVSqE80QcdgQGA7bRZygEytMMsnp/dd2wt0BMIlgyYGA7pDiiGy7Byl4+KfOrovljDvE7BSgbOBko8qyR4z7iFyj1S9VlqlSHShWSRCw9y+8Bict2pX52r4oq8WuRTbLznqu2qTdXMk+rN/MAoBEV1yBCcRh1fHXKxM27f9h1Ll77iVehXsk4gkZerFE10L44N/H/2mMC2xfOItxDrhaT2NnNLfZf5LpI4ac614hxVDyF6jI5vY9SXT+ovY9lFKqXaGIxuLzlnu0CiRxCliHOYnHt2jZm+TW3kbGUJlTd4aXFD+n6kGrrdAckNmKSF6AkwomlU0uqt7gCh5zEi9tz/oLrpQjaCKi/mJpHwSrULZWvYpbsHTgQDe3mx4FgGLSLheqO6yers+a8i/caFjETfZcohXoGIyF/C/LIKHdjiv46GQzT2p/I8n+kvzQHRO9YsUnoT7165WDq2lO78OwWTUCi2bXdK58sv7SpOmbm5hWwy5YeOc6gHKtKq//fupX8yBTBrWKuIOtvhjMsotquBKKR7FpR51raV6PoxXGoONY0TUS4itqipzGZ20i+7T3it7rrDK6f+nPfvRrCtpBpX12rR5QMNwOWCSZfiTzVUQ2ASbsXoYpGKb5yOXFjk+8vB8FsaRoUkCqD9sj5OjoDFLCy4DTWloTDgj5qrwrMN7HcQZtxZWGjj4lBIlUKz+AUvM1ui/Xrcr2TifYGra/DXMoJX5f1OnWFf0/9cI=
+    properties :
+     x : 538
+     y : 385
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         // Ferme la fenêtre
+         Ferme()
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : LIB_Titre_2
+    identifier : 0x25a3bf591172f91d
+    internal_properties : CAAAAAgAAAAH7uR1vR86KcwRJwIsYQUf42Mv0foeM2HvEzvFcU9oyn5M9wnk+UBC3krgEM1v+KF17YN19X9xXTxAtEKSKV+PaVcHbEDHWE2lhWLlw++alWoHE4bpygmWEIWetm+BfFeQMRY9h2Qms0qUO3bOco1KVKoXnAildVmet0Te86W0Thub/ay6iC9UE+bZRMKhuk61MCknryoskhuuf2FpKv0+aeVWZvQc+GJwQYFNEotojoX+8Uc6SmHUZ3aIbbS6sDJXgyzpwWICsBFYp5KKreX/ApJnibs6rxGQM/E4X/3/JbBMtcn25+0ODYumMl/d3/8Tv8Fxk2wd207Ys0huR9hf57wZqf38CqsSiG/ec1KMH/Q70HpWhjLso+Cnmvx0O4Ul3vM0v+0obHy7ndykOtW6a8OL5aKGBBRasqGmvpG4nGgdhGXq2oSLQJhLG7WLZoQIcuI0G4Qa84G/9xbQU7EoNMtm3aXTEVj44/e78Dtsi65sz2KbmXH6YiNob/q32oliNxxuJTMGSBUQYX7HhDJ1wBhbWdggHNEbxV3ihaDpJVE9NtuqPTiIhMfph9qJMjLj
+    properties :
+     x : 30
+     y : 18
+     width : 620
+     height : 47
+    type : 3
+    code_elements :
+     type_code : 2
+     p_codes : []
+  -
+    name : ARBRE_Export
+    identifier : 0x25a3bf591173f91d
+    internal_properties : CAAAAAgAAADzmoFw1Os2akvq5EzqWqdrdn/2qyEJABnpWmcFtjiktWbeN9ZZCjaWXpHt6wM6GORqxDWsZ5YTzmPCQL0k8luGD6kA9KoqdEh++WylUC+iWDBXgph7pjdVUEjEOIohnIr3IAxeNj7NtzWL98MgM6Zjcl5ZH21y1zNoaHlhYALiK7thu1v5nauN2Q2/fjxVwdZl0GkbPijRoDp3i77MAt/ANGLrp6Ej0WYx1XLapNsLBmT/7S+oQWyMqVOWwlYrt8WJ+hO6Nf53xxk15cD2rG0gx1AFa7RqM7Wqp134zy6n8aBjWxLFpNelU7eC2WP6uesJrlCZHRBCipaOdY5H5Ry4MI/tfapzlHLeom8p+lXoBTI0+GcIBmYcBbYsBU7In9MvyIdonhunJXmLPWLAfJHFHCkFUbIYsHzFz1ZIG910sysUsV2AmAaqjhuRYVonQgsO+ENSseVIfjIENjAV2UtUb/j4GK8ZgLK+/Q1QOkjZFnlizNHqjYkM460XntFqGHSL9rWAzJuWgxjbTOxIrJtJrUlvnfj+IiRO4FKt+hBuZTqjioChS+usut597NtVW7+7X3XIPjTUy0ooi2E6WR9t/bMykK4PsO5N4xnK3rE3EopCES52bvlrAbw5bDJyaU1i7f2Bl2vQgoCvr+Ie+iURT1UC89/sVQD8ntj6Hr28A1BinZC9NGKV8YQ2fXPg1jb8tHR16h3eICWAvAY4DukWYMsW2fzWk2OZ0x1ncuHvNJjxlVCmeAmFxdJcjiuc0LSvjQKop83WTgPd93ESA6meCR5S/OmTrWkAQKuj/oM9MtlL74D6xvQI+GlOgZCyuq/UzJAAU0qFe59JptksJIHAz3DJY84JxZBWotnLny/qH82zAI8l3E9rXtfeXZK9LnYNvIrfCjb2OZXHPey2aI/LoZPtQIgTEUt06EgiBc6Au122xCwszymAECLQOqbzegei5T4cVx4JYuO6vqqimPUXi+9vSZECI1hy38+PRjbDzarWzz1wBCr6Vxjt3EKERX0XirPHkYjO0XEH22+IiwsPYUzAOBtrFO5n2sKMWqkluMHBMrPsJnWvw3Le5og/ru8jbEPUCYFgTIu/cifiNeFOvsKQdeyo5cbDUuVMCmnvxpeacnB0yQ2WlL2gMVRoW+YX6uFcB98borNyYQi3iVFhJDl/pAWA7XFDZ1ZiUu71TbHvPHrfeRWFtmm0euoe7C/+s+tybGW7NAl0ze94ldfAuNqGlXFQF7dqLIPbTe39Pt78h/O0+5HJA/eDcb9lATpJjjDtPU/HsH7GtPgFWqwr3SMNvaljxz4nO6J95RwnNNG9C0+6EYSTU+qVIiVj2kbe1C2YB5l1Be2c0Mc0vTIplKOlx2xXRo1M2QuycWKhJiNYV3he8fvimoJAkoiwu7ZnQaxUweRXrlo=
+    properties :
+     x : 18
+     y : 81
+     width : 514
+     height : 291
+    type : 19
+    code_elements :
+     type_code : 25
+     p_codes :
+      -
+        type : 35
+        enabled : false
+      -
+        code : |1-
+         
+        type : 18
+      -
+        type : 19
+        enabled : false
+      -
+        type : 20
+        enabled : false
+      -
+        internal_properties : CAAAAAgAAABmYRKMe+JVqKNus9YSJ4QvaxiJNazVLBZBGz/jfbe2V08o/HndBcfP7vqL0cXCt+Qn+Idnu7mJAAMcXknjvOePZK+Ww3YqB5z51Q48mSy9EcoBgFnhqRnne+mbCkCbgqU+5ffrG9WMldY/1w==
+        code : |1+
+         // Récupère la branche cliquée
+         sDossier est une chaine = ArbreSelect(ARBRE_Export)
+         // Si c'est un dossier, adapte les coches des fils
+         SI sDossier [=] TAB ALORS retour
+         
+         // Parcourt les flux
+         sFlux est une chaine = ArbreRécupèreFils(ARBRE_Export, sDossier, aPremier)
+         TANTQUE sFlux <> ""
+         	
+         	// Coche le flux
+         	ARBRE_Export[sDossier+TAB+sFlux]..Cochée = 	ARBRE_Export[sDossier]..Cochée
+         	
+         	// Flux suivant	
+         	sFlux = ArbreRécupèreFils(ARBRE_Export, sDossier, aSuivant)
+         	
+         FIN
+        type : 17
+  -
+    name : BTN_Tous
+    identifier : 0x25a3bf591174f91d
+    internal_properties : CAAAAAgAAAB9VtsNLVWilVg7eULeuhjFHnxQ+shHDuBtX3VagUCz2JtGR4o03wMAy8NS0ncuOACf6KOj9S1TTjGdTnEKABRnW2mg4YPpppaDM+FwdCfituenKlQ9JqQypAWQGYjwryeJYX7ppdFB/gK22ui5kuyvSmQnZu5b1sLpJcVS/6uYnbKIyyD+L7Oy0bzJMC1XRloePSJRtam37bZotlDkSoMqysg/EHLc1wmGw738iFxcMAOVciAAbAelvP828upDaZcSjRdZ6fevmheYxxqiy3pUCPBkRf0+PsMdEIsNzuNjBb8w6H4zDWOPFxJXmqo+d3ntlHLVj0fFdGBMTMjUruc5znaGNldfKL6ltBbaRJv6GOzKHl0IDEfvuCiGFc6THv0q77sovN5wOY+xOs6bRAvZlOE+SkSgCa0UistAFbD1+c3oULu9QwyKZ2BisEYsPSk1/c2PEOpwqXoO1xK9c6HbU+O266SkfRbcOycJ4iTVq5O9EalHHq2RjJJDLVh+1c5PAjAhN5L/4itZXAlBSMYYbeb9SKpemdzW/2wuMHcway6ZhfsBd7dbGqEwot5FIvoF1Sr4KyxzYBgzzM8TkvI/KKwLhoUogxunqrM/rMqskdgePxeUJT75dc0fLFa7JAEVD8YVLcwUIFLoOw3zc13Tm9QIDtkoKFbbuAt+iOAN1aYmpZkPmtpVnFu3IpwDyA57V0Kd8dTAHACvmTnlsAdi6k4Pn48HTnkCIcOLyeioIznQ+tTlFI75ubzSOJZVYuHELnKVQgo207oZcOkf6NEm1CGsEpx8kil2c7nlvru+2d7ryo4c5WKZu5Lp7jLOWUK6KuaJ7URZX/mCpGOKz3TeuaUs7lo=
+    properties :
+     x : 538
+     y : 81
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        internal_properties : CAAAAAgAAACK9b5Oq14NaEcmuwZu88Tb77jdcVChXG5lO/eLadv+AxvosD3h2fcXktJTKXFeN8izaJM7jx/j4oH21D9pKnGVdsGkMRzAgZ7/1xQqD9oPZ4yr7hfnV8sZ2eNBYB657JMITw2RueM6UTrTew==
+        code : |1+
+         // Coche tous les noeuds
+         CocheNoeuds(Vrai)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Aucun
+    identifier : 0x25a3bf591175f91d
+    internal_properties : CAAAAAgAAACbHRm/krWve240C3v65j9ZRyEwXwCvOz9uiZnc180mi1LiOy8tiwnPrEn5scwaXf5RrjULtXVsdk9Q6cfK6S9QiA+p0+7N28RBvC6PzfMUu9wXSImpKcbTbtxzuCYBhWnJzlPaCZv68SbGSE/I1xrZx/jSiglN5UsNHiRHGtr3Jv+C1/+PJTge/cSNGSm1k1z0U0wbdqAqm/0RKlNJExtwL9mx8A7vNXEU9gCoouw5l/KDq71Bf5+EQNppxou1KpVNgIb9ZL575miLU2MHSrv5Q65jpphUFzKDkENNHkF4WlybMdhTK+D5j6Jv7s2nfMs3RGTqAP5nebM31qiApNN02v+Lx9GDaQme27H5YrYU7LB6ARgfgCNn/aM8oeYWVz+Nc9YmVoR3XTPnA9S1LNpbwpIII32sr62UoVq2qnCxKq3C68eOYythkvgoTQ4atti2WsbJxexdrE3g+wm1aRJO+BD/iQF69KnHue8m5Ow2ntB4iMskfMKgY1hrivRSLMVQdRejuALi5cIx+s5fis3HjnGkTptAdAHveYxpVJ+7mot8DFngTQ7EX0PMkdqZ5YmGYMH88NrG23PByHb9UAeGjQdqjubItNwYup0gRoDZAo9HTLkDh5l2Utvvf6BNJ8JQKCO7MuL/E2W8hYAXUTrwcpHBIs4i/WECMsuj+gSKrKsRBAlGaPleSQdR20IDv2E4KuPPHyr5e3fMJVeP5kYwA2bv5kxXbeoFs1zsOVX749y8WcmVFSPKTMMmnidRIZ6HZF+JhM3bUzoUx6w0m6ey3aJ/BFFDkTYvbAx8T1S6gGQ/bmo1R/Dxqwv9mB0oPvBo0AiBkdPoMHAcWCAwzXiHHnTe1yWv+A==
+    properties :
+     x : 538
+     y : 117
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         
+        type : 14
+      -
+        internal_properties : CAAAAAgAAABKtXZQVT6tyBc2O8Y+U4Qrb3itwYAR7D6lOwdbCYsOwwv40B3BmXfXwoIz6UG+99iTSAPLvxfr6ul+HLcRYvlt/smcKdS4aYbHv1xCl1LX3/QTRk+/jxPhYQupGEZxdGsw94UpEXtg6XqTuw==
+        code : |1+
+         // Décoche tous les noeuds
+         CocheNoeuds(faux)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : IMG_RSS
+    identifier : 0x25a3bf59117cf91d
+    internal_properties : CAAAAAgAAAAcBIoMwktSiMt6NnAmLmrEidn8/JcThOCw4ToUPPG9qfQxBpClj631KJT2nhxMVCPWYat0BcFaI1PjfQpalAIfy44YrP+1LhWJKgWPfQTd7LaV7GeNibjRvHeg5ffmoEYlmIGF+E/zE+i6knG68AsqopEXSWvXPCGwytCGLgONHpgdt2qAwyeYMEbsRfSMqvInij6Hy+r77vaPm1DFno0Vi2luXlITPiJXSXeoM7jwvTxGkQtcnCyjWH6yx6M6blOWPSR+/rfFrVd/jcqGcpM5OyPLzspH+k+mS/cVfeQoMzx1luWbM7x/F2RRREt43FvOPqpK8ndMmtpuelk8HkIAEAF7vmaPlQrSyJdB87jA8u0mO1xxhcXcfJK/4WckTeOH1oAnLYuZEFkFpX4oOviTPAwiopCxz92VSD6FsZyxc5xZMSCIgD8zzEI7EHYrrQZvKhA7bgGbloJiIQBoiiI4E8q6lVdJcdoQnRyMay85GeVUGUCaK3SIvAQ/jo6yzZKX5CO++Xu/Nee3cFYYpnBGMwZp9Xfcnhoptq9xs3jKMJT7UYqgYwycLokFCBq8tcyaUiI4lKcR/6eo7mU1NP3k4bhCjElb6P5HKTgU+L/JGTXaaJ34BO0CqEmKz2XrGFMQsZzhW4hITvfq4WvZClzGeAXzZtK7PaO0CscI5XX+emHUqC7482paobg+qsb30drsmwz1+VG17pHYl3/kMVx0c1+RnLVU+zxKUsTcHOgo+fp+tAhnZkCe39hEbVGbrBRiGNUOQriCGX/SQQar32Wksa604+eIaSsWFf7xwY8WSvx55rwiHqnNDOXeVcCPatIU8EovBfiKi8FovDCBDCJ7zmd4J9iVcbjWTBDv/9NakaZmKa4IGGa6En/guw==
+    properties :
+     x : 699
+     y : 76
+     width : 18
+     height : 18
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : BTN_Exporter
+    identifier : 0x25a3bf9211c3d5a2
+    internal_properties : CAAAAAgAAAD4NKeAL2dCO6hnEch12/eUbUC4fanC+PInIWfT760secTE2qO1yrAY65nowz1p+5hcpSkzxFdqTiCJNLChCEFf/tFfxizZf5iZrXd1ZpVyPIjdugzSJ6VlI4s5DM7MW2p5BHVDgiHRtyGvfsg5YPAxD1vrcMKBRq5U+UuAtmdUucwo08cyKt9L7R5+wr04NGGyEo3FWYSr6AJrXwj8yakcFi0ue/Hp366Vh9CVbJ8orfsjyuqnjMwb3d/dXtSFv5Sw/0Wx6+tP1TEj3pQE00vlXRFVer5dpsJIaxfznXNnprDlnWkb/PB62eKlEdPQMj+wlszueS2Y/ds/GRk2u7QYh53EyAp6XQbIjUOF1AEgaa+SyU/IUeOq52m8KZMLFUViNO8LdsqbIGFSRmGNlIvXaBsvpn5x+ju9dHjYIbMtFYu5jfKxeE81zt3FsfvWyDX2f1vtUDss4ztUlZQxX9ngWQmodnvrDqp8PTwKScPgFUOkNUX6sZFQVTDFvmtrygITA7TzJkwgnv2kvz6nB9d+9xf6v+Dph0gVUStLUQqJKpXCRw4uOde3mh5+iMYTiB0/m3B9O7mbPgdARUWJjyXfGCMEuex9LY1+AUy3Q6OPkfDO3VbeGc+N4OAGhLlti+Ul6BHDdxKa09mkxK6MATYBnGRO1+HnXSO9NO+zHCyJfk9Nt6CngjJ3Q4MF0ylo0Dj2HfGeJvO3oeLtgJSVd9yRtbvoVQiGIWoi00fcNsdm1QKRwl98MIQBrtlJU+QcHRxm8W7pzZHnRdi+TpgEen9hzXIFPtDVy6wxweS/lZ5JCefaI3orSWa/uUEhDP4tP8VGHXcMMt3H2+KCW1OyU2lSbNgGTXtBWldiIX+mJh1NTYBs71XfT2FW8nj771fg7aOrPPGOv57sAOX2JXwixS4HINk0qVvHSXsmy8OB4Q==
+    properties :
+     x : 432
+     y : 385
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        internal_properties : CAAAAAgAAABHdgSerVgYIzaDaVKEjPTmBG1LsAR1bes5k6oB0XxZxV1qYKGrD8+MLPDKA7UADwQolooRAEAfCjhXgp+yY4geU7bWRzr9GLT/Y++Vpty7OxdAzlHn0ZFE/m3oPbSyfDlG9tg6n/QwpHvSas26FwsFAJcv0F/l0ChHfHjqWbYhopNJi9qPWU27/djn//39p8munZopEezzyiZ/C2yiTrF/KRnJiavkMMv5sk80iwTLeBkFOQKVi6JAWBerjXB7OQiitTvWC92mK/KuvojjCoyzf6o5CZnEPBByy7rgeLDVLllwP0aJ5jbH
+        code : |1+
+         bAuMoinsUneCoche 	est un booleen = faux
+         nIndiceDossier		est un entier
+         nIndiceFlux			est un entier
+         sListeExportée 		est une chaine
+         sExport 			est une chaine
+         
+         sModele est une chaine = [
+         <opml version="1.1">
+         <head>
+         <title>%1</title>
+         <dateModified>%2</dateModified>
+         </head>
+         <body>
+         %3
+         </body>
+         </opml>
+         ]
+         
+         // Si le dossier "Abonnements" est coché
+         si ARBRE_Export[<§$0005§>]..Cochée ALORS
+         	// Exporte les flux sans dossier
+         	POUR TOUT FluxRSS AVEC IDDossier = 0
+         		bAuMoinsUneCoche = vrai
+         		sListeExportée += [RC] + ChaîneConstruit("<outline text=""%1"" xmlUrl=""%2""/>", Remplace(ChaîneVersUTF8(FluxRSS.Titre), "&", "amp;"), FluxRSS.Adresse)
+         	FIN
+         FIN
+         
+         // Parcourt les sous-dossiers
+         sDossier est une chaine = ArbreRécupèreFils(ARBRE_Export, <§$0005§>, aPremier)
+         TANTQUE sDossier <> ""
+         	
+         	// Si le dossier est coché
+         	si ARBRE_Export[<§$0005§> +tab+ sDossier]..Cochée alors
+         		
+         		// Mémorise l'identifiant dans la liste
+         		si ArbreRécupèreIdentifiant(ARBRE_Export, <§$0005§> +TAB+ sDossier) > 0 alors
+         			// Au moins un dossier est coché
+         			bAuMoinsUneCoche = vrai
+         			nIndiceDossier++
+         			
+         			// Lit le dossier
+         			hlitrecherchepremier(dossier, iddossier, ArbreRécupèreIdentifiant(ARBRE_Export, <§$0005§> +TAB+ sDossier))
+         			si htrouve(dossier) = faux alors continuer
+         			
+         			// Libellé du dossier
+         			sListeExportée += [RC] + chaineconstruit("<outline text=""%1"">", Remplace(ChaîneVersUTF8(dossier.libellé), "&", "amp;"))
+         									
+         			// Parcourt les flux
+         			nIndiceFlux = 1
+         			pour TOUT FluxRSS avec IDDossier = dossier.IDDossier
+         				sListeExportée += [RC] + ChaîneConstruit("<outline text=""%1"" xmlUrl=""%2""/>", Remplace(ChaîneVersUTF8(FluxRSS.Titre), "&", "amp;"), fluxrss.adresse)
+         			FIN
+         			sListeExportée += [RC] + "</outline>"
+         		Fin
+         		
+         	FIN
+         	
+         	// Dossier suivant
+         	sDossier = ArbreRécupèreFils(ARBRE_Export, <§$0005§>, aSuivant)
+         	
+         FIN
+         
+         // Si aucun dossier coché
+         si bAuMoinsUneCoche = faux ALORS
+         	erreur(<§$0003§>)
+         	reprisesaisie(ARBRE_Export)
+         FIN
+         
+         // Construit l'export
+         sExport = ChaîneConstruit(sModele, <§$0004§>, DateVersChaîne(DateDuJour()+Maintenant(),maskDateEmail), sListeExportée)
+         
+         // Ouvre le sélecteur de fichier
+         sFichier est une chaîne
+         sFichier = fSélecteur("", "", <§$0001§>, <§$0002§> + TAB + "*.opml", "*.opml", fselCrée + fselExiste)
+         // Si un fichier est sélectionné
+         si sFichier ~= "" alors retour
+         
+         // Mémorise le buffer dans le fichier XML
+         fsauvetexte(sFichier, sExport)
+         
+         // Ouvre le répertoire dans l'explorateur Windows
+         lanceappliassociée(fExtraitChemin(sFichier, fDisque+fRépertoire))
+         
+         // Message de fin de traitement
+         toastaffiche(<§$0000§>, toastcourt, cvMilieu, chcentre)
+         
+         // Ferme la fenêtre
+         Ferme()
+         
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : IMG_Répertoire_Fermé
+    identifier : 0x261e19a403fb2fde
+    internal_properties : CAAAAAgAAADBLnQmy3MA9ryU3gEMi8oAxkUoVw0txu4YAtw9+XDs2y9KLNf2b0cHlX9RLlzeEvLq95LK+sFNkOiRAPmtFQHJT8A0YBV3KWmy6QiLqh70Kl1q7TtgOFK+YG5Vs6K7rxg42FfyB9T8ZWuoE2oyUFBdmc19oWr0p53jNES9VqTLcgHPjUVyP7S7/49QW2B6L4WkNUmChVVMfxeh+Hqcn4lwqbLnLnLOfXsIrFmn4tiJYR2k2IKMpwRPr9xU5BcvIB/d4TGTWMHpHAP1Zv+DtvBMzY3fbrXp7g/ZqeVjITNlhUo2WbSDube7O9BQZHtm2wEKcLWL+TdTdpc+965mk55U8qf5qe4ISm5TFH1PWqxhRkgcSGbUrYX7xH1++Gh/J63ydnCDJByjxKsaPOBbSxRaczkyhOOC6W2rnFAiuusbgf4IMyvu5DeH8bvWKrQi+kkoPPRMa/RIATzfaOh4iqPov5UIFGWGDKT10ozIw1xGjpKFsCeGa1Fw1fbrMRE5E1DtAtMe16+N+XJnJ7Sb5LVXjiuZ5annhCR7ZLx/8kzn5wjxj1gZaDBiO4EiBLkNGGHLG4rf9layZMm5MVLcsHtGKVYDMxXr9vcaoDsyUyczXJYTCofHcsvk+3kibmioavpbWFXCfvt6UM/cOv8+2tvscnNIGWm3mvShg2h52ApWqBtPUo+Y+f68C06bIGdKGphQmkdeDZnYDzhXmAQJGMwdgTY2vaBPeYSPla0Xi39Y7U2yVje0UJh6SsjPMSNNtjANhILisShAvJoOrebK3yxSvusOKIVTr/1QCJrYyESGVr6R2vfOMC0hHJYOZ9Wr+3P2ArMo3sAH19fE7jG66G/WC1D7G0Lt8M8nsvfAVliXkowks9kKgq1P4FreyrdseMRMaw2y+LKwcg96cTx47pREv6u0sw==
+    properties :
+     x : 700
+     y : 106
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : IMG_RépertoireRSS
+    identifier : 0x261e19c40401a9a2
+    internal_properties : CAAAAAgAAAD9f/u2+6f0sMzJos3sLxRhAHx2EToZ9mf3Oeq1Xl5ruOGgQuQFjgqD0aoUyImdh7J/Ho5xUKowztoqwbvLiK7ZLCPLOGpsPgK6PrSmaV0d/te8eNVjORhHCXtfVPC7af7t7b2Rni/z2tqLAljchkWUckV5A11YXtrjDYYtd3punmiNH5yVT3W50e5sA/mj4Q+vf/MbAkMeEen895y5mx63BnMjX37+XwrOGwrm8mwEtJ9/0znj7FdtQOlWucB8Hi4AhtyX6nYqCEcJt0ANlDeHxxsJwBNVO320Cego/7RpLYq9McK+iF6FIxjM5Gn5CQAnxGkSCrkBFmI3U62L/aUFDCB5Z23cYiQfEOPsF/gGwMwBI++NYoV/agyzm/MPqRCWRWJb3H404A5JD1fghQVSPypmshYB+qcbI6ZGXkfxPS2xocILN3wIwIkZ9ZxtBM3d59NoNEBe9ODL2rFHTcTg3fkxN3aJ5y57KqqtvvysRJC/Q10KA+sOYT2Zb9j2QlEOgoiBezufqeqPpYekUlCpDkcVsisRhaOb0dH/gKLSHbKP7lB0y0fEbDAxCQ4EZMTxbqwvRZDXnBngF9NM8sAGbCm3zPCSUs/HD/xUjETiHYp+ujHLA2KlimPUxv9KHJ+PH57BPhb4E51D6ao1RzYLutDXobHy100hU/gA48N2UHWJUX+PhzzDYoaiFVr858rokiu6UUSvn9xrx6CeEF21kKRL6tXLyPoYg28c6nxsdhTeYEWiwoO1qbZXoUCyg6HOGCAgwR+sgWz2z0rz+m0dvn+oTJF91KOBD0p5Yviy+QoRZ1tjFhI3jaJPo35qLMtADGpmk9/COBWwbe7ds4lQbwOU7Awkx1ByHHGekyX8lWFZSOFaHW0XyqM3OanJpTjSbLOzo4fDrPbk30i68yZz1eI5nAVL7nM=
+    properties :
+     x : 700
+     y : 134
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : FRM_SansNom1
+    identifier : 0x263a39cb0eb16270
+    internal_properties : CAAAAAgAAADzXyfYwPTC5D8GLt5gmknLNeNt289FehpxlNPP91BUZ27Q3wU0YJ0cqu9JyGY76pjZk25ZBX05pyBJsnKzfhx9DPh5/G6tfeic1BmmeyDzssDnYt3FmPF3OTBynVvyzCVNZomgxQ3NxEnF/mhIPkJLQUMqNv168dtQRl+ieiVc49JH0xth7VpY60A/+KOcmV/vb0vm5s7CoGFvNohSRhuCCV78gf8pDtEPUhaQiexklT/zx99WP6MZnzowJuZnqQDWn2uwfy2K9op11XTePD9Zj7r+DQX9+ajcmgxNHZ1NYFc+td/Yw0JQMaYXE6kkRFYjdpnXF6WiizRA2O0B133sflGuQ0TQ50dsL/KKunpvKnrskkxF3KtzfZh9RTkDAXEDIf2I
+    properties :
+     x : 18
+     y : 18
+     width : 6
+     height : 45
+    type : 20
+    code_elements :
+     type_code : 32
+     p_codes : []
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAADAfZ27Q+jJ/MBXHLGCb7PyE2Yqjvuo9mAX2ZN+LLuyQtzms1431znXR0sNCCeLESXZp1gqmo+m2mUhb2ELR2phZ8VOgUSyXddfQyxpxffipvH/iiFuFkCLgpjx1Ah9/9/ndeRpWb0s9Qcjy8oPtW3aMcRtuglgDe5Ch9/jnC/Drp19/hhf+qz96diLw5T0yWlzg33c/E8hhMwUBdSOV69/8iDQGLfTvLoTvV3YkiQ5Dce7dxB2gUx1AVvVTykQMm7G+0haIOV568KMGgPEJluRN2XjgQ11Tb8vVxt6P2g=
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  internal_properties : CAAAAAgAAACgxg9QfS9Y14cdqyOp6E9EVzwpRrUHfbWihzYGJlVClRPaD1B6ajZ/coX1rQCJf5xx0Ed2qJKzGC7wNjyyYWvFtCseyqHxEJy9PMFXb1AjDump3hNH4dBsOlwKcQ5CDGMo7+EeoSdgS/zEifkfFIVORrbkDzdO2GQdZhZof5EvLA==
+  type_code : 1
+  p_codes :
+   -
+     code : |1+
+      PROCEDURE MaFenêtre()
+      
+      // Valeur de retour par défaut
+      mafenetre..ValeurRenvoyée = faux
+      
+   -
+     code : |1-
+      // Remplit l'arbre
+      RemplitDossier()
+     type : 34
+   -
+     code : |1-
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+  procedures :
+   -
+     name : CocheNoeuds
+     internal_properties : CAAAAAgAAABmqF6cMJ3/KZ+8LLQbLPMfLKAjqgIxKzXp7P5DC0XQjAg5XY42VSv/dylD3LlGVBa1XLSZ9xAhG4pUaz5ZPOwuozG1zXA5xF1FuiTQEuGZH4EzajrxePzI+8w53mVsQV+svobcWKEUEKWseTEEXtq2fpEW2eZX570TnDH23WNcNHF2r2tjCv6c47TcX5qQRwLDj0YHPw==
+     procedure_id : 1559300285652334862
+     type_code : 14
+     code : |1-
+      // Résumé : Coche / Décoche noeud
+      // Syntaxe :
+      //CocheNoeuds ( [<bCoché> est booléen])
+      //
+      // Paramètres :
+      //	bCoché (booléen - valeur par défaut=1) : Valeur de la coche
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE CocheNoeuds(LOCAL bCoché est un booleen = vrai)
+      
+      
+      // Parcourt les dossiers
+      sDossier est une chaine = ArbreRécupèreFils(ARBRE_Export, "", aPremier)
+      TANTQUE sDossier <> ""
+      	
+      	// Coche le dossier
+      	ARBRE_Export[sDossier]..Cochée = bCoché
+      	
+      	// Parcourt les flux
+      	sFlux est une chaine = ArbreRécupèreFils(ARBRE_Export, sDossier, aPremier)
+      	TANTQUE sFlux <> ""
+      		
+      		// Coche le flux
+      		ARBRE_Export[sDossier+TAB+sFlux]..Cochée = bCoché
+      	
+      		// Flux suivant	
+      		sFlux = ArbreRécupèreFils(ARBRE_Export, sDossier, aSuivant)
+      		
+      	FIN
+      	
+      	// Dossier suivant
+      	sDossier = ArbreRécupèreFils(ARBRE_Export, "", aSuivant)
+      	
+      FIN
+      	
+     type : 458752
+   -
+     name : RemplitDossier
+     internal_properties : CAAAAAgAAAAmUcIUBjps+ZQka2m2CHOqRTIesuYlgQZusNBJOY7ix7Cte8o5iMS53obSUHbUIZo+DgYbHqQxg74a8Wbs+gy9dQZwJJAsm64kTK5dJfJ54pcE5LKWu4Af7YJd7UiVDahUgxSIvR7iHREMBzj5MRxFyoiea6WuSe7h3r2JbobGtyP9pXf010Yj2fZY4MXBpAak0GsCHbY=
+     procedure_id : 1559301578439036907
+     type_code : 14
+     code : |1+
+      // Résumé : Remplit les dossiers
+      // Syntaxe :
+      //RemplitDossier ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE RemplitDossier()
+      
+      // Vide l'arbre
+      ArbreSupprimeTout(ARBRE_Export)
+      
+      // Abonnements
+      arbreajoute(ARBRE_Export, <§$0005§>, IMG_RépertoireRSS, IMG_RépertoireRSS, 0)
+      ARBRE_Export[<§$0005§>]..Cochée = Vrai 
+      
+      // Ajoute les dossiers
+      pour TOUT dossier sur Libellé
+      	arbreajoute(ARBRE_Export, <§$0005§> +tab+ dossier.libellé, IMG_Répertoire_Fermé, IMG_Répertoire_Fermé, dossier.IDDossier)	
+      	// Coche le noeud
+      	ARBRE_Export[<§$0005§> +TAB+ Dossier.Libellé]..Cochée = Vrai 
+      FIN
+      
+      // Déroule l'arbre
+      arbrederouletout(ARBRE_Export)
+      
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAAAspXRQsX4kpYpRJzI8SMGEUfXYJhQeqig0H9mPZLI9hoPnkeFEnSQ8t7JVd8VUY9eLyST/2DyAYB+9rK7lbHVOclfSdkhgAQ9dNjlmStKMpPl9
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x15a3bf59287af91d
+  internal_properties : CAAAAAgAAACyXVFaObH4lOGSEHJoZf1MD49w+XTw2LScZCP/urkWFwy+HYJdyQ3umA==
+  strings :
+   -
+     text :
+      fr-FR : Export terminé !
+     index : 0
+   -
+     text :
+      fr-FR : Sélectionnez un fichier...
+     index : 1
+   -
+     text :
+      fr-FR : Fichier OPML (*.opml)
+     index : 2
+   -
+     text :
+      fr-FR : Vous devez sélectionner au moins un dossier à exporter
+     index : 3
+   -
+     text :
+      fr-FR : WD Lecteur RSS
+     index : 4
+   -
+     text :
+      fr-FR : Abonnements
+     index : 5
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

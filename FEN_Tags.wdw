@@ -1,0 +1,556 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : FEN_Tags
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : FEN_Tags
+ identifier : 0x259522f705ec4395
+ internal_properties : CAAAAAgAAAB6RjutWV4Xew0g8mw+97R1cbIa3FDJfrZ436g4/x8VfQk9+7Mf9uQeHW/Kw90DMY14PC3UGCwKBl6/C736Ryfzxer65HbDGbPVWgMDVSuHkEKru/RImE3DCG18dW5MgcaR7Fh0NnkXI8VKE1xRm7aJNR8mCRoIqoCRdHoC+3H74dM+OwMbdWbLe6AmcJkyA4J7AyRNLZ8/+cX0A2iCzYuRjtYXjIr154x5kTnhM+ibWZnZsB+7Ag/u16L2utoJGBYtXxesYarCmjA6dExkDTgbB/RWZ1TuqbZ57TOndCkOq2tJTuhOJs9DLNYbqIe6zm7gorRV/MqwjWdm7DmhQuqMhvC79jyAA9IF6OUrhCAaoiW8gx4ULpYBYDtz6sbvT4Dye8fdYG6NianMBpg+6sZZW5nExnhcjAOAG7lHCKtgGq/rbrZCkM+WegzEC7CAOoIqQZvNXvFZllrIyTfVI3PCC0R6wmoZDhOjq16BS/ce0tqwif9DB11aMcgMF7mYHRzPHpaeL8topJpj4uoMulsCDAj58DI4E2NLSdI+SUuZt1QIcVHHHA3nA+t6U0clXEimr4QQLZ5EKBSjL6XpY6NDOhIKHnv2ZsakYdzqoLJYxS3PrN9JeX8zK/a0VLMol++N8FpgWCic8l5hf+PGf3nfAGGVWSMtrSRsBBhDxf666Mz42tJ7SuTImvuUWrJ+Yo/lyw32hIvlWyjHbpv1tQwDgPfj0dmRKS6AC088Jww5oX8d907rj4Zp7kbFAVHVBCkPyw==
+ properties :
+  width : 800
+  height : 350
+  widthClient : 798
+  heightClient : 318
+ controls :
+  -
+    name : TABLE_Tag
+    identifier : 0x2595232e06291973
+    internal_properties : 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
+    properties :
+     x : 6
+     y : 6
+     width : 665
+     height : 306
+    columns :
+     -
+       name : COL_IDTag
+       identifier : 0x2595232e062a1982
+       internal_properties : CAAAAAgAAAADjP8Z8ChZVSYEVeJHobVpXHqHrBD4fefB8C/25DET/I8ZYkZFggQa4+21nIG1fK6PPX8oIWajfEFYC9KfAZGlVj6rGdHWIQFtI5Un2lTIj/QqjR41A8W11UfnCWobM/2J9wpZu/PrQ1mAjAW7RTobuZS9aRe7SM585iGYjbdcnbNB2yhh4JzN13maLMl/F+GnAhKgiNTuDnIEIArM6Eli8BNqvZkxN3fCCsHboaN4W8bOylh7CInWnD7myxkF0Z8QEA==
+       type : 2
+       content :
+        internal_properties : CAAAAAgAAAD8vMrBxm8w4VxroeD+Jc677prZTLj16aZeyhj5lcSu6Rf2PorfbD0kKUNTwlakQIIO4ZJbaB8H2JkCOeaebw5RiAPePoXaMTPEwmjUuttuFQWHEd4REQfPFptd1Mg8mYW3NtRUM/tP9QXBphphesPEjk3ETgdeTvDB+njf2ZWrCXAQDocK3HYsCa/CGfaSIbmON+X1q1MmMxclrgrHh8U050Rw2r6NnE5gV+V4uJm4Wjf5aphVWxezXIz1b4Unr8sTrye1FS5CmUwMSbk0330p3Nv1Mk1BUa9Q1nosM0mBtFKnKWi74LndLnp1/5b85rbGgr5YJrvLT4NarriCO58Bx2VDbLwg6t8Vf/Tkr+2KZv4RKv/RWFlL/qiYbTVorm9yjRj+DPwhpjOGsOe+HlXajMP4dg4TsetzKpWrZzLQ+PR4RWSNmbW6d8JH5+sBA0rLq8Y0TR9aTbzZ4WJBbL2yY/qyX+f7471if6dJ6yzP9/qXRE1cagmoUvZIehwaTU0ivotLIy/GdYuk6fNSdZj7k3pL67zeyG2rtaB+9eTQz9iHDpeOpfIJBNBxJWMyBte9ITi7R/yDpp85WDPmrRvd3rTnCSJdUgkkSLaTtACqsVHnV6bPbyqUV+L89VaZ34DiL0N6W5vDhixYyYKuUcOX2Biq6vdoPZBKsKqhMzG9el1E7oGm3iy8y+kytr7BXz2hdt05BLmjTuh3FAXuIAYfBK4eJEV2ASqLkvlg0TVjvTq6ndhmpSwrggFs9ILRGT299ucaHuxzGqFjTjbwpb+HNJLPv+Ys0JGS/DTBEbdRPsxL44KmkUSB4tGkBPGaT3p82USdGqghphm8laeLTch1N6rRjvEiDRccICBBnCE52BbQECmGY/5kbHbG6ofDgQHotM9p/xtsqAeqoK2qDk//sbWmJq68aH1hHhNFnLEwZqEjjYlMPb2OfhnrcwsyG3+xUneQZX+PNfaeuZ1/GejTjR7LeToGFjkRbm9oEHRAo7Mt+WKzxWNT3tMB9J1WYhIbk24gWqDn
+        type : 2
+       code_elements :
+        internal_properties : CAAAAAgAAACVbIAZKIyLUtOx/TRl3LdawH8KiRIbZVPHIi3CQG0ZQWORAsfR1LV9KK1m6uVL3Trxd5kjIU0MB2uWkg==
+        type_code : 3
+        p_codes :
+         -
+           type : 276
+           enabled : false
+         -
+           type : 277
+           enabled : false
+         -
+           type : 278
+           enabled : false
+     -
+       name : COL_Libellé
+       identifier : 0x2595232e062c1982
+       internal_properties : CAAAAAgAAAD8QK2BXroHdORwo6XBO6es0IFSeqO2OMIPXy30VGsJXqK7Ij8TIduWtndkNaesVQBmyR4jI7qV4trwJy7kU8wyor0YK6bprIOl0AWJAP45MUuViiMeUkBrzAW39veiZPUmMQr5QaUXCjcd7WwFKt8cI7G4Ltw7ZnJUrqZ81e5jbs1/KdQytt7CQ8LWimSRLPFXAg4g+ovWx6ImAOq3mWrEGEP66DyF30eRL0ecV27FYXoFAEcUT/Bz
+       type : 2
+       content :
+        internal_properties : CAAAAAgAAADf7pRt5dOoSx59mj0pfC+Z27/ewvr3Mme5kIE++5unri7CZgRJtt+RIVBljJcXGbkds00hZqRjha3wLPx3X6aIY+SAFfmDNql8Qlatbf40hhsCbDYlqGjNy4qiRwCe/gismeRYQWTNhVwxW+z8JMTM0C6ZQpo4f2UGU5N8qJY2bz4r4Wk4YvjDMP8YNYkdny3hPByhaorPW2VhJsdkrzOD7eR8xmXEfoVJ9ZOM1iSyW0KdlZujKPCnwarAPowdkHP7V8mZh95/QJ4SztcbNAL5eDROOjIWaTLL0ONeIE3LQ4rNYMRd9i2CjOo1Uikf+VBg4mZFpMOuWJ8uP401fFn6QHTtjNqP0lgzXzh9A7yCVjFKq3fyljNHaNoC4sbY3NUgVpnEP5jMlpaQJFHKWCgf2FBh3A1IYeJMTczY7YEO4WyM2qFzOMMqNhuNehKsCrl/X//08vNzdf3s3bp1A4iNqSv2N7nYStzOk4QMfQmH1PEUHBY8vMRxk9x+3ZgpQZKk+kGMBMnfWBIG6LWOnb8DwToM3p/eRToQXWduiz7PZfglxRZVOz0AiwxMCzs01WldszvUmALAXar97f3Gs7Znwgw++nsxsc5tEieJHGJDVb89jiGy41XvThjX77bX6ppOK9pPCA/yYS84kML4wRqb5rBHIyCo7tVboB2zj2to/hMEtRpfhnN7nl0T6E45uHfNlnoU1yd0MeNHISv6ymUx4CwP47Sm7u94bPheVe2+/WD87I/9a1nGdS+jAFAtIBkPuLabR9Se2WRr7b62ywQNLIS+ClEucTpPRLlPCZXCbgaXPI8zbUnyjyk5hhFank4+GZUw5TI40YB6hi3jTaUvOyY0B1IouJI/4kG97imOkCjc8Y6rg0Ex/eg5YL/fBgdspIhVcT2esQtT7X6lMrwgoSGlrd3eZovcoCIui6Rbv52xj4iaYMrKfmYeV5HBab0QqREEp9hRYrkeSEeCuJRyVjBVUAdoQKNfzlY=
+        type : 2
+       code_elements :
+        internal_properties : CAAAAAgAAABZUD0l2M6hWM4GIFioAMozHNyQ0d1xah/OIRLM3l6oDM60SthUKZ1TQmgA+AcA1U8+/kUE/dCf+KJPwCOiNI4=
+        type_code : 3
+        p_codes :
+         -
+           type : 276
+           enabled : false
+         -
+           type : 277
+           enabled : false
+         -
+           type : 278
+           enabled : false
+     -
+       name : COL_Comptage
+       identifier : 0x2595234306476a61
+       internal_properties : CAAAAAgAAAD96cbQ+tIbNPUIlyUUFJLI4M/w/l7XsDWPPJpVxVkH6ZBqYgOUaBw7t0qbY1la5l1Y/F77Ektz0QgzjNPdhJkMb0zZAqed4GGgH8oyQRFgVQNmDTjM4JaR6pnSorlLjgM9KcZvMhv9u14IzDTzMZBST9uQz8p0MsbzEWplnZX1ZnlZh8VQwvbwChuy+P6JpJvN8VA5uqKp3hHPGdiqEio/Ehx+6JfbFgGmDAd47XRpQc8WX+O4wreshdJuz4RfWJFxNBQlmLPDOjwW
+       type : 2
+       content :
+        internal_properties : CAAAAAgAAACcWn8H86hY0NBxfi32a15AVjzaKM2+P9Jb3hP+95cLWSM2RCFCR63uUQc2YGOfMlEb78b94QESOTXle0o+RAKSJ+6OxFeED7g6aTS/c+OoGb7vgcpPBMrrue679sp44ptt+XSQeGymLFviqw44AP9P2Sfc+eC/VnOdxlEC+n7b4reTIclDv49hB+BLechw643jU1VqUAg/anX1c1md2Al2iN4KiiHFPEHBTVT5+jAnmzKWrnfAkwIhW9REgLsiaZOpJmDZjNVp0Zm0Uagua2amOE3pIytlt8fRqYdRqGIMSyPTAH5m6nNH1zrCYDG+p2g1ysBl04KTL49XU7jiyZ1nNa6slh/sda26bsJfZSngXQC9uhZSSnqicbtl0Km4jz0CzB4DAy7eAflmoCYRdU7J7zzbn4H2x3Ieyzxaf5Hpp3juhzwTlUimtPAskXVsFITio2P6EMs60p2vLw7BZUl/EtQkmuJSuEEj9h+p1N1Cx9rFYqUBczwEHNA4yVbrWd2G2UxWctQRNn1L+zGPoc3YXdPzFPmdSYYPzlgG4IJBZuAKHuZhiknGahkZzXjO8XChYmRo2E/WxQ1GynF1D1iahMF3WGVmNyKOQZDJ2ZTDZhuuHw06JEm9aWG8lRmfLFmS3HOpRpygw3RjRa5pJ46IUoe0ZxBzBjXMky4lBAlcoZdtFsoL6e1FgaJK3k9REhgHzRkcA15q23o4YEFbvD0ejLuQk7jXYpXHuTMumO005HgP9Qc5lkuGYJhM1OdlsnoDT+lh+Wkcp6vsfID72+IMJpNdWOMfHZgoE4bHFFXUkdTS+RtDBFVY6nJgwNCUYiHSIpjoWbEk7c2xQZMGE6EoOSfHeYir6AYCqwofHVEYXa7disDxJM2NCDEm+g5VfhoqdZkmUI7LJ1vPhiel6lr0DxSak7dPGZTJ4TcJ4cUdTzOsoZz7jio/ADxjW+LaoFY1X3c62235wl/giuznmYNCreWiavOLcbAztC3wMQoaKbmcl6MlR2GqetW3d/Uds3A=
+        type : 2
+       code_elements :
+        internal_properties : CAAAAAgAAADQVzsDX7Ea49ynorOmZ225XM6va+vrP+RoG/EvUaCK5SaxZXyXGX0qORYRBdXQp9CqZ7w+bk6bZIqbEYyjM7wbBvTbqA==
+        type_code : 3
+        p_codes :
+         -
+           type : 276
+           enabled : false
+         -
+           type : 277
+           enabled : false
+         -
+           type : 278
+           enabled : false
+    type : 9
+    controls : []
+    code_elements :
+     type_code : 9
+     p_codes :
+      -
+        code : |1-
+         
+         REQ_listeTags.pIDTag = null
+        type : 14
+      -
+        code : |1+
+         // Enlève toute sélection
+         tableselectmoins(TABLE_Tag)
+        type : 35
+      -
+        type : 22
+        enabled : false
+      -
+        type : 24
+        enabled : false
+      -
+        type : 23
+        enabled : false
+      -
+        type : 25
+        enabled : false
+      -
+        code : |1+
+         // Mémorise le nombre de sélection
+         nNbSélection est un entier = TableSelectOccurrence(TABLE_Tag)
+         
+         // Selon le nombre de lignes sélectionnées, active ou désactive des boutons
+         BTN_Fusionner..Etat = (nNbSélection = 2 ? actif sinon grise)
+         BTN_Renommer..Etat 	= (nNbSélection = 1 ? Actif SINON Grisé)
+         BTN_Supprimer..Etat = (nNbSélection >= 1 ? Actif SINON Grisé)
+        type : 33
+      -
+        type : 230
+        enabled : false
+      -
+        type : 241
+        enabled : false
+      -
+        type : 263
+        enabled : false
+      -
+        type : 262
+        enabled : false
+      -
+        type : 222
+        enabled : false
+      -
+        type : 223
+        enabled : false
+      -
+        type : 224
+        enabled : false
+  -
+    name : BTN_Renommer
+    identifier : 0x259523520693a3ff
+    internal_properties : CAAAAAgAAAAORXmRtYnyUUI5sORDzezEQC9u2qV+XaNOf4MNs35v77NReL35bnsZQqLBF6YZh3r+kG1wwdvYUKsf6rE0PpdqV/3o+cBYkrFJRLAIcBgN1pgeAEHSNsRfE4b1bDkVSMFuTf0hYD1YIMEXmPKxGtx+UYCmgiVo0vH6EcYh0uynp/DQHBnrAU7b0rnX00quSnYH3Wlu+WLBeg+b7uPRoHaQrPnsJ7T2FzZl1UE9JwKMiRU7XRLzO2aIxpOjB+rbn32wyUMJEIWeD63yyWbVrseyfJ4OG5Hl0PhVbYrCP0Bc/c7m1LbunnYp0e7Y2R5ZSzP1kG4d1mt2TM8aGj/yQHpeZhLSGzwvR2Somc6/v/pUdlvqL4rwfHkJYy//w5U33SFrvF7Y+8H0qNy3o5nDd/N/D4aCHvpIGjOpIQm348X+4LhGkf7jAemgTiyBM7ySTWnvCfSeDfk3mhO+EWX5PBUuyQ1DZkiPMLMj6YYSRebA0/0fzm/vQE/3KmSON4xxwCMLsnxkj+3SZ9nisl5hu/vhYIV1mImGvCEdqzmF5nDw2ZLHR/GSQ2DjSh4nsTNtpgeatHRQM24ImGeFg0j4TKox+9dDtCrqoeq2dT4mQnpAdjva5s6ww1QGRJOBAAKKj+V00sU+hXvI69U4fFgvrm1xp4hi1ya2L9BXh+KOD+O6cgwfCj2NP9LrFwXLMJMpEYn8uKoC3ZrJvdaJjkldsK12n6UFbPllMPkvUwlLio5xHfG44T19/0dVLc/5If5FXbaLlFMXAS87W+bzAvLcsPCZ9EPk4Nurx+xg135mAQaP7dzy7sotnPMcj68LvhvLfC/gFpyoTx270sSMbXSezpY+4YfADd/lmgXTrxmlMcBXlxHUFBr8in2UuMzjlsLEMRYkPUqiXmz2qA/dl3eFP3lG7RvB6gRYCqTnF7Rj3+1bAiLW/TvbJnnaODHGLKsjjx319lBY3R8nfakLQ5KUPBSQ/4mUpK/kyM3GYg==
+    properties :
+     x : 677
+     y : 42
+     width : 115
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         // Une seule ligne doit être sélectionnée
+         SI TableSelectOccurrence(TABLE_Tag) <> 1 ALORS
+         	Erreur(<§$0000§>)
+         	RETOUR
+         FIN
+         
+         // Récupère le libellé courant (comme base de saisie)
+         sNouveau est une chaine = table_tag.COL_Libellé[tableselect(TABLE_Tag)]
+         
+         // Ouvre la fenêtre pour saisir un nouveau libellé
+         SI Saisie(<§$0001§>, sNouveau, [<§$0002§>, <§$0003§>], 1, 2, dlgIcôneQuestion) = 2 ALORS RETOUR
+         
+         // Si ce nom existe déjà
+         hlitrecherchepremier(tag, Libellé, sNouveau)
+         si htrouve(tag) ALORS
+         	
+         	// Confirmation
+         	SELON Dialogue(<§$0004§>, [<§$0005§>+sNouveau, <§$0005§>+COL_Libellé, <§$0003§>], 1, 3, dlgIcôneQuestion)
+         		// Fusionner sous le tag 1
+         		CAS 1 : DemandeFusion(tag.idtag, COL_IDTag)
+         		// Fusionner sous le tag 2
+         		CAS 2 : DemandeFusion(COL_IDTag, Tag.IDTag)
+         		// Annuler
+         		CAS 3: RETOUR
+         	FIN
+         	
+         SINON
+         	
+         	// Lit l'enregistrement à modifier
+         	HLitRecherchePremier(tag, idtag, table_tag.COL_IDTag[tableselect(TABLE_Tag)])
+         	// Modifie le libellé du tag
+         	tag.Libellé = sNouveau
+         	hmodifie(tag)
+         	
+         	// Rafraîchit la table
+         	TableAffiche(TABLE_Tag, taInit)
+         	
+         FIN
+         
+         // Une modification a eu lieu
+         mafenetre..valeurrenvoyee = vrai
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Supprimer
+    identifier : 0x259523610699dfb1
+    internal_properties : CAAAAAgAAACZ/afG80mtizY+UjzkMXPW2W9onAPbq9GssfGX1aMyd07pSzih4Stf97uXfF/b4fSdVc/druXUCeH1EtIVUC+ncha53bgaT8IUB3dkOsGCGE1Vt2LyFdx5S/4leLYfiV+u+wMcMyFM5t8BII4JEF4gF5mq+QfNzyooHkkNsiNjY8OyBm1LaDOGrMeU+FF1S2VHoJNFysG6nbExdIn9bZq8kGvOvxlRQuJ49Wt7FHFm6KAqCb6qIJk1bPQXU27Q9qAm8cJJRF18KzHpNli0ZCyZdz7wBZ6oZ3/6jEuL3wAy60MQUtEG3x/pWT3EEHbhxbzu4FREexmOgz7hkruSt4KIaegiqcIMCtgBGJuWQ1LkFFHoY1/F30k8nJcy0r9vIJGMYgjAcqA48fsnUg564G6lgvuszoK/39wN5k+nm9DpFIapJkq3zb5sb+XXNEuq83eP6Fu2eYtOD2zx/KtGdnFz/jr7/2jCgi4MgngYh03g8fDDF3ZfQjKxARuL/TGQTdhz276X1RpGOZSL8peJdQi57zBabAES1SUrZmko/fPYmu/ZrX6PywfRX+UixY3hwGo7MeLZWs8M4D5mR15z9X3/b32EABONG+KI0s+e4zLyNptbzpUi5vqJFBONNQhX1DicIPj9McELq0rSFVuQFBk78fBQ2UiumXFNW0zRx0Rz9unygXpLFz3KTe+Y1x5i55tW1Pk6E/rENLbXUzhDoG0eFlI+7b7tr/wuzstHw0VXOCxZYjATBpmoErFAOCiZAHwSuVOiEIbYov0P12n8aEK++1xwa09iVW01gj5AEin2fQhCxaILWb+eBl60uNR+ykbXc4w1lTu99j86vHDAN2teZwnos37pFSfmxmWQBUor/r2DfL3sbhrSC2UxQfbv2jp1QD3K6o3BHeFYydfGWoFSpX8g5W78W3cp/H5iY8XwU0UzTxcPre1oOugDNGW35AFgtoeZlJMy/ChgNy0OHZOBfGa/qQe2tdux
+    properties :
+     x : 677
+     y : 78
+     width : 115
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Au moins une ligne doit être sélectionnée
+         si TableSelectOccurrence(TABLE_Tag) <= 0 ALORS
+         	Erreur(<§$0006§>)
+         	RETOUR
+         FIN
+         
+         // Confirmation
+         SI Dialogue(<§$0007§>, [<§$0008§>,<§$0003§>], 1, 2, dlgIcôneQuestion) = 2 ALORS RETOUR
+         
+         
+         // Parcourt les lignes sélectionnées
+         pour tout ligne selectionnee nIndice de TABLE_Tag
+         	
+         	// Lit le tag
+         	HLitRecherchePremier(Tag, IDTag, COL_IDTag[nIndice])
+         	SI HTrouve(Tag) = faux ALORS
+         		Erreurconstruit(<§$0009§>, COL_Libellé[nindice])
+         		RETOUR
+         	FIN
+         	
+         	// Supprime le tag
+         	si hsupprime(tag) = faux ALORS
+         		Erreurconstruit(<§$000a§>+rc+herreurinfo(herrmessage), col_libellé[nindice])
+         	FIN
+         
+         FIN
+         
+         // Rafraîchit la table
+         TableAffiche(TABLE_Tag, taInit)
+         
+         // Une modification a eu lieu
+         MaFenêtre..ValeurRenvoyée = Vrai
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Fusionner
+    identifier : 0x2595238506b36b18
+    internal_properties : CAAAAAgAAADi97xq/CijRuSsVUz2QHFWA5bmQtab3GwM+VPXa0BcwcqmoK3qFFBVhPdSteOuGDpjrLV7/jGXQSdLS6WfGZKRFXOgfoAJhGWWiWr595yJdQrN5VLrM9hy9S3vM+/DbxTKJn3qOh7zhiLZNkUiKyxF4KljHbqf9SD81vUXOfww55U5ycW+rJHgqP3MB98ZJeX3ChjXLZEQA2l8a355GgfKVqN4XMhiN6dIrAgKv+o20Sz09ZXivSTbkua93pM/c4Zi9UAI/VX2sD7LiRJSmJjxXCsL0PqneQkrjJ7yo2tHtc3AHgqzLl+QTVaMOeFleDcyFafkyXTUEB9Tx26MvdlD+KXvZTmIw9GS2RrfZ4SCxsvpH+y0s6IEd573pFajo3UMpB540QAqm8Ee2WUCkEmVUFmKoqNdDMziPUNFRl8mXL9jtNf8GMhsYN3D6yDCp10/gBZxHrKkWlLxpimDY+/Pcnbs+6CJTtmZKWM7tDO9P7Bki28hfE2pltU7S7ox8u/9yUlp3dctlSjMRrSmh+BRh90bC5vCHxre7fxRjIZdwA6OjAgQWo+XNr30QKXgud1tQaKAU2d+b9TjacUNTZsc0UuZqOum8sMhd1ISU2gBNx/TnxjrfL8UhcIBjO5FMylFOcbAZjlyecxzdBSaMFJG7EqqYMoyJpU41cp3mbc05GUOGhhtSL5gqe83063KYSNDs1CccH1nHvxeNE+fia2T82EXVa30rHDsyGDRN2vWIiDbi29c/OfMx2EJdBmQ7Hs/AVS2LxKr+tUXWTZr/aIcg7muWpPIOiZmPfBTe0htxKG9W4M/HA1nec29GJaUWtsOb+Nu7TduenxYEx7CbxB1PdlwQ5FqCEeh9oNIEIuc7zLmcrkFayBXAYSiGUgVgpDaqE0BECAo/0jUQNhEKgapLx1WNOIQG5DZheWHxRtQmwRsehBB9bOoFArcbwSitWyySYocINVEJQTGiY6ykf4Lyvhdc8M=
+    properties :
+     x : 677
+     y : 114
+     width : 115
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Deux lignes doivent être sélectionnées
+         SI TableSelectOccurrence(TABLE_Tag) <> 2 ALORS
+         	Erreur(<§$000b§>)
+         	RETOUR
+         FIN
+         
+         nIDTag1, nIDTag2 sont des entiers sur 8
+         sTag1, sTag2 sont des chaines
+         
+         // Mémorise identifiants et libellés
+         nIDTag1 = COL_IDTag[TableSelect(TABLE_Tag, 1)]
+         nIDTag2 = COL_IDTag[TableSelect(TABLE_Tag, 2)]
+         sTag1 	= COL_Libellé[TableSelect(TABLE_Tag, 1)]
+         sTag2 	= COL_Libellé[TableSelect(TABLE_Tag, 2)]
+         
+         // Confirmation
+         selon Dialogue(<§$000c§>, [<§$0005§>+sTag1, <§$0005§>+sTag2, <§$0003§>], 1, 3, dlgIcôneQuestion)
+         	// Fusionner sous le tag 1
+         	CAS 1 : DemandeFusion(nIDTag1, nIDTag2)
+         	// Fusionner sous le tag 2
+         	CAS 2 : DemandeFusion(nIDTag2, nIDTag1)
+         	// Annuler
+         	CAS 3: RETOUR
+         FIN
+         
+         // Une modification a eu lieu
+         MaFenêtre..ValeurRenvoyée = Vrai
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Fermer
+    identifier : 0x259523b80731331b
+    internal_properties : CAAAAAgAAACHJ3NRAgzbjIPZIghX17UbUjPqC+qS4RAl5GDIM0oottO6GrMR1+PdfcsUbW+pa7etyJN/Oat3M4qV44S0hbK/7DF/X6THH1V/CmK9vZMOGK5Zbee5cEl7wmMba3nTISnR3DEwNhmpGqJPkR8W1TCjGM2mXoI0BBJYB5B3ll762WjbWoCqFcaORoAxhHZTTJkhtUvuVkqQfh4pdawtTmhmv8r0qUVkNjcDRhehhY31Pi9w9urY5uxgsYH52smFvOoyKs0iSKvBKKW7iqMlgLAABbr/99RwLavQXP6YvT/fzMWSEz2hHoP8pPKPR01pgQSo7wS0UgBsUzFQ15uIHKPADzcotK7pYfIW2HOSmsfKIYTSaax7tSflnSgXgjA0WKCjYpvAHVOs05UBJw86yFVgiwziTuL6dx0/HpKHY5GtBDKjtKh3aV0kmqrGQqcHMNcP2zZBY5KwIyZlxL5nAgvE9r3+CypY69XT+1IKlHrCmnrWDa8OtUnrCCEVbSKpuS60MrUEsBAgYlHaIHA/Xj7RK385tcQ2Q4yQzukUsE7mfe9MXofm6fx/AuCovDbjwU3KtuODewpIz/TMWDN0WjwVrUpJoNyqbsVwPKvFAsu/DBJR+zL2X8rNSNXnL4SY0f+WWMdKvkW+Vbl8/c+cBNf30xq/NVosc55OqTooeRNK32cESP5dFG2iLlKBqntUyP7GatNTcY2iIu6uIp0KmY89zZfkz58ITdahAu/6F1PexP9lYj2fxhRX3lG80DCqBbrTmXj4Hn0gM+4gUWWWA2HsFmWUn2xZyOXe2qLGcgenTREKVQCpyLpJN0+w4rvt4xw8KKJ5mansyOiZxrh2f0+3xGVDpijby16BOnEN23Yrv/oXgpWccZrvTNj5/0Wg4pIxbVxpx89piNuzZd9JpCUQNL40L9/bHA==
+    properties :
+     x : 677
+     y : 282
+     width : 115
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        internal_properties : CAAAAAgAAADQZyvpRjJZltgKBVFD+SKMukTEU1n2G2jmPSjnx1ZKdSF2vB36egNKcReVrz/xwpIZdIpZoyUu0CjPxu+MpGLAedmE/39iAmJIcu72BpKoWkpseLXy2lnJGPSMFw==
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Ajouter
+    identifier : 0x25952e960987a6c8
+    internal_properties : CAAAAAgAAADLtXmMa/m5wi4lZSJf8DZYb663vRfmwfFp7RMnNvdcbNkATPtNd2uFiXHNNsvjYvVsuDMzppzFF7hV+OoG/ID2gmHiyljehLLKDoiBGfykC+Ria0VL+yo/+5b99d/fi9xTBGcMGfXQCulT2dD/k2EgDMtoBNaI+/c9sAFczKJahSlxMU0TNjZ5Kq+3Td7SBx8/z6Az569y6gNGLXQWeorKsxKzuRQDXYymBMTBhf+l16LYQ5ACQySr6ztIJzloZhvxlk/u/d5JDEM1+Lh9DH8ggh2ea2UQqlcYdQEi69wbFfwntvv1Hp6qQyNwNS5AD+qLKxgOZfR6me/SBXju5UvOGhDCyUFENmiTWbcorPmM2Zu28ayW/IYgSNx4MxcHysBN52CZKx2gYhFpn9xqesOvBuCpzrnqs+I+PwYfKP3z8ognlZlj3f2887MtGlKSmfadBsyjJRwlap/yyA2nyCU9u/1knfddd0NjqLidJ/KfSDmZp8qoXEu8EQ6r6IQ9FqWatIcsMkW79FNuVRpcUuWs5CdBf+xnGJ5WU9a5htr7n6DovcRFk69xLVMQ158PMloPZWaxgmHK8hT2Z39IOFxh420UoI6lg/bEnr6ZphZpH8+yL6TSQ5NdCtHuJ5S8RkMi+GwauuGTakMHSn5iu6w5ZY/9zl1RL/NvrXthBDs3otsEOLTTHVglCjIVt+WvIusstOjODoxk2OLEDnWI29pXhtqWix+giEdUnCFARFmEDd9ugaNliX7Ia7wTHdCaryVQ4Z1m0eZnxLQOWkrD8oDdTYZV3sWX5Ge/bV9KYKWo1Q4ogmXu1yvaBgXJSocpW0/NwgOzRSAebUVrImlLKHgKuPlw6tey+u9dWNtGxn1aL4bo74It1l7jDyWCpU0N6DFqqEnkjFnn4BZNQejSEqqxrUv6GlEyxERzVCsY3xQUtlVov34Qw0clIZRIXy14fo6NLE/CGGcGBI8oH7q0jsO0iPSRKFsHCwBgSDadM4ZT2P1usdGFLCeHYQ==
+    properties :
+     x : 677
+     y : 6
+     width : 115
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         
+         sNouveau est une chaine
+         
+         // Ouvre la fenêtre pour saisir un nouveau libellé
+         SI Saisie(<§$000d§>, sNouveau, [<§$000e§>, <§$0003§>], 1, 2, dlgIcôneQuestion) = 2 ALORS RETOUR
+         
+         // Si ce nom existe déjà
+         hlitrecherchepremier(tag, Libellé, sNouveau)
+         si htrouve(tag) ALORS
+         	
+         	// Message d'erreur
+         	Erreur(<§$000f§>)
+         	retour
+         	
+         SINON
+         	
+         	// Ajoute le tag
+         	hraz(Tag)
+         	tag.Libellé = sNouveau
+         	hajoute(tag)
+         
+         	// Rafraîchit la table
+         	tableaffiche(TABLE_Tag, taRéExecuteRequete)
+         	
+         FIN
+         
+         // Une modification a eu lieu
+         mafenetre..valeurrenvoyee = vrai
+        type : 18
+      -
+        type : 161
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAADAfZ27Q+jJ/MBXHLGCb7PyE2Yqjvuo9mAX2ZN+LLuyQtzms1431znXR0sNCCeLESXZp1gqmo+m2mUhb2ELR2phZ8VOgUSyXddfQyxpxffipvH/iiFuFkCLgpjx1Ah9/9/ndeRpWb0s9Qcjy8oPtW3aMcRtuglgDe5Ch9/jnC/Drp19/hhf+qz96diLw5T0yWlzg33c/E8hhMwUBdSOV69/8iDQGLfTvLoTvV3YkiQ5Dce7dxB2gUx1AVvVTykQMm7G+0haIOV568KMGgPEJluRN2XjgQ11Tb8vVxt6P2g=
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      PROCEDURE MaFenêtre()
+      
+      // Valeur de retour par défaut
+      mafenetre..ValeurRenvoyée = faux
+   -
+     code : |1+
+      
+      
+     type : 34
+   -
+     code : |1+
+      
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1+
+      
+      
+     type : 2
+  procedures :
+   -
+     name : DemandeFusion
+     procedure_id : 1555193085067160904
+     type_code : 14
+     code : |1+
+      // Résumé : Demande la fusion de deux tags
+      // Syntaxe :
+      //DemandeFusion (<nIDTagMaitre> est entier sur 8 octets, <nIDTagAFusionner> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDTagMaitre (entier sur 8 octets) : Identifiant du tag qui deviendra le principal
+      //	nIDTagAFusionner (entier sur 8 octets) : Identifiant du tag à fusionner (qui va donc disparaître)
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE DemandeFusion(LOCAL nIDTagMaitre est un entier sur 8, LOCAL nIDTagAFusionner est un entier sur 8)
+      
+      // Modifie les associations du tag a fusionner
+      pour tout association avec IDTag = nIDTagAFusionner
+      	
+      	// Si l'association n'est pas déjà présente
+      	hrecherchepremier(Association, IDAssociation, [association.IDBillet, nIDTagMaitre])
+      	si htrouve(association) = faux ALORS
+      		
+      		// Modifie l'association courante pour pointer sur le tag maître
+      		association.IDTag = nIDTagMaitre
+      		hmodifie(association)
+      	
+      	SINON
+      		// L'association vers le tag maître existe déjà, il suffit de supprimer l'association vers le tag à fusionner
+      		hsupprime(Association)
+      
+      	FIN
+      	
+      FIN
+      
+      // Lit le tag a fusionner
+      HLitRecherchePremier(tag, idtag, nIDTagAFusionner)
+      si htrouve(tag) = faux alors retour
+      
+      // Supprime le tag
+      hsupprime(tag)
+      
+      
+      // Rafraîchit la table
+      TableAffiche(TABLE_Tag, taInit)
+      
+      // Cherche la ligne du tag maître
+      soit nIndice = TableCherche(COL_IDTag, nIDTagMaitre)
+      
+      // Sélectionne le tag restant
+      TableSelectPlus(TABLE_Tag, nIndice)
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAAAspXRQsX4kpYpRJzI8SMGEUfXYJhQeqig0H9mPZLI9hoPnkeFEnSQ8t7JVd8VUY9eLyST/2DyAYB+9rK7lbHVOclfSdkhgAQ9dNjlmStKMpPl9
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x159522f2005f301c
+  internal_properties : CAAAAAgAAACyXVFaObH4lOGSEHJoZf1MD49w+XTw2LScZCP/urkWFwy+HYJdyQ3umA==
+  strings :
+   -
+     text :
+      fr-FR : Vous devez sélectionner le tag à renommer
+     index : 0
+   -
+     text :
+      fr-FR : Nouveau libellé du tag
+     index : 1
+   -
+     text :
+      fr-FR : Renommer le tag
+     index : 2
+   -
+     text :
+      fr-FR : Annuler
+     index : 3
+   -
+     text :
+      fr-FR : Le libellé saisi correspond à un tag existant. Souhaitez-vous fusionner les tags ?
+     index : 4
+   -
+     text :
+      fr-FR : "Fusionner sous le tag "
+     index : 5
+   -
+     text :
+      fr-FR : Vous devez sélectionner le ou les tags à supprimer
+     index : 6
+   -
+     text :
+      fr-FR : Êtes-vous sûr de vouloir supprimer les tags sélectionnés ?
+     index : 7
+   -
+     text :
+      fr-FR : Oui - Supprimer
+     index : 8
+   -
+     text :
+      fr-FR : Le tag %1 n'a pas été trouvé en base
+     index : 9
+   -
+     text :
+      fr-FR : Le tag %1 n'a pas pu être supprimé
+     index : 10
+   -
+     text :
+      fr-FR : Vous devez sélectionner les 2 tags à fusionner
+     index : 11
+   -
+     text :
+      fr-FR : Êtes-vous sûr de vouloir fusionner les tags sélectionnés ?
+     index : 12
+   -
+     text :
+      fr-FR : Libellé du tag à ajouter
+     index : 13
+   -
+     text :
+      fr-FR : Ajouter le tag
+     index : 14
+   -
+     text :
+      fr-FR : Le libellé saisi correspond à un tag existant
+     index : 15
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

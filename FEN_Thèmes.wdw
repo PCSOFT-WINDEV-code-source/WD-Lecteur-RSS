@@ -1,0 +1,282 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : FEN_Thèmes
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : FEN_Thèmes
+ identifier : 0x26336e51306d53e7
+ internal_properties : CAAAAAgAAAClCDQks64O1XdTA/TE7d3stLonxunvS64ouuJMk4hVJa6+Lh62GoaKlbAWPTnRMG+l7kATph7mXY2zf1hl+cvVafFC48o8+UR2KRec7fw0ORMPH6bnLlFXjuEARTRYHIC9TYP5HPqgaZDgl6zHl5gU2hUHClIMIsuGxrbv4fOZleNGiWqDbrlPqSI0RWkeIfKXXuRnZKAD2QvMW6oB/ndNyBp7KtdDsqVU9tf3BhrUdfNYNVpcayqwm6NOWADuXQ6tDXiUXx71CcVt1m2BmfAn0762SImqv5VwkVYWqkUz7VvBOuw1I2Q2D+7FBEbFvW49rGn/atPxA3piw/8cRB4sreWdAnfQaSWGY3+4J1RaBKk1F9i/BzqQPu5LSFiiDOzn9BPEOAKXCmxNIgmc/3q35AqcL6LGEPZ7BAW0fPpoOAJIGkdoDodl1W0oqNA1rD5HXBEUuOsJUUO/A0S5NOl2pMvkO5qlMOQ2VGZobTrMFi+3j0qT01st5iVisKFVITIu1eaP0/PaxSU6+N14iSOEo1UhqOfPupWdMQESpVTFRSeiFWT7VDKFibX6VgK34nbx9CW2tEV5OstiP+NcI7JaBFwnTp439wDEZW9ED4DrcEGR692gVrDD7TT9QAJU7uqr/ev1Uhpa856LSdd2dlXrowZGxRSTULrZW0Ic2HUG1PpSJ7YrpJQ3Qe5WtxRBmHPIyh0jTUutVrcxWP+fK4at5wEe93QY3McHFXQXBW3WTJZACI7MEvFBMk0zQZFQ6HiZ
+ properties :
+  width : 103
+  height : 171
+  widthClient : 101
+  heightClient : 169
+ controls :
+  -
+    name : ZR_Thème
+    identifier : 0x26336e5c307e81cd
+    internal_properties : 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
+    properties :
+     width : 103
+     height : 171
+    controls :
+     -
+       name : IMG_Couleur
+       identifier : 0x26336e61309093b0
+       internal_properties : CAAAAAgAAAAywkn5cetDV+0SJKjy0p7LOBmRdBTF+05Aw4BPV0d6+nns9LKbD6mlffdQbVFtlcknoJmNbx8fKuk/gyovYUNUfz9smhlZc6IhWeIi4/TpcSVeIINGsZZ/2WenPdsIgNAduPIi7OEmS7EFls/IZKMAvNLYNsEKvzZrNfiBOpJjNtE/xo68JRylnld1K+lmYSuI7oZ0CAHRN6j69SvTBus9iDVqXFzY2hX/4zs7d4GV5up5aKR/Cp6XjkyqD+Gy+ePQU/l0X4+LIVieN15y8/Ct9lePhXAyPkv3Dl6oLUL8m+K5PcX6EKUp/+zAFXknv79UUZu1Sdm4rg3fM81cwjt1yabaF62TXrO3CaAingkRdvWZB9cSGAWtpmKKc9GffLynpopvPdDBa+F421qfYVi73w0bxRPtYMh/DgeKKbhjg1b/VVC+jGLmBlWs4vPReX+vaUAi6h6nw6goW2Ym0vgIOUnZDdpaCEZXD2p8vSfOqbgXRDi1wlODZO2qfQMo1+tV9H31WhsQ91L6aAMETjYAjOwZ3SpoIFa0ne/xomlDz6g6un1awFdkFubP502lQ0fgCpZ1tIir+V9/67AsUJNO1ZI0nbFHaumSEz6xOzYQQXkeyVrKTRBSXByfFL5NbsZRQZ5ZamD7Be1szhy6VPM6fG8ULph89O4dLZNDRsFWwFRSmIJM63I/oeB2xGIfRQ85/uZUFi47OPXN7vU=
+       properties :
+        x : 2
+        y : 2
+        width : 30
+        height : 30
+       type : 8
+       code_elements :
+        type_code : 8
+        p_codes :
+         -
+           code : |1-
+            
+           type : 18
+         -
+           code : |1-
+            
+           type : 152
+         -
+           code : |1-
+            
+           type : 153
+    columns :
+     -
+       name : ATT_Couleur
+       identifier : 0x26336f8531000727
+       internal_properties : CAAAAAgAAAAjQ6Am3BmLh/wJjg9DMb9zwXdSp4dtqfxaq0xAk818+36o172/SQkTbebZs0hBTbNFwROHaCZ2E3vUfvSnLezF8VgxOOYkb7zTK/9H5GtSFWO+7klrwfZrqtxmPo2vsWDTvH/fBrZFwn/ut0UrfC7tpUME9RtHyufo0ozr9bzwWh6AsgxTH5g=
+       type : 3
+       content :
+        identifier : 0x2543d2e01484d3ef
+        internal_properties : CAAAAAgAAAA+ydwH69gPtZH9qoG8K7G6DH/mRhLAsIA4PXnwyQx9MV8BNs7UzvWB7NTCuEJWvBmA5CdsnUFWw3dCUBfdsaykjF1uve6LPYfwNBNWYEJulQmozEPUgRf5BggPT0njovHi1TUZ3dMWVWJDzVO7BYEECF/l1PEjm665bwXVv4LK4oa6xdFXhLX48q7GZuO+5fIY2l9pbbTIT9LWlT6k
+        type : 3
+       code_elements :
+        type_code : 46
+        p_codes : []
+     -
+       name : ATT_CouleurHTML
+       identifier : 0x2633719f320d3f95
+       internal_properties : CAAAAAgAAABtn9uwAycI9UrgeJXPipsWSmGtHcjPbJW5L17Ww0oKmejJrnIwm/q4cHk0IgFRAoRkGPhPM2WMzpu6zFhz23kLPFy/A2XXh93qcoCONIr23f+XdNLPx/PPoD+jxcvUIBWSo0Fa97te4w==
+       type : 3
+       content :
+        identifier : 0x2543d2e01486d3ef
+        internal_properties : CAAAAAgAAAA+ydwH69gPtZH9qoG8K7G6DH/mRhLAsIA4PXnwyQx9MV8BNs7UzvWB7NTCuEJWvBmA5CdsnUFWw3dCUBfdsaykjF1uve6LPYfwNBNWYEJulQmozEPUgRf5BggPT0njovHi1TUZ3dMWVWJDzVO7BYEECF/l1PEjm665bwXVv4LK4oa6xdFXhLX48q7GZuO+5fIY2l9pbbTIT9LWlT6k
+        type : 3
+       code_elements :
+        type_code : 46
+        p_codes : []
+    type : 30
+    code_elements :
+     type_code : 42
+     p_codes :
+      -
+        type : 35
+        enabled : false
+      -
+        type : 22
+        enabled : false
+      -
+        type : 24
+        enabled : false
+      -
+        type : 23
+        enabled : false
+      -
+        type : 25
+        enabled : false
+      -
+        code : |1+
+         // Mémorise la couleur
+         gsCouleurChoisie = ATT_CouleurHTML
+         gbCouleurChoisie = Vrai
+         
+         // Ferme la popup
+         Ferme()
+         
+        type : 33
+      -
+        type : 230
+        enabled : false
+      -
+        type : 241
+        enabled : false
+      -
+        code : |1+
+         // Si c'est une sortie de survol parce qu'une couleur a été choisie, ne pas modifier le fond (le nouveau va être appliqué)
+         si gbCouleurChoisie alors retour
+         
+         // Applique le thème courant
+         FEN_Principale.ThèmeApplique(gsCouleurChoisie)
+        type : 153
+      -
+        type : 222
+        enabled : false
+      -
+        type : 223
+        enabled : false
+      -
+        type : 224
+        enabled : false
+      -
+        code : |1+
+         // Récupère le champ survolé
+         sChampSurvolé est une chaine = zonerepeteeinfoxy(ZR_Thème, ziNomChamp, SourisPosX(), sourisposy())
+         // Récupère l'indice de survol
+         nIndiceSurvolé est un entier = zonerepeteeinfoxy(ZR_Thème, ziNumLigne, SourisPosX(), sourisposy())
+         
+         // Si on survol toujours la même ligne / le même champ
+         si gnIndiceSurvol = nIndiceSurvolé _et_ gsChampSurvolé = sChampSurvolé alors retour
+         
+         // Mémorise les nouveaux indices de survol
+         gnIndiceSurvol = nIndiceSurvolé
+         gsChampSurvolé = sChampSurvolé
+         
+         // Si aucun champ survolé (ce n'est pas une pastille d'aperçu)
+         si sChampSurvolé <> "" ALORS
+         
+         	// Applique le thème survolé
+         	FEN_Principale.ThèmeApplique(ATT_CouleurHTML[nIndiceSurvolé])
+         	
+         FIN
+        type : 66048
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAADAfZ27Q+jJ/MBXHLGCb7PyE2Yqjvuo9mAX2ZN+LLuyQtzms1431znXR0sNCCeLESXZp1gqmo+m2mUhb2ELR2phZ8VOgUSyXddfQyxpxffipvH/iiFuFkCLgpjx1Ah9/9/ndeRpWb0s9Qcjy8oPtW3aMcRtuglgDe5Ch9/jnC/Drp19/hhf+qz96diLw5T0yWlzg33c/E8hhMwUBdSOV69/8iDQGLfTvLoTvV3YkiQ5Dce7dxB2gUx1AVvVTykQMm7G+0haIOV568KMGgPEJluRN2XjgQ11Tb8vVxt6P2g=
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      //--- Fenêtre Popup ---
+      // Pour accéder au champ ou à la combo popup qui a ouvert cette fenêtre
+      // vous pouvez utiliser : MonChampPopup
+      PROCEDURE MaFenêtre(gsCouleurThème est une chaine)
+       
+       // Par défaut, la couleur courante est utilisée
+       gsCouleurChoisie est une chaine = gsCouleurThème
+       gbCouleurChoisie est un booleen = faux
+       
+       // Liste des thèmes disponibles
+       gtabThème est un tableau de chaines
+       
+       // Indice de survol
+       gnIndiceSurvol est un entier
+       gsChampSurvolé est une chaîne
+   -
+     code : |1+
+      
+      // Remplit les couleurs disponibles
+      RemplitThèmes()
+     type : 34
+   -
+     code : |1+
+      
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1+
+      
+      // Applique la couleur choisir
+      FEN_Principale.ThèmeApplique(gsCouleurChoisie)
+      
+      // Mémorise la couleur du thème
+      optionecrit(OPTION_IHM_couleur, gsCouleurChoisie)
+      
+     type : 2
+  procedures :
+   -
+     name : RemplitThèmes
+     procedure_id : 1599744789673450536
+     type_code : 14
+     code : |1-
+      // Résumé : Remplit la liste des thèmes
+      // Syntaxe :
+      // RemplitThèmes ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE RemplitThèmes()
+      
+      
+      // Ajoute les couleurs disponibles
+      Ajoute(gtabThème,"#212121")	// Noir
+      Ajoute(gtabThème,"#515151")	// Noir (défaut)
+      Ajoute(gtabThème,"#BDBDBD")	// Gris
+      
+      Ajoute(gtabThème,"#E53935")	// Rouge
+      Ajoute(gtabThème,"#D81B60")	// Rose
+      Ajoute(gtabThème,"#8E24AA")	// Pourpre
+      
+      Ajoute(gtabThème,"#3949AB")	// Indigo
+      Ajoute(gtabThème,"#1E88E5")	// Bleu
+      Ajoute(gtabThème,"#00ACC1")	// Cyan
+      
+      Ajoute(gtabThème,"#43A047")	// Vert
+      Ajoute(gtabThème,"#7CB342")	// Vert clair
+      Ajoute(gtabThème,"#C0CA33")	// Citron
+      
+      Ajoute(gtabThème,"#FDD835")	// Jaune
+      Ajoute(gtabThème,"#FB8C00")	// Orange
+      Ajoute(gtabThème,"#F4511E")	// Orange foncé
+      
+      // Vide le champ
+      zonerepeteesupprimetout(ZR_Thème)
+      
+      // Remplit les thèmes
+      sCouleur est une chaine
+      pour tout element sCouleur de gtabThème
+      	zonerepeteeajouteligne(ZR_Thème, HTMLVersRVB(sCouleur), sCouleur)
+      FIN
+      // Supprime la sélection initiale
+      zonerepeteeselectmoins(ZR_Thème)
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAAAspXRQsX4kpYpRJzI8SMGEUfXYJhQeqig0H9mPZLI9hoPnkeFEnSQ8t7JVd8VUY9eLyST/2DyAYB+9rK7lbHVOclfSdkhgAQ9dNjlmStKMpPl9
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x1fb2b98803b106ba
+  internal_properties : CAAAAAgAAACyXVFaObH4lOGSEHJoZf1MD49w+XTw2LScZCP/urkWFwy+HYJdyQ3umA==
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

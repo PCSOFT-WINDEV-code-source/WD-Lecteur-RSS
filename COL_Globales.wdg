@@ -1,0 +1,3175 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : COL_Globales
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x1612a3f200d200fa
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAADwTMtTe1CJ7xaND6i1Z1/N+8fbglpXq98IkeEH39n92qBddMip1A7yETGNTiwUhksBNh/8YN73cM4uG/M0FbtvnxMAEyuHrnaPUfuJ6Q==
+  type_code : 31
+  p_codes :
+   -
+     internal_properties : CAAAAAgAAADTpYrx/Q5qdg9Mn1oET7DJg50MXChNoxuPcvOgCFXPDxFcLrhzEFEN2IND1Agm3X7XejoQIBSyZL69KF3Q4K6ETTFUm9Xc6LiE7kL8BoJIWmspGDOKm9bnYChNpMcxh7T1dUcxMs+WGtz+L3Q=
+     code : |1-
+      STFluxRSS est une structure
+      	nIDFlux est un entier sur 8
+      	sAdresse est une chaine
+      	sLien est une chaine
+      	sTitre est une chaine
+      	bufImage est un buffer
+      	bAImporter est un booleen
+      	sDossier est une chaine
+      	dhPublication est une dateheure
+      	nVersion est un entier
+      	Flux est un WL.xmldocument
+      	sDescription est une chaine
+      	nLangue est un entier
+      	tabBillets est un tableau de stbillet
+      FIN
+      
+      STBillet est une structure
+      	nIDBillet est un entier sur 8		< mapping = "IDBillet">
+      	nIDFlux est un entier sur 8			< mapping = "IDFluxRSS">	
+      	nIDDossier est un entier sur 8		< mapping = "IDDossier">
+      	sTitreFlux est une chaine			< mapping = "TitreFlux">
+      	sTitre est une chaine				< mapping = "Titre">
+      	sLien est une chaine				< mapping = "Lien">
+      	dhDPublication est une dateheure	< mapping = "DatePublication">
+      	dJourPublication est une date		< mapping = "JourPublication">
+      	dhLecture est une dateheure
+      	dhRéception est une dateheure
+      	sAuteur est une chaine				< mapping = "Auteur">
+      	sCatégorie est une chaine
+      	sDescription est une chaine			< mapping = "Description">
+      	sImage est une chaine				< mapping = "ImageBillet">
+      	sGUID est une chaine
+      	bLu est un booleen					< mapping = "Lu">
+      	sContenu est une chaine				< mapping = "Contenu">
+      	bFavoris est un booleen				< mapping = "Favoris">
+      	sTags est une chaine
+      FIN
+      
+      CONSTANTE
+      	// Options
+      	OPTION_ALERTE_TEMPORISATION 		= "ALERTE_TEMPORISATION"
+      	OPTION_ALERTE_SEULEMENTSIREDUIT 	= "ALERTE_SEULEMENTSIREDUIT"
+      	OPTION_ARCHIVAGE_NBBILLETS_ACTIF 	= "ARCHIVAGE_NBBILLETS_ACTIF"
+      	OPTION_ARCHIVAGE_NBBILLETS 			= "ARCHIVAGE_NBBILLETS"
+      	OPTION_ARCHIVAGE_NBJOURS_ACTIF 		= "ARCHIVAGE_NBJOURS_ACTIF"
+      	OPTION_ARCHIVAGE_NBJOURS 			= "ARCHIVAGE_NBJOURS"
+      	OPTION_IHM_DEROULERDOSSIERAUTO		= "IHM_DEROULERDOSSIERAUTO"
+      	OPTION_IHM_NOEUDCOURANT				= "IHM_NOEUDCOURANT"
+      	OPTION_IHM_NOEUDSDEROULES			= "IHM_NOEUDSDEROULES"
+      	OPTION_IHM_MODE						= "IHM_MODE"
+      	OPTION_LANCEMENTAUTO				= "LANCEMENTAUTO"
+      	OPTION_CONFIRMERMARQUAGELU			= "CONFIRMERMARQUAGELU"
+      	OPTION_IHM_TAGACTIF					= "IHM_TAGACTIF"
+      	OPTION_IHM_PARTAGEACTIF				= "IHM_PARTAGEACTIF"
+      	OPTION_IHM_COULEUR					= "IHM_COULEUR"
+      	
+      	// ID des noeuds racines dans la liste
+      	IDABONNEMENT 	= "ABONNEMENT"
+      	IDVEILLE		= "VEILLE"
+      	IDNONLUS 		= "NONLUS"
+      	IDFAVORIS 		= "FAVORIS"
+      	IDAUJOURDHUI	= "AUJOURDHUI"
+      	IDHIER			= "HIER"
+      	IDTAGS 			= "TAGS"
+      	
+      	// Préfixes
+      	PREFIX_DOSSIER	= "DOSS_"
+      	PREFIX_TAG		= "TAG_"
+      	
+      	// Evénement / Section critique pour le comptage
+      	EVT_COMPTAGE	= "COMPTAGE"
+      	EVT_SUPPRESSION	= "SUPPRESSION"
+      Fin
+      
+      // Répertoire des fichiers
+      gsRépertoireFichier est une chaine = SysRep(srAppData)+["\"]+<§@1593978800039692000a§>
+      // Répertoire de cache
+      gsRépertoireCache 	est une chaine = gsRépertoireFichier+["\"]+<§@1593978800039692000c§>
+      // Répertoire des aperçus de billets
+      gsRépertoireAperçus est une chaine = frepertoiretemp+["\"]+<§@1593978800039692000b§>
+      
+      // Options
+      gtaOptions est un tableau associatif de chaines
+      gtaOptionsDéfaut est un tableau associatif de chaines
+      
+      // Identifiant de l'événement survol
+      gnIDEvenementSurvol est un entier = -1 // Positionné à -1 pour savoir quand la roulette au survol est activée
+      
+      // Comptage des non lus
+      gtaComptage est un tableau associatif d'entiers
+      
+      // Handle de la fenêtre principale
+      gnHandleFenêtre est un entier systeme
+      
+      
+      // Définit les valeurs par défaut
+      gtaOptionsDéfaut[OPTION_ALERTE_TEMPORISATION] = 30
+      gtaOptionsDéfaut[OPTION_ALERTE_SEULEMENTSIREDUIT] =  Vrai
+      gtaOptionsDéfaut[OPTION_ARCHIVAGE_NBBILLETS_ACTIF] =  Vrai
+      gtaOptionsDéfaut[OPTION_ARCHIVAGE_NBBILLETS] = 200
+      gtaOptionsDéfaut[OPTION_ARCHIVAGE_NBJOURS_ACTIF] = Faux
+      gtaOptionsDéfaut[OPTION_ARCHIVAGE_NBJOURS] = 30
+      gtaOptionsDéfaut[OPTION_IHM_DEROULERDOSSIERAUTO] = Faux
+      gtaOptionsDéfaut[OPTION_IHM_NOEUDCOURANT] = ""
+      gtaOptionsDéfaut[OPTION_IHM_NOEUDSDEROULES] = ""
+      gtaOptionsDéfaut[OPTION_IHM_MODE] = 2
+      gtaOptionsDéfaut[OPTION_LANCEMENTAUTO] = Faux
+      gtaOptionsDéfaut[OPTION_CONFIRMERMARQUAGELU] = Vrai
+      gtaOptionsDéfaut[OPTION_IHM_TAGACTIF] = Vrai
+      gtaOptionsDéfaut[OPTION_IHM_PARTAGEACTIF] = Vrai
+      gtaOptionsDéfaut[OPTION_IHM_COULEUR] = "#515151"
+     type : 720896
+   -
+     code : |1-
+      
+     type : 720898
+  procedures :
+   -
+     name : rssRecupereImageFlux
+     internal_properties : CAAAAAgAAAAb2nmAp5DlIFUO9NMhRpEjvPbHIRKCBH+q8MZ9CtYRCml6nkBEQB0IJWXbHdspYAAvwuuTk6LIylFnpJTGlbWLOfrGuJI0AS/HS9o2CiL/hqu/TUD6KVUyOlLkwzimzySiIwyzgShxtF6L8tbeUwKvQg6mktAWnx4Evzu4LG8D9I4h3XOPcTc/QY5bP2yoSIfiWRS+31yg8+vY+bTea2+6Cgo2nfZP2gaCd0wU0NProvMaYQe02SxISBNq2Dqn5/sLb9hz64fh3/4fO92jazmKRKCh+kgaKuBujil6/s6fEwce3o0m1d8GMNzDeUti7WK00J6QGnhZD91+AL1PISEZxy+qTa4cDRq+YiC2pgUd7eNB5skdk4dlWbnwG3cNhKsuECjxLCl61O+rDoSUCIoMa9LFnpwWE8lEkHvY5Y7ZlAlZLP0137kVNj2JWUpaV7E73m6shF47+i5a/M1JE39KfwipMlDyq25YfQ3NsRXCySovNyPjcAwR
+     procedure_id : 1590513878206513402
+     type_code : 15
+     code : |1+
+      // Résumé : Récupère l'image "favicon" associée au flux
+      // Syntaxe :
+      //[ <Résultat> = ] rssRecupereImageFlux (<stMonFlux> est STFluxRSS)
+      //
+      // Paramètres :
+      //	stMonFlux (STFluxRSS) :Structure contenant les informations du flux
+      // Valeur de retour :
+      // 	buffer : Image du flux
+      //
+      
+      PROCEDURE rssRecupereImageFlux(stMonFlux est un STFluxRSS) : buffer
+      
+      MaRequête 		est un httpRequête
+      MaRéponse 		est un httpRéponse 
+      tabURLATester 	est un tableau de chaines
+      MonNoeud 		est un xmlnoeud
+      MonImage 		est une Image 
+      
+      // Définit les différentes URL à tester
+      
+      // Le favicon du lien défini dans "link"
+      // le flux peut contenir plusieurs balises link, il faut donc récupérer la balise link ayant un contenu et pas d'attribut
+      si stMonFlux.flux.rss..existe alors
+      	POUR TOUT MonNoeud DE stMonFlux.flux.rss.channel
+      		// Si le noeud parcouru est "link", que son texte n'est pas vide et qu'il ne possède pas d'attribut	
+      		SI MonNoeud..Nom ~= "link" _ET_ MonNoeud..Texte <> "" _et_ MonNoeud..Attribut..Occurrence = 0 ALORS
+      			// Mémorise le lien
+      			stMonFlux.sLien = MonNoeud..Texte
+      			// Mémorise un lien vers le favicon de l'URL de la balise link
+      			ajoute(tabURLATester, URLExtraitChemin(MonNoeud..Texte, urlProtocole)+"://"+URLExtraitChemin(MonNoeud..Texte, urlDomaine) + ["/"] + "favicon.ico")
+      			ajoute(tabURLATester, URLExtraitChemin(MonNoeud..Texte, urlProtocole)+"://"+URLExtraitChemin(MonNoeud..Texte, urlDomaine) + ["/"] + "favicon.png")
+      			
+      		FIN
+      	FIN
+      	
+      SINON
+      	POUR TOUT MonNoeud DE stMonFlux.Flux.feed
+      		SI MonNoeud..Nom ~= "link" _ET_ MonNoeud..Attribut["type"] ~= "text/html" _ET_ MonNoeud..Attribut["href"] <> "" ALORS
+      			// Mémorise le lien
+      			stMonFlux.sLien = MonNoeud..Attribut["href"]
+      			// Mémorise un lien vers le favicon de l'URL de la balise link
+      			Ajoute(tabURLATester, URLExtraitChemin(stMonFlux.sLien, urlProtocole)+"://"+URLExtraitChemin(stMonFlux.sLien, urlDomaine) + ["/"] + "favicon.ico")
+      			Ajoute(tabURLATester, URLExtraitChemin(stMonFlux.sLien, urlProtocole)+"://"+URLExtraitChemin(stMonFlux.sLien, urlDomaine) + ["/"] + "favicon.png")
+      		FIN
+      	Fin
+      Fin
+      
+      // Le favicon défini sur l'URL du flux
+      ajoute(tabURLATester, stMonFlux.sAdresse +["/"]+ "favicon.ico")
+      ajoute(tabURLATester, stMonFlux.sAdresse +["/"]+ "favicon.png")
+      // Le favicon défini sur le domaine de l'URL du flux
+      ajoute(tabURLATester, URLExtraitChemin(stMonFlux.sAdresse, urlProtocole)+"://"+URLExtraitChemin(stMonFlux.sAdresse, urlDomaine) + ["/"] + "favicon.ico")
+      ajoute(tabURLATester, URLExtraitChemin(stMonFlux.sAdresse, urlProtocole)+"://"+URLExtraitChemin(stMonFlux.sAdresse, urlDomaine) + ["/"] + "favicon.png")
+      
+      // Parcourt les URL à tester
+      sUneURL est une chaine
+      pour tout element sUneURL de tabURLATester
+      	
+      	// Mémorise l'URL 
+      	MaRequête.URL = sUneURL
+      	MaRequête..IgnoreErreur = httpIgnoreRenvoiHTTPS
+      	// Interroge l'URL
+      	MaRéponse = HTTPEnvoie(MaRequête)	
+      	// Si la requête est OK (code de retour à 200), mémorise l'image
+      	SI MaRéponse.CodeEtat = 200 _et_ MaRéponse.Contenu <> "" ALORS
+      		// Enregistre le retour dans une variable image (pour vérifier que ce retour soit réellement une image)
+      		MonImage = MaRéponse.Contenu
+      		si MonImage.Valide = faux alors continuer
+      		// Le retour est bien une image
+      		RENVOYER MaRéponse.Contenu
+      	SINON
+      		// 301 / 302 : Document déplacé de façon permanente / temporaire
+      		si MaRéponse.codeetat dans (301, 302) alors
+      			// Définie la nouvelle URL
+      			sUneURL = MaRéponse.Entête["Location"]
+      			// Relance le test de l'URL
+      			Ajoute(tabURLATester, sUneURL)
+      		FIN
+      		
+      	FIN
+      	
+      FIN
+      
+      // Vide le tableau des URL (il va potentiellement être à nouveau utilisé)
+      supprimetout(tabURLATester)
+      
+      // Si aucun favicon n'est trouvé, il faut interroger la page "racine" du domaine et récupérer l'image défini dans la balise "link shortcut icon" ou "link icon"
+      sURL est une chaine
+      SI stMonFlux.sLien <> "" ALORS sURL = stMonFlux.sLien SINON sURL = stMonFlux.sAdresse
+      MaRequête.URL = URLExtraitChemin(sURL, urlProtocole)+"://"+URLExtraitChemin(sURL, urlDomaine)
+      MaRequête..IgnoreErreur = httpIgnoreRenvoiHTTPS
+      // Interroge l'URL (en gérant les éventuelles redirections)
+      MaRéponse = HTTPEnvoie(MaRequête)
+      tantque MaRéponse.CodeEtat dans (301,302)
+      	MaRéponse = HTTPEnvoie(MaRéponse.Entête["Location"])
+      FIN
+      // Si la requête est OK (code de retour à 200), recherche des balises indiquant l'icône
+      SI MaRéponse.CodeEtat = 200 _ET_ MaRéponse.Contenu <> "" ALORS
+      	
+      	// Balises à retrouver
+      	tabBalises est un tableau de chaines = ["rel=""icon""","rel=""shortcut icon"""]
+      	pour tout element sUneBalise de tabBalises
+      		// Mémorise le contenu complet
+      		sURLFavicon est une chaine = MaRéponse.contenu
+      		// Si le contenu contient la balise
+      		si sURLFavicon [~] sUneBalise ALORS
+      			// Extrait l'URL
+      			nDebut, nFin sont des entiers
+      			nDebut = position(sURLFavicon, sUneBalise, 1, SansCasse)
+      			nDebut = position(sURLFavicon, "<",nDebut, depuisfin)
+      			nFin = position(sURLFavicon, ">",nDebut)
+      			sURLFavicon = sURLFavicon[[nDebut a nFin]]
+      			sURLFavicon = extraitchaine(sURLFavicon, 2, "href=""")
+      			sURLFavicon = extraitchaine(sURLFavicon, 1, """")
+      			
+      			// Mémorise cette URL (et ses variantes)
+      			ajoute(tabURLATester, sURLFavicon)
+      			si sURLFavicon [= "//" alors ajoute(tabURLATester, "http:"+sURLFavicon)
+      			ajoute(tabURLATester, stMonFlux.sAdresse+["/"]+sURLFavicon)
+      			ajoute(tabURLATester, URLExtraitChemin(stMonFlux.sAdresse, urlProtocole)+"://"+URLExtraitChemin(stMonFlux.sAdresse, urlDomaine)+["/"]+sURLFavicon)
+      			ajoute(tabURLATester, stMonFlux.sLien+["/"]+sURLFavicon)
+      			ajoute(tabURLATester, URLExtraitChemin(stMonFlux.sLien, urlProtocole)+"://"+URLExtraitChemin(stMonFlux.sLien, urlDomaine)+["/"]+sURLFavicon)
+      			
+      		Fin
+      	FIn
+      FIN
+      
+      // Parcourt les URL à tester
+      POUR TOUT element sUneURL de tabURLATester
+      	
+      	// Mémorise l'URL 
+      	MaRequête.URL = sUneURL
+      	MaRequête..IgnoreErreur = httpIgnoreRenvoiHTTPS
+      	// Interroge l'URL
+      	MaRéponse = HTTPEnvoie(MaRequête)	
+      	// Si la requête est OK (code de retour à 200), mémorise l'image
+      	SI MaRéponse.CodeEtat = 200 _ET_ MaRéponse.Contenu <> "" ALORS
+      		// Enregistre le retour dans une variable image (pour vérifier que ce retour soit réellement une image)
+      		MonImage = MaRéponse.Contenu
+      		SI MonImage.Valide = Faux ALORS CONTINUER
+      		// Le retour est bien une image
+      		RENVOYER MaRéponse.Contenu
+      	FIN
+      	
+      FIN
+      
+      // Impossible de récupérer une image pour le flux
+      renvoyer ""
+     type : 458752
+   -
+     name : rssChargeDepuisURL
+     internal_properties : CAAAAAgAAAB48M2Bg6eqL1bxnM7fcptUG4Zd6/1VhAe0pNq2vTvsvY4+Hga/yjLCguATNOjTIWd42ecS39W3Rtd6/H7ikrguD3MsKWLNu8Mci9v7fbsRHaRX/EdHCt9sPlNevJ9Y2rt5uMdthgnVDgAzjslIoumQp+1h6CY/OmFoVVSaUfG3bi3nF+WGO4RxBarMLGENVLBcJch1fEAWPD1s0vCLFhhpO4Iqpn4b
+     procedure_id : 1590517988479048451
+     type_code : 15
+     code : |1-
+      // Résumé : Charge un flux à partir d'une URL
+      // Syntaxe :
+      //[ <Résultat> = ] rssChargeDepuisURL (<sURL> est chaîne [, <bChargeBillets> est booléen])
+      //
+      // Paramètres :
+      //	sURL (chaîne ANSI) :URL du flux
+      //	bChargeBillets (booléen - valeur par défaut=1) :Vrai pour charger les billets, Faux autrement
+      // Valeur de retour :
+      // 	STFluxRSS : Variable de type STFluxRSS avec le flux chargé
+      //
+      PROCEDURE rssChargeDepuisURL(LOCAL sURL est une chaine, LOCAL bChargeBillets est un booleen = vrai) : STFluxRSS
+      
+      sContenu		est une chaine
+      ContenuFluxRSS 	est un WL.xmlDocument
+      MaRequête 		est un httprequete
+      MaRéponse 		est un httpreponse
+      stMonFluxRSS	est un STFluxRSS
+      
+      // Mémorise l'URL
+      stMonFluxRSS.sAdresse = sURL
+      
+      // Définit l'URL
+      MaRequête..URL = sURL
+      MaRequête..IgnoreErreur = httpIgnoreRenvoiHTTPS
+      // Interroge l'URL
+      MaRéponse = httpenvoie(MaRequête)
+      SI ErreurDétectée ALORS
+      	// Remonte l'erreur
+      	Erreurpropage(erreurinfo(errMessage))
+      	renvoyer stMonFluxRSS
+      FIN
+      
+      // Analyse le code résultat
+      selon MaRéponse.CodeEtat
+      	// 200 : Requête traitée avec succès
+      	CAS 200
+      		// Mémorise le contenu de la réponse
+      		sContenu = MaRéponse.Contenu
+      		// Si le contenu est compressé en gzip
+      		Si MaRéponse.Entête["Content-Encoding"]..vide = faux _et_ MaRéponse.Entête["Content-Encoding"] ~= "gzip" ALORS
+      			// Décompresse la chaîne
+      			bufContenu est un buffer = MaRéponse.Contenu
+      			sContenu = decompresse(bufContenu)
+      			si erreurdetectee alors sContenu = MaRéponse.contenu
+      		FIN
+      		// Charge un document XML à partir du contenu
+      		ContenuFluxRSS = XMLOuvre(sContenu, depuisChaîne)
+      		SI ErreurDétectée ALORS
+      			ErreurPropage(<§@15939788000396920000§>+rc+sURL)
+      			RENVOYER stMonFluxRSS
+      		FIN
+      
+      		// Charge les informations du flux à partir du contenu du flux
+      		_ChargeInfosDepuisContenu(ContenuFluxRSS, stMonFluxRSS, bChargeBillets)
+      		renvoyer stMonFluxRSS
+      		
+      	// 301 / 302 : Document déplacé / à rediriger de façon permanente / temporaire
+      	CAS 301, 302, 307, 308
+      		// Il faut récupérer l'URL de redirection et refaire le chargement
+      		sURLRedirection est une chaine = MaRéponse.Entête["Location"]
+      		stMonFluxRSS = rssChargeDepuisURL(sURLRedirection, bChargeBillets)
+      		renvoyer stMonFluxRSS
+      		
+      	// Autres cas : serveur inaccessible, erreur interne, etc.
+      	autres cas
+      		ErreurDéclenche(1, MaRéponse..DescriptionCodeEtat)
+      		renvoyer stMonFluxRSS
+      FIN
+     type : 458752
+   -
+     name : FichierOPML_Charge
+     internal_properties : CAAAAAgAAADjQhrHX1pwpp//Sn4k+zqR2KygTqSGsMSwUvvVKH2BVdw+quo4/VW8Y5l0bGjMVWY6sGI8czv+IenlMnszPWNB3P8iQ83GgU+RJ2by5zI5Qz5x1RSFzmzAOYIAEWxdFpBv8VnZcawpFfadskYP6Ukn8YwZkikUKgBWz+TbJDIPWz/lEq01SxZBjA4/rCTsw7gH11AlA0ogL5vf3MiJpAA94jcvpcosflSFDUgb48mAATqORDAE
+     procedure_id : 1590852746959579514
+     type_code : 15
+     code : |1-
+      // Résumé : Charge les données du fichier OPML
+      // Syntaxe :
+      //[ <Résultat> = ] FichierOPML_Charge (<sFichierOPML> est chaîne)
+      //
+      // Paramètres :
+      //	sFichierOPML (chaîne ANSI) :<indiquez ici le rôle de sFichierOPML>
+      // Valeur de retour :
+      // 	tableau : Tableau contenant les flux lus dans le fichier
+      //
+      PROCEDURE FichierOPML_Charge(LOCAL sFichierOPML est une chaine)
+      
+      tabFlux est un tableau de STFluxRSS
+      
+      // Charge le document XML
+      xmlOPML est un WL.xmldocument = xmlouvre(sFichierOPML, depuisFichier)
+      
+      // Récupère le noeud <body>
+      xmlNoeudSource est un xmlnoeud = xmlOPML.opml.body
+      
+      // Traite les éléments de ce noeud de façon récursive
+      // (Un fichier OPML est défini par des balises <outline> dont le nombre d'imbrications dépend de l'application qui a généré le fichier)
+      FichierOPML_TraiteNoeudFils(xmlNoeudSource, tabFlux)
+      
+      // Tri les flux par libellé
+      tableautrie(tabFlux, ttmembre, "sDossier;sTitre")
+      
+      renvoyer tabFlux
+     type : 458752
+   -
+     name : FichierOPML_TraiteNoeudFils
+     internal_properties : CAAAAAgAAACYJq7r1z5tEezYDUmo+oFkezu1TJHZ0Nit5+xRGWIP1H96kw1llUnb++2b5ljfrAvuzkwRldBKqapLNCi2F+f5rVsmHWGaPGFz4KPTy+6sakWINYLC0wpqeS8GQSXyCs82aMrcdVbutXvf+8V4GWVRcBtYIOs+DbD0ciTYufafGMzgUh/i2Dkk43/DzNsbmsxHibcj/J2+KJ/8gYzk+Q0PR+hioUv7UT/Ny8/gA579STN3NYP3pSk9xCdZqTgyYkS8kbFEZJMj8C7zfulg+lY+V85u+dMVxBQzmTOHH1rBe4sui4NLdSlVkS+EIendD2vtQHHGdjr/DwYkBaquz9uKpH5iAlvqRJW3dY0=
+     procedure_id : 1590852746959645378
+     type_code : 15
+     code : |1-
+      // Résumé : <indiquez ici ce que fait la procédure>
+      // Syntaxe :
+      //FichierOPML_TraiteNoeudFils (<xmlNoeudSource> est xmlNoeud, <tabFlux> est tableau)
+      //
+      // Paramètres :
+      //	xmlNoeudSource (xmlNoeud) :Noeud source
+      //	tabFlux (tableau) :Tableau des flux
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE prive FichierOPML_TraiteNoeudFils(xmlNoeudSource est un xmlnoeud, tabFlux est un tableau de STFluxRSS)
+      
+      xmlNoeud est un xmlnoeud
+      
+      // Parcourt les noeuds fils du noeud source
+      POUR TOUT ELEMENT xmlNoeud DE xmlNoeudSource
+      	
+      	// Si le noeud courant contient des fils <outline>, il faut descendre dans l'élément
+      	si xmlNoeud.outline..Occurrence > 0 alors
+      		FichierOPML_TraiteNoeudFils(xmlNoeud, tabFlux)
+      		continuer
+      	FIN
+      	
+      	// Ici, il faut vérifier que le noeud courant soit une description de flux
+      	si xmlNoeud..nom <> "outline" alors continuer
+      	
+      	// Ici, le noeud est un noeud de flux
+      	
+      	stUnFlux est un STFluxRSS
+      	variableraz(stUnFlux)
+      	
+      	// Parcourt les attributs
+      	pour tout element Attribut de xmlNoeud..Attribut
+      		// Selon le nom de l'attribut
+      		selon Attribut..Nom
+      			// text : c'est le libellé du flux
+      			CAS "text"
+      				stUnFlux.sTitre = attribut..Valeur
+      			// xmlUrl : c'est l'URL d'accès au flux
+      			CAS "xmlUrl"
+      				stUnFlux.sAdresse = Attribut..Valeur
+      			// attributs non gérés
+      			AUTRE CAS
+      				// Ne rien faire
+      		FIN
+      	FIN
+      	
+      	
+      	// Pour récupérer le dossier direct, il suffit d'interroger le noeud source
+      	POUR TOUT element Attribut de xmlNoeudSource..Attribut
+      		// S'il s'agit de l'attribut "text", mémorise le nom comme nom de dossier
+      		si Attribut..Nom = "text"
+      			stUnFlux.sDossier = Attribut..Valeur
+      		FIN
+      	FIN
+      	
+      	// Si le flux n'a pas d'adresse, il ne faut pas en tenir compte (mauvaise génération ou interprétation du fichier OPML)
+      	SI stUnFlux.sAdresse = "" ALORS CONTINUER
+      	
+      	// Si le titre est vide
+      	si stUnFlux.sTitre ~= "" ALORS
+      		// Définit l'adresse comme étant le titre
+      		stUnFlux.sTitre = stUnFlux.sAdresse
+      	FIn
+      		
+      	// Mémorise le flux s'il est correct
+      	ajoute(tabFlux, stUnFlux)
+      	
+      FIN
+     type : 458752
+   -
+     name : TP_rssRécupèreImageFlux
+     internal_properties : CAAAAAgAAADZYxvxsagSpJHlvOxOie0NuWJmENb8ykIKSD3DkvtY0lJe95DBJRX0u4HEpAh8RX7SePLUE3tGYSk1qsuLJWtxfF+Kc+UeIQeZH7b6F9J5C1Y5VWw13mTQeUJs9RDxMrw7zfWVVaAVAeqhbrqDnSVjjShlDu1I5rwakyBvqLb7ZxtB7hm5L3IdoMJb8GiQb1TkNjI5i0U0N5vP2GxJUBy9Uq+rJSdvKoQ9lew3281k6cK2jQo+
+     procedure_id : 1590856861554936363
+     type_code : 15
+     code : |1+
+      // Résumé : Lance la récupération de l'image d'un flux RSS
+      // Syntaxe :
+      //TP_rssRécupèreImageFlux (<nIDFlux> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFlux (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE TP_rssRécupèreImageFlux(LOCAL nIDFlux est un entier sur 8)
+      
+      bufImage est un buffer
+      stMonFlux est un stfluxrss
+      
+      // Se positionne sur le flux
+      HLitRecherchePremier(fluxrss, IDFluxRSS, nIDFlux)
+      si htrouve(FluxRSS) = faux ALORS retour
+      
+      // Charge le flux depuis l'URL
+      stMonFlux = rssChargeDepuisURL(FluxRSS.Adresse, faux)
+      SI stMonFlux.nVersion = 0 ALORS retour
+      
+      // Récupère l'image du flux
+      bufImage = rssRecupereImageFlux(stMonFlux)
+      // Si le buffer est récupéré
+      si bufImage ~= "" ALORS retour
+      
+      // Charge le buffer dans une image (pour vérifier qu'il s'agisse bien d'une image)
+      MonImage est un image = bufImage
+      si MonImage..valide = faux alors retour
+      // Redimensionne l'image en 16x 16
+      dredimensionne(MonImage, 16, 16, drHomothétiqueEtendu+drHauteQualité)
+      bufImage = MonImage.Image
+      
+      // Créé une image en cache (pour accélérer l'affichage)
+      fsauvebuffer(gsRépertoireCache +["\"]+ "flux" +["\"]+ fluxrss.IDFluxRSS+".png", bufImage)
+      
+      SectionCritiqueDébut("FLUX")
+      // Se positionne sur le flux et modifie l'image
+      HLitRecherchePremier(FluxRSS, IDFluxRSS, nIDFlux)
+      fluxrss.image = bufImage
+      hmodifie(fluxrss)
+      SectionCritiquefin("FLUX")
+      
+     type : 458752
+   -
+     name : ImporteFlux
+     internal_properties : CAAAAAgAAAAGR7dgVwY2ldKURTyrPa+4oEeCL+KxpXQVKaR4PI1I5aplFZt7HT2cBQDlXdSMvh8YHWFCqqqwxwZkSYVkJyap5HIyexUbyn16zbsouPeMEd4TqgEGwZZbeZHG1ciH9MOm+40Qdzz3zHXwIrnd
+     procedure_id : 1590859713413754163
+     type_code : 15
+     code : |1-
+      // Résumé : Importe les flux depuis un tableau
+      // Syntaxe :
+      //[ <Résultat> = ] ImporteFlux (<tabFlux> est tableau [, <nIDDossierImport> est entier sur 8 octets])
+      //
+      // Paramètres :
+      //	tabFlux (tableau) :Tableau des flux à importer
+      //	nIDDossierImport (entier sur 8 octets - valeur par défaut=-1) :Identifiant du dossier dans lequel importé les flux
+      // Valeur de retour :
+      // 	tableau : Tableau contenant tous les identifiants de flux importés
+      //
+      PROCEDURE ImporteFlux(tabFlux est un tableau de STFluxRSS, LOCAL nIDDossierImport est un entier sur 8 = -1) : tableau d'entier sur 8
+      
+      nIDDossier est un entier sur 8
+      tabIDFlux est un tableau d'entier sur 8
+      
+      // Parcourt les flux
+      POUR TOUT element stUnFlux de tabFlux
+      	
+      	// Seulement si le flux est marqué à importer
+      	si stUnFlux.bAImporter = faux alors continuer
+      	
+      	// Le flux ne doit pas déjà exister
+      	hrecherchepremier(fluxrss, Adresse, stUnFlux.sAdresse)
+      	si htrouve(fluxrss) ALORS
+      		erreurconstruit("Impossible d'ajouter le flux %1 : ce flux est déjà présent dans l'application.", stUnFlux.sAdresse)
+      		RENVOYER tabIDFlux
+      	FIN
+      	
+      	// En mode "import avec arborescence", il faut ajouter le dossier si besoin
+      	si nIDDossierImport = -1 alors
+      		// Le dossier existe-t-il ?
+      		SI stUnFlux.sDossier <> "" ALORS
+      			HLitRecherchePremier(Dossier, Libellé, stUnFlux.sDossier)
+      			SI HTrouve(Dossier) = Faux ALORS
+      				HRAZ(Dossier)
+      				Dossier.Libellé = stUnFlux.sDossier
+      				SI HAjoute(Dossier) = Faux ALORS
+      					ErreurConstruit(<§@15939788000396920001§> +RC+ HErreurInfo(hErrMessage), stUnFlux.sDossier)
+      				FIN
+      				nIDDossier = Dossier.IDDossier
+      			FIN
+      		SINON
+      			// Pas de dossier pour ce flux, il sera à la racine
+      			nIDDossier = 0
+      		FIN
+      	SINON
+      		// Le dossier est le dossier d'import donné en paramètre
+      		nIDDossier = nIDDossierImport
+      	Fin
+      	
+      	// Ajoute le flux
+      	HRAZ(FluxRSS)
+      	FluxRSS.Adresse 	= stUnFlux.sadresse
+      	FluxRSS.Titre 		= stUnFlux.sTitre
+      	FluxRSS.Image		= stUnFlux.bufImage
+      	FluxRSS.IDDossier	= nIDDossier
+      	FluxRSS.Lien		= stUnFlux.sLien
+      	SI HAjoute(FluxRSS) = Faux ALORS
+      		ErreurConstruit(<§@15939788000396920002§> +RC+ HErreurInfo(hErrMessage), stUnFlux.sTitre)
+      		RENVOYER tabIDFlux
+      	FIN
+      	// Mémorise l'identifiant du flux	
+      	nIDFluxRSS est un entier sur 8 = FluxRSS.IDFluxRSS
+      	// Mémorise cet identifiant
+      	ajoute(tabIDFlux, nIDFluxRSS)
+      	
+      	// Récupère l'image du flux (en tâche parallèle)
+      	fEN_Principale.FluxRSS_Affiche(nIDFluxRSS)
+      	MaTache est une TâcheParallèle = TâcheParallèleExécute(TP_rssRécupèreImageFlux, (nIDFluxRSS),tpoCopieComplèteContexteHFSQL)
+      	MaTache2 est une TâcheParallèle = TâcheParallèleExécuteAprès(MaTache, FEN_Principale.FluxRSS_MAJ_Image, (nIDFluxRSS), tpoThreadPrincipal)
+      	
+      FIN
+      
+      // Renvoie le tableau contenant tous les flux importés
+      renvoyer tabIDFlux
+     type : 458752
+   -
+     name : TP_rssRécupèreBilletsFlux
+     internal_properties : CAAAAAgAAAAuH4H533IwMfbq5wCn8ZN2KEEmNTrnYaQFC4pk8PHgx84bmdmvA6EkQU5jYWAIPjEsm8VgugThYJ/HLI4fhrEkoXeLFKh2b4IfIC7Ry+YvRNMYkxb96McMDuCl/mPen247wIoRcn9S6d4iCpH1
+     procedure_id : 1590873264057339798
+     type_code : 15
+     code : |1-
+      // Résumé : Lance la récupération des billets d'un flux RSS
+      // Syntaxe :
+      //[ <Résultat> = ] TP_rssRécupèreBilletsFlux (<nIDFlux> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFlux (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	multi-valeur : ID flux / Nombre de nouveaux messages récupérés
+      //
+      
+      PROCEDURE TP_rssRécupèreBilletsFlux(LOCAL nIDFlux est un entier sur 8) : (entier sur 8, entier)
+      
+      stMonFlux est un stfluxrss
+      nNbNouveauxBillets est un entier
+      
+      // Se positionne sur le flux
+      HLitRecherchePremier(fluxrss, IDFluxRSS, nIDFlux)
+      si htrouve(FluxRSS) = faux ALORS renvoyer (nIDFlux, 0)
+      
+      // Charge le flux depuis l'URL
+      stMonFlux = rssChargeDepuisURL(FluxRSS.Adresse)
+      SI stMonFlux.nversion = 0 ALORS RENVOYER (nIDFlux, 0)
+      
+      // Si un lien est présent dans la structure mais pas dans l'enregistrement (lien non présent à l'import ou mal détecté), il faut l'ajouter
+      si stMonFlux.slien <> "" _et_ fluxrss.lien ~= "" ALORS
+      	HLitRecherchePremier(FluxRSS, IDFluxRSS, nIDFlux)
+      	FluxRSS.lien = stMonFlux.sLien
+      	hmodifie(fluxrss)
+      FIN
+      
+      // Récupère la date de dernière génération du flux (si elle existe)
+      si stMonFlux.dhPublication <= FluxRSS.DernièreGénération ALORS RENVOYER (nIDFlux, 0)	
+      
+      // Parcourt les billets du flux
+      stUnBillet est un STBillet
+      pour tout element stUnBillet de stMonFlux.tabBillets
+      	
+      	// Ce billet existe-t-il déjà en base ?
+      	hrecherchepremier(billet, guid, stUnBillet.sguid)
+      	si htrouve(billet) alors continuer
+      	
+      	// Vérifie qu'un billet de même titre et même date n'est pas déjà présent
+      	HRecherchePremier(billet, DatePublicationTitreFlux,[stUnBillet.dhDPublication,stUnBillet.sTitre, fluxrss.IDFluxRSS])
+      	si htrouve(billet) alors continuer
+      	
+      	// Ajoute le billet
+      	hraz(billet)
+      	billet.DatePublication 	= stUnBillet.dhDPublication
+      	billet.DateRéception 	= maintenant()
+      	billet.IDFluxRSS		= fluxrss.IDFluxRSS
+      	billet.Auteur			= stUnBillet.sAuteur
+      	billet.Categorie 		= stUnBillet.sCatégorie
+      	billet.Description		= stUnBillet.sdescription
+      	billet.GUID				= stUnBillet.sguid
+      	billet.Image			= stUnBillet.simage
+      	billet.Lien				= stUnBillet.sLien
+      	billet.Titre			= stUnBillet.sTitre
+      	billet.Contenu			= stUnBillet.sContenu
+      	hajoute(billet)
+      	
+      	nNbNouveauxBillets++
+      	
+      	// Modifie les compteurs
+      	SectionCritiqueDébut(EVT_COMPTAGE)
+      	gtaComptage[nIDFlux]++
+      	si FluxRSS.IDDossier > 0 alors gtaComptage[prefix_dossier+FluxRSS.IDDossier]++
+      	gtaComptage[IDABONNEMENT]++
+      	gtaComptage[idnonlus] = gtaComptage[IDABONNEMENT]
+      	si billet.DatePublication..partiedate = datedujour() alors gtaComptage[IDAUJOURDHUI]++
+      	si billet.DatePublication..partiedate = hier() alors gtaComptage[IDHier]++
+      	SectionCritiqueFin(EVT_COMPTAGE)
+      	
+      	// Envoie un message à la fenêtre tous les 5 billets
+      	SI modulo(nNbNouveauxBillets,5) = 0 ALORS
+      		// Notifie la fenêtre de la mise à jour
+      		TâcheParallèleExécute(NotifieFenêtre, (FluxRSS.IDFluxRSS,1), tpoThreadPrincipal)
+      	FIN
+      	
+      	// Récupère l'image du billet (pour la mémoriser en cache)
+      	Billet_RécupèreImage(billet.idbillet)
+      	
+      Fin
+      
+      // Si au moins un billet a été récupéré
+      si nNbNouveauxBillets > 0 ALORS
+      	// Notifie la fenêtre de la mise à jour
+      	TâcheParallèleExécute(NotifieFenêtre, (FluxRSS.IDFluxRSS,1), tpoThreadPrincipal)
+      FIN
+      
+      // Récupère la date de dernière génération du flux (si elle existe)
+      SectionCritiquedebut("FLUX")
+      HLitRecherchePremier(FluxRSS, IDFluxRSS, nIDFlux)
+      FluxRSS.DernièreGénération = stMonFlux.dhPublication
+      hmodifie(fluxrss)
+      SectionCritiqueFin("FLUX")
+      
+      // Il faut éventuellement supprimer les billets les plus anciens qui font dépasser la limite
+      si Archivage_NbBillets(fluxrss.IDFluxRSS) ALORS
+      	// Il faut mettre à jour tous les compteurs
+      	ComptageInitialise()
+      FIN
+      
+      
+      renvoyer (nIDFlux, nNbNouveauxBillets)
+     type : 458752
+   -
+     name : _dateConvertie
+     internal_properties : CAAAAAgAAAAapVmMO3f1ziyrnqtQaMISJ48XKlhplCbrD22chx3TVmDnNmvHyutj01Zpt2QiPeSJ333anuChvTdXz82mPPydZYTGhZWvgYpEUVbS/aLbhTjLPsPmqr70NEjXAO2WhHgAqZINmExGJQb6OCHgWFGwqf+NLNpTVGsQzVya0SWHtiSH/Ry9P2lRO8F0LEauNC4jKIQtbEwm5idPxmcWV66iiVX6UIf+P7NUiE0m/swQRx+6TCEqIv1is82C9usfg7Of3xcGhnSKbe6okZ+8t2gahnWqIt32
+     procedure_id : 1590874982045051461
+     type_code : 15
+     code : |1+
+      // Résumé : Convertit une date RSS en une DateHeure WLangage
+      
+      PROCEDURE PRIVE _dateConvertie(LOCAL sValeurBalise est une chaine)
+      
+      dhDateHeure est un DateHeure
+      sHeureDécalage, sMinuteDécalage sont des chaînes
+      sSigneDécalage est une chaîne
+      sZone est une chaine
+      duDuréeDécalage est une durée
+      sMoisEnLettre est une chaîne
+      
+      // Supprime les doubles espaces qui peuvent être présents
+      tantque sValeurBalise [=] "  "
+      	sValeurBalise = remplace(sValeurBalise, "  ", " ")
+      FIN
+      // Supprime les espaces avant / après
+      sValeurBalise = ChaîneFormate(sValeurBalise, ccSansEspace)
+      
+      // Format JJ-MM-AAAA HH:mm:SS (13-07-2015 14:15:10)
+      SI VérifieExpressionRégulière(sValeurBalise, "([0-9]{2,2})-([0-9]{2,2})-([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})",dhDateHeure..Jour, dhDateHeure..Mois, dhDateHeure..Année, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde) ALORS
+      	
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format AAAA-MM-JJTHH:mm:SS (2015-07-13T14:15:10)
+      SI VérifieExpressionRégulière(sValeurBalise, "([0-9]{4,4})-([0-9]{2,2})-([0-9]{2,2})T([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})",dhDateHeure..Année, dhDateHeure..Mois, dhDateHeure..Jour, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde) ALORS
+      	
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format AAAA-MM-JJTHH:mm:SS+01:00 (2015-07-13T14:15:10+03:00)
+      SI VérifieExpressionRégulière(sValeurBalise, "([0-9]{4,4})-([0-9]{2,2})-([0-9]{2,2})T([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})(+|-)([0-9]{2,2}):([0-9]{2,2})",dhDateHeure..Année, dhDateHeure..Mois, dhDateHeure..Jour, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde, sSigneDécalage, sHeureDécalage, sMinuteDécalage) ALORS
+      	
+      	// Ajoute le décalage
+      	SELON sSigneDécalage
+      		CAS "+" : dhDateHeure..Heure -= sHeureDécalage ; dhDateHeure..Minute -= sMinuteDécalage
+      		CAS "-" : dhDateHeure..Heure += sHeureDécalage ; dhDateHeure..Minute += sMinuteDécalage			
+      	FIN
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format AAAA-MM-JJTHH:mm:SSZZZ (2015-07-13T14:15:10PDT)
+      SI VérifieExpressionRégulière(sValeurBalise, "([0-9]{4,4})-([0-9]{2,2})-([0-9]{2,2})T([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})([a-zA-Z]{1,4})",dhDateHeure..Année, dhDateHeure..Mois, dhDateHeure..Jour, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde, sZone) ALORS
+      	
+      	// Convertit la zone en décalage
+      	(duDuréeDécalage) = _ZoneVersDécalage(sZone)
+      	// Applique le décalage
+      	dhDateHeure += duDuréeDécalage
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format Jjj, JJ Mmm AAAA HH:mm:SS (Mon, 13 Jul 2015 14:15:10)
+      SI VérifieExpressionRégulière(sValeurBalise, "[a-zA-Z]{3,3}, ([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})",dhDateHeure..Jour, sMoisEnLettre, dhDateHeure..Année, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde) ALORS
+      	
+      	// Convertit le mois à partir des lettres
+      	dhDateHeure..Mois = _MoisLettreVersMoisEntier(sMoisEnLettre)
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format Jjj, JJ Mmm AAAA HH:mm:SS +0100 (Mon, 13 Jul 2015 14:15:10 +0300)
+      SI VérifieExpressionRégulière(sValeurBalise, "[a-zA-Z]{3,3}, ([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2}) (+|-)([0-9]{2,2})([0-9]{2,2})",dhDateHeure..Jour, sMoisEnLettre, dhDateHeure..Année, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde, sSigneDécalage, sHeureDécalage, sMinuteDécalage) ALORS
+      	
+      	// Convertit le mois à partir des lettres
+      	dhDateHeure..Mois = _MoisLettreVersMoisEntier(sMoisEnLettre)
+      	// Ajoute le décalage
+      	SELON sSigneDécalage
+      		CAS "+" : dhDateHeure..Heure -= sHeureDécalage ; dhDateHeure..Minute -= sMinuteDécalage
+      		CAS "-" : dhDateHeure..Heure += sHeureDécalage ; dhDateHeure..Minute += sMinuteDécalage			
+      	FIN
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format Jjj, JJ Mmm AAAA HH:mm:SS ZZZ (Mon, 13 Jul 2015 14:15:10 PDT)
+      SI VérifieExpressionRégulière(sValeurBalise, "[a-zA-Z]{3,3}, ([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2}) ([a-zA-Z]{1,4})",dhDateHeure..Jour, sMoisEnLettre, dhDateHeure..Année, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde, sZone) ALORS
+      	
+      	// Convertit le mois à partir des lettres
+      	dhDateHeure..Mois = _MoisLettreVersMoisEntier(sMoisEnLettre)
+      	// Convertit la zone en décalage
+      	(duDuréeDécalage) = _ZoneVersDécalage(sZone)
+      	// Applique le décalage
+      	dhDateHeure += duDuréeDécalage
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format JJ Mmm AAAA HH:mm:SS (13 Jul 2015 14:15:10)
+      SI VérifieExpressionRégulière(sValeurBalise, "([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})",dhDateHeure..Jour, sMoisEnLettre, dhDateHeure..Année, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde) ALORS
+      	
+      	// Convertit le mois à partir des lettres
+      	dhDateHeure..Mois = _MoisLettreVersMoisEntier(sMoisEnLettre)
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format JJ Mmm AAAA HH:mm:SS +0100 (13 Jul 2015 14:15:10 +0300)
+      SI VérifieExpressionRégulière(sValeurBalise, "([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2}) (+|-)([0-9]{2,2})([0-9]{2,2})",dhDateHeure..Jour, sMoisEnLettre, dhDateHeure..Année, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde, sSigneDécalage, sHeureDécalage, sMinuteDécalage) ALORS
+      	
+      	// Convertit le mois à partir des lettres
+      	dhDateHeure..Mois = _MoisLettreVersMoisEntier(sMoisEnLettre)
+      	// Ajoute le décalage
+      	SELON sSigneDécalage
+      		CAS "+" : dhDateHeure..Heure -= sHeureDécalage ; dhDateHeure..Minute -= sMinuteDécalage
+      		CAS "-" : dhDateHeure..Heure += sHeureDécalage ; dhDateHeure..Minute += sMinuteDécalage			
+      	FIN
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      // Format JJ Mmm AAAA HH:mm:SS ZZZ (13 Jul 2015 14:15:10 PDT)
+      SI VérifieExpressionRégulière(sValeurBalise, "([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2}) ([a-zA-Z]{1,4})",dhDateHeure..Jour, sMoisEnLettre, dhDateHeure..Année, dhDateHeure..Heure, dhDateHeure..Minute, dhDateHeure..Seconde, sZone) ALORS
+      	
+      	// Convertit le mois à partir des lettres
+      	dhDateHeure..Mois = _MoisLettreVersMoisEntier(sMoisEnLettre)
+      	// Convertit la zone en décalage
+      	(duDuréeDécalage) = _ZoneVersDécalage(sZone)
+      	// Applique le décalage
+      	dhDateHeure += duDuréeDécalage
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      
+      // Formats exotiques :
+      // 02/10/10 a 20h30
+      // Format JJ/MM/AA a HHhmm (13/07/15 a 14h15)
+      nAnnée est un entier
+      SI VérifieExpressionRégulière(sValeurBalise, "([0-9]{2,2})/([0-9]{2,2})/([0-9]{2,2}) a ([0-9]{2,2})h([0-9]{2,2})",dhDateHeure..Jour, dhDateHeure..mois, nAnnée, dhDateHeure..Heure, dhDateHeure..Minute) ALORS
+      	
+      	// Applique l'année (on considère que les billets sont "récents")
+      	dhDateHeure..année = nAnnée + 2000
+      	// Repassage en mode locale
+      	dhDateHeure = DateHeureUTCVersLocale(dhDateHeure)
+      	// Si la date heure est valide, il faut la renvoyer
+      	SI DateHeureValide(dhDateHeure) ALORS RENVOYER dhDateHeure
+      	
+      FIN
+      
+      
+      // Si la date heure a un format inconnu, renvoie la date heure par défaut (qui correspond à maintenant
+      RENVOYER dhDateHeure
+      
+     type : 458752
+   -
+     name : _MoisLettreVersMoisEntier
+     internal_properties : CAAAAAgAAADM6G1vKNFBoxCdcP4nEP9LRx9m/x+Nq3NqILbZlDUpABLZsX0O3pqQExHOlTE5LcVSv7gDOhTJu2GDHZ8K6lMZv65QkS1S69koQknVo/ophLaFODh7LA6c+1colOFZ/AnQqu9cJk5Z4w1El7Dp5NoSdGOVItWcjsdCxGOar9ZxLcxFUmzXsnM927Z5KMvcrfu2/lbxQgmlzZ6m7MmT8xK1mRy98MxSuKRVAlMnraQTOLLvGDiA2fptF0WEKrDVhwAGNS7vYumZenKna0OuSoE1sFZ5r9SSjLQF4Utz5jiOKYpI/aUnqJKeVA==
+     procedure_id : 1590875033584670591
+     type_code : 15
+     code : |1+
+      // Résumé : Retourne le numéro de mois correspondant au texte
+      
+      PROCEDURE PRIVE _MoisLettreVersMoisEntier(sMoisLettre)
+      
+      SELON sMoisLettre
+      	CAS "Jan":
+      		RENVOYER 1
+      	CAS "Feb":
+      		RENVOYER 2
+      	CAS "Mar":
+      		RENVOYER 3
+      	CAS "Apr":
+      		RENVOYER 4
+      	CAS "May":
+      		RENVOYER 5
+      	CAS "Jun":
+      		RENVOYER 6
+      	CAS "Jul":
+      		RENVOYER 7
+      	CAS "Aug":
+      		RENVOYER 8
+      	CAS "Sep":
+      		RENVOYER 9
+      	CAS "Oct":
+      		RENVOYER 10
+      	CAS "Nov":
+      		RENVOYER 11
+      	CAS "Dec":
+      		RENVOYER 12
+      	AUTRE CAS:
+      		RENVOYER 0
+      FIN
+      
+     type : 458752
+   -
+     name : _ChargeInfosDepuisContenu
+     internal_properties : CAAAAAgAAADMNAFNkwsHMTbxhshtwumGIz7tUwSV1Ke8TBKmtSMEVT5Wbh4PYmIa4nCTHNgzMZcgaX+yV0XfZt8itL66ugAWD+ucUSJVa6ssi4sT3Qth3exn1HsLThs42vfyOOsUTjdFrMshGp1B+jynMtWEvi2Mg/F1zPpzVn10OehmjZ1L+qlrG7n6z9C9UT5A2P2ZSLRAcosKMb13n0Jpf2sQu3/Jm1Z26jqn
+     procedure_id : 1591146234848254981
+     type_code : 15
+     code : |1-
+      // Résumé : Charge les informations d'un flux dans une structure STFluxRSS à partir du contenu du flux
+      // Syntaxe :
+      //[ <Résultat> = ] _ChargeInfosDepuisContenu (<ContenuFluxRSS> est xmlDocument, <stMonFluxRSS> est STFluxRSS [, <bChargeBillets> est booléen])
+      //
+      // Paramètres :
+      //	ContenuFluxRSS (xmlDocument) :Contenu du flux
+      //	stMonFluxRSS (STFluxRSS) :Structure du flux
+      //	bChargeBillets (booléen - valeur par défaut=1) :Vrai pour charger les billets, Faux autrement
+      // Valeur de retour :
+      // 	STFluxRSS : Flux RSS
+      //
+      PROCEDURE PRIVE _ChargeInfosDepuisContenu(LOCAL ContenuFluxRSS est un WL.xmldocument, stMonFluxRSS est un STFluxRSS, LOCAL bChargeBillets est un booleen = vrai) : stfluxrss
+      
+      // Mémorise le contenu du flux
+      stMonFluxRSS.Flux = ContenuFluxRSS
+      
+      // Détermine la version du flux (Atom 1.0 ou RSS 2.0)
+      SELON vrai
+      	// RSS
+      	CAS ContenuFluxRSS.rss..Existe
+      		stMonFluxRSS.nVersion = 2
+      		_ChargeInfosDepuisContenu_RSS(stMonFluxRSS, bChargeBillets)
+      		
+      	// Atom
+      	CAS ContenuFluxRSS.feed..existe
+      		stMonFluxRSS.nVersion = 1
+      		_ChargeInfosDepuisContenu_Atom(stMonFluxRSS, bChargeBillets)
+      		
+      	// Type non géré
+      	autres cas
+      		ErreurDéclenche(1, <§@15939788000396920003§>) 
+      		renvoyer stMonFluxRSS
+      FIN
+      
+      renvoyer stMonFluxRSS
+     type : 458752
+   -
+     name : _ChargeInfosDepuisContenu_RSS
+     internal_properties : CAAAAAgAAADZTsHgffqWbA0iHGWlvbTPLl+04hYJJA9MkB4W6QbwOsJhNJLrf2jBOu3XVY0a4e5v8QCKNJ8VXc51yLGk0mvF4b6l+hJDD83yfOpcMcGClObm/lycYmC1JuP94W7aC5BRaQL019jp7nU4g8lKfmXhe1pPVlTjrvZCKJfgTfacAmDKx+YPSDRtsGNm/WhNBbe4OgtfXk7aMZtv9YQG2tQRgnLjQSaAAV6MI0T2XB/zjM+SkU/VqZxs2pzfpVlWC1IHAEE7O3iOi2eGxgBCl8Oe5mq1sn7ugwNTi22JkMwm
+     procedure_id : 1591149030872025603
+     type_code : 15
+     code : |1-
+      // Résumé : Charge les informations d'un flux en RSS 2.0
+      // Syntaxe :
+      //_ChargeInfosDepuisContenu_RSS (<stMonFluxRSS> est STFluxRSS [, <bChargeBillets> est booléen])
+      //
+      // Paramètres :
+      //	stMonFluxRSS (STFluxRSS) :Structure à remplir
+      // 	bChargeBillets (booléen - valeur par défaut=1) : Vrai pour charger les billets, Faux autrement
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE PRIVE _ChargeInfosDepuisContenu_RSS(stMonFluxRSS est un stfluxrss, LOCAL bChargeBillets est un booleen = vrai)
+      
+      // Vérifie le format du flux
+      si stMonFluxRSS.Flux.rss..existe = faux alors retour
+      
+      // Titre
+      stMonFluxRSS.sTitre 		= stMonFluxRSS.Flux.rss.channel.title..texte
+      // Lien
+      xmlLien est un xmlnoeud
+      pour tout element xmlLien de stMonFluxRSS.Flux.rss.channel
+      	si xmlLien..nom ~= "link" et xmlLien..texte <> "" ALORS
+      		stMonFluxRSS.sLien = xmlLien..texte
+      		sortir
+      	FIN
+      FIN
+      // Date de publication
+      si stMonFluxRSS.Flux.rss.channel.lastBuildDate..existe alors
+      	stMonFluxRSS.dhPublication 	= _dateConvertie(stMonFluxRSS.flux.rss.channel.lastBuildDate..Texte)
+      SINON
+      	SI stMonFluxRSS.Flux.rss.channel.pubdDate..Existe ALORS
+      		stMonFluxRSS.dhPublication 	= _dateConvertie(stMonFluxRSS.Flux.rss.channel.pubdDate..Texte)
+      	fin
+      Fin
+      // Description
+      stMonFluxRSS.sDescription 	= stMonFluxRSS.flux.rss.channel.description..Texte
+      
+      
+      // Billets
+      SI bChargeBillets = Faux ALORS RETOUR
+      
+      stUnBillet est un STBillet
+      MaCatégorie est un xmlnoeud
+      MonBillet est un xmlNoeud
+      
+      // Parcourt les billets du flux
+      POUR TOUT ELEMENT MonBillet DE stMonFluxRSS.Flux.rss.channel sur item
+      	
+      	variableraz(stUnBillet)
+      	
+      	// Mémorise les informations du billet
+      	stUnBillet.sGUID			= MonBillet.guid..Texte
+      	sTitre est une chaine = MonBillet.title..Texte
+      	stUnBillet.sTitre			= sTitre
+      	stUnBillet.sLien			= MonBillet.link..Texte
+      	sDesc est une chaine = MonBillet.description..Texte
+      	stUnBillet.sDescription		= sDesc
+      	stUnBillet.sContenu			= stUnBillet.sDescription
+      	si MonBillet.encoded..existe alors stUnBillet.sContenu = MonBillet.encoded..texte
+      	stUnBillet.sAuteur			= MonBillet.author..Texte
+      	si stUnBillet.sauteur ~= "" alors stUnBillet.sAuteur			= MonBillet.creator..Texte
+      	si MonBillet.pubDate..existe alors
+      		stUnBillet.dhDPublication 	= _dateConvertie(MonBillet.pubDate..Texte)
+      	SINON
+      		SI MonBillet.date..Existe ALORS
+      			stUnBillet.dhDPublication 	= _dateConvertie(MonBillet.date..Texte)
+      		Fin
+      	FIn
+      	stUnBillet.dhRéception 		= Maintenant()
+      	stUnBillet.sImage			= MonBillet.image..Texte
+      	// Si la balise image n'est pas définie
+      	si stUnBillet.simage ~= "" ALORS
+      		// Vérifie s'il existe une balise enclosure
+      		si MonBillet.enclosure..Existe alors
+      			stUnBillet.sImage = MonBillet.enclosure..Attribut["url"]..valeur
+      		SINON
+      			// Vérifie s'il existe une balise content de type image
+      			si MonBillet.content..existe _et_ MonBillet.content..Attribut["medium"]..valeur ~= "image" ALORS
+      				stUnBillet.sImage = MonBillet.content..Attribut["url"]..valeur
+      			SINON
+      				// On va rechercher une balise <img> dans le contenu
+      				sURLImage est une chaine = stUnBillet.sContenu
+      				SI sURLImage [~] "<img" ALORS
+      					sURLImage = ExtraitChaîne(sURLImage, 2, "<img")
+      					sURLImage = ExtraitChaîne(sURLImage, 1, ">")
+      					sURLImage = ExtraitChaîne(sURLImage, 2, "src=""")
+      					sURLImage = ExtraitChaîne(sURLImage, 1, """")
+      					SI sURLImage <> "" ALORS
+      						si sURLImage [=] "://" alors
+      							stUnBillet.sImage = sURLImage
+      						SINON
+      							stUnBillet.sImage = URLExtraitChemin(stMonFluxRSS.sLien, urlProtocole)+"://"+URLExtraitChemin(stMonFluxRSS.sLien, urldomaine)+["/"]+sURLImage
+      						Fin
+      					FIN
+      				FIN	
+      			FIN
+      			
+      		Fin
+      		
+      	FIN
+      	
+      	// Si le GUID est vide, on considère que le lien fait office de GUID
+      	SI stUnBillet.sGUID ~= "" ALORS
+      		si stUnBillet.sLien <> "" alors
+      			stUnBillet.sGUID = stUnBillet.sLien
+      		SINON
+      			// Si le lien est vide, on utilise le titre
+      			stUnBillet.sGUID = stUnBillet.stitre
+      		Fin
+      	FIN
+      	
+      	POUR TOUT MaCatégorie DE MonBillet sur category
+      		stUnBillet.sCatégorie += [";"] + MaCatégorie..Texte	
+      	FIN
+      	
+      	// Ajoute le billet à la liste des billets
+      	ajoute(stMonFluxRSS.tabBillets, stUnBillet)
+      	
+      Fin
+     type : 458752
+   -
+     name : _ChargeInfosDepuisContenu_Atom
+     internal_properties : CAAAAAgAAAATeNZ6XrQcKQts6YBhhrWibrn50l4LV2eoV5RhrsKOFBKPWt/Stn6023PxO6S1ZKRXtWiAdUR0F1hNrdnIGpSgSnEonG0TJ0b8Z1PljolY5OaRTVPDnaaOUUTlKjjzPiv1LM4fGSfGpkBEjA1EYbz5NMj4oX60G8pe/Yh8b9SqyhBJp6pPCvAyGE3RpplPecjXf5qhoaCj0OMFkUIrfyLDViCLM8THV7LE3/Uo6JzpoxHFfzIBtgoVNrCVRPhvNY5hD1QoIk7/wk2RP7lx93JpQAu0NrWrPxLU6KL3GsSp9AO6Ivs+iQ0svOjP0Atydz8iK+lqR+VL1Cm2APNguyTBs7BJVJNCWZ+h3SNzuT8p8QSafiuy683Z1WuxRYBfHVYa6sG6XXKbBb3cnUMSHBrxydbUNYrIcEuVWnIQ8Dtd6W76
+     procedure_id : 1591152144723384811
+     type_code : 15
+     code : |1-
+      // Résumé : Charge les informations d'un flux en Atom 1.0
+      // Syntaxe :
+      //_ChargeInfosDepuisContenu_Atom (<stMonFluxRSS> est STFluxRSS [, <bChargeBillets> est booléen])
+      //
+      // Paramètres :
+      //	stMonFluxRSS (STFluxRSS) :Structure à remplir
+      // 	bChargeBillets (booléen - valeur par défaut=1) : Vrai pour charger les billets, Faux autrement
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE PRIVE _ChargeInfosDepuisContenu_Atom(stMonFluxRSS est un stfluxrss, LOCAL bChargeBillets est un booleen = vrai)
+      
+      // Vérifie le format du flux
+      si stMonFluxRSS.Flux.feed..existe = faux alors retour
+      
+      // Titre
+      stMonFluxRSS.sTitre 		= stMonFluxRSS.Flux.feed.title..texte
+      // Lien : le lien est sur une balise "link" de type "alternate"
+      xmlLien est un xmlnoeud
+      POUR TOUT ELEMENT xmlLien DE stMonFluxRSS.Flux.feed sur link
+      	SI xmlLien..Attribut["rel"] ~= "alternate" ET xmlLien..Attribut["href"] <> "" ALORS
+      		stMonFluxRSS.sLien = xmlLien..Attribut["href"]
+      		SORTIR
+      	FIN
+      FIN
+      // Date de publication
+      stMonFluxRSS.dhPublication 	= _dateConvertie(stMonFluxRSS.flux.feed.updated..Texte)
+      // Description
+      stMonFluxRSS.sDescription 	= stMonFluxRSS.flux.feed.subtitle..Texte
+      
+      // Billets
+      si bChargeBillets = faux alors retour
+      
+      stUnBillet est un STBillet
+      MaCatégorie est un xmlnoeud
+      MonBillet est un xmlNoeud
+      
+      // Parcourt les billets du flux
+      POUR TOUT ELEMENT MonBillet DE stMonFluxRSS.Flux.feed sur entry
+      	
+      	variableraz(stUnBillet)
+      	
+      	// Mémorise les informations du billet
+      	stUnBillet.sGUID			= MonBillet.id..Texte
+      	stUnBillet.sTitre			= MonBillet.title..Texte
+      	
+      	// Le lien est sur une balise "link" de type "alternate" (ou non, selon)
+      	POUR TOUT ELEMENT xmlLien DE MonBillet sur link
+      		// Le href est renseigné
+      		SI xmlLien..Attribut["href"] <> "" ALORS
+      			// S'il s'agit d'un "alternate", 
+      			si xmlLien..Attribut["rel"] ~= "alternate" alors
+      				// Force ce lien
+      				stUnBillet.sLien = xmlLien..Attribut["href"]
+      				SORTIR
+      			SINON // Si ce n'est pas un alternate
+      				// Mémorise le lien (uniquement s'il n'est pas déjà rempli) et continue le parcours (pour trouver éventuellement le lien alternate)
+      				si stUnBillet.sLien ~= "" alors stUnBillet.sLien = xmlLien..Attribut["href"]
+      			FIN
+      		FIN
+      	FIN
+      	
+      	si MonBillet.summary..existe alors
+      		stUnBillet.sDescription = MonBillet.summary..Texte
+      	SINON
+      		SI MonBillet.content..Existe ALORS
+      			stUnBillet.sDescription = MonBillet.content..Texte
+      		FIN
+      	FIN
+      	stUnBillet.sContenu = MonBillet.content..Texte
+      	
+      	stUnBillet.sAuteur			= MonBillet.author.name..Texte
+      	stUnBillet.dhDPublication 	= _dateConvertie(MonBillet.updated..Texte)
+      	stUnBillet.dhRéception 		= Maintenant()
+      	
+      	// On va recherche une balise <img> dans le contenu
+      	sURLImage est une chaine = stUnBillet.sContenu
+      	SI sURLImage [~] "<img" ALORS
+      		sURLImage = ExtraitChaîne(sURLImage, 2, "<img")
+      		sURLImage = ExtraitChaîne(sURLImage, 1, ">")
+      		sURLImage = ExtraitChaîne(sURLImage, 2, "src=""")
+      		sURLImage = ExtraitChaîne(sURLImage, 1, """")
+      		SI sURLImage <> "" ALORS
+      			stUnBillet.sImage 			= sURLImage
+      		FIN
+      	Fin	
+      	stUnBillet.sImage 			= sURLImage
+      	
+      	POUR TOUT MaCatégorie DE MonBillet sur category
+      		stUnBillet.sCatégorie += [";"] + MaCatégorie..Texte	
+      	FIN
+      	
+      	// Ajoute le billet à la liste des billets
+      	ajoute(stMonFluxRSS.tabBillets, stUnBillet)
+      	
+      Fin
+     type : 458752
+   -
+     name : FluxRSS_RécupèreImageCache
+     internal_properties : CAAAAAgAAABgiwzaU0RoobbGOyVqmos+w/DkPFKP+S50bgBFhSCSHxKHAYzJlsRlPGRWSHaileqIcDQlNkIBAySwAb586CzRA3SqAgTe05KqIv4W4ClaASL/ZcGZ4td0MJ34Mpdw4ktHji2/YKUpYlTHwukQFBX8if+LzjTJbJNMQYDqad1j0rpkFk47amnUuB0PLWAgGbnXiq1A0/g=
+     procedure_id : 1591593671632632766
+     type_code : 15
+     code : |1-
+      // Résumé : Récupère l'image du flux depuis le cache
+      // Syntaxe :
+      //[ <Résultat> = ] FluxRSS_RécupèreImageCache (<nIDFluxRSS> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFluxRSS (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	chaîne ANSI : Chemin de l'image
+      //
+      
+      PROCEDURE FluxRSS_RécupèreImageCache(LOCAL nIDFluxRSS est un entier sur 8) : chaine
+      
+      sImage est une chaine
+      nPosition est un entier
+      
+      
+      // Définit le chemin de l'image
+      sImage = gsRépertoireCache +["\"]+ "flux" +["\"]+ nIDFluxRSS+".png"
+      // Si cette image existe, il faut la renvoyer
+      SI fFichierExiste(sImage) ALORS RENVOYER sImage
+      
+      // Mémorise la position HF
+      nPosition = HSauvePosition(FluxRSS, hSauveRubriques)
+      
+      // Lecture de l'enregistrement
+      HLitRecherchePremier(FluxRSS, idfluxrss, nIDFluxRSS)
+      SI HTrouve(FluxRSS) ALORS
+      	
+      	// Si une image est définie
+      	SI HInfoMémo(FluxRSS, Image) <> "" ALORS
+      		
+      		// Enregistre l'image dans le fichier de cache
+      		SI HExtraitMémo(FluxRSS, Image, sImage) ALORS
+      			
+      			// Renvoie l'image
+      			RENVOYER sImage
+      			
+      		FIN
+      		
+      	FIN
+      	
+      FIN
+      
+      // Image non définie
+      RENVOYER ".\ihm\picto-rss.png"
+      
+      fin:
+      SI nPosition > 0 ALORS hretourposition(nPosition)
+     type : 458752
+   -
+     name : Billet_RécupèreImageCache
+     internal_properties : CAAAAAgAAAAAq2w6s6SmMcqK55WKdsvitxRUzIpTpb6w2hQ1NVxKK4bTcQQBUnD9YNg6uI4WtQ4s3Ly1tg61ExiUbS6kpMz9N8g6IiwKr2rGnurIarvUhxTpx2/bfEFeKkeiXNEyjDHBILc9AvfjHG6phMNC/m8SKxmtpD7r7pVem5pUEz8t4NwmUDR9fKP++pdZv3I6Yxk3ao1gs9g=
+     procedure_id : 1591596583629264543
+     type_code : 15
+     code : |1-
+      // Résumé : Récupère l'image d'un billet depuis le cache
+      // Syntaxe :
+      //[ <Résultat> = ] Billet_RécupèreImageCache (<nIDBillet> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDBillet (entier sur 8 octets) : Identifiant du billet
+      // Valeur de retour :
+      // 	chaîne ANSI : Chemin de l'image
+      //
+      
+      PROCEDURE Billet_RécupèreImageCache(LOCAL nIDBillet est un entier sur 8) : chaine
+      
+      sImage est une chaine
+      nPosition est un entier
+      
+      // Définit le chemin de l'image
+      sImage = gsRépertoireCache +["\"]+ "billet" +["\"]+ nIDBillet+".jpg"
+      // Si cette image existe, il faut la renvoyer
+      si fFichierExiste(sImage) alors renvoyer sImage
+      
+      // Mémorise la position HF
+      nPosition = hsauveposition(billet, hsauverubriques)
+      
+      // Lecture de l'enregistrement
+      HLitRecherchePremier(Billet, IDBillet, nIDBillet)
+      si htrouve(Billet) alors
+      	
+      	// Si une image est définie
+      	si Billet.Image <> "" ALORS
+      		
+      		// Tente de récupérer l'image
+      		sImage = Billet_RecupèreImage(billet.image)
+      		si fFichierExiste(sImage) alors renvoyer sImage
+      				
+      	FIN
+      	
+      FIN
+      
+      // Image non définie
+      renvoyer ".\ihm\BilletDefaut.jpg"
+      
+      fin:
+      si nPosition > 0 alors hretourposition(nPosition)
+     type : 458752
+   -
+     name : MarqueLu_FluxRSS
+     procedure_id : 1591630200365647220
+     type_code : 15
+     code : |1-
+      // Résumé : Marque un flux RSS comme lu
+      // Syntaxe :
+      //MarqueLu_FluxRSS (<nIDFluxRSS> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFluxRSS (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE MarqueLu_FluxRSS(LOCAL nIDFluxRSS est un entier sur 8)
+      
+      // Le flux doit être valide
+      hlitrecherchepremier(fluxrss, IDFluxRSS, nIDFluxRSS)
+      si htrouve(fluxrss) = faux alors retour
+      
+      // Paramètre la requête de mise à jour
+      REQ_MarqueLu_FluxRSS.pIDFluxRSS = nIDFluxRSS
+      // Exécute la requête de mise à jour
+      si hexecuterequete(REQ_MarqueLu_FluxRSS) = faux alors retour
+      
+      // Décrémente le tableau des comptages
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      nNbNonLus est un entier = gtaComptage[FluxRSS.IDFluxRSS]
+      gtaComptage[FluxRSS.IDFluxRSS] = 0
+      SI FluxRSS.IDDossier > 0 ALORS gtaComptage[PREFIX_DOSSIER+FluxRSS.IDDossier]-=nNbNonLus
+      gtaComptage[IDABONNEMENT]-=nNbNonLus
+      gtaComptage[IDNONLUS] = gtaComptage[IDABONNEMENT]
+      MAJ_Compteur_Aujourdhui()
+      MAJ_Compteur_Hier()
+      SectionCritiqueFin(EVT_COMPTAGE)
+      
+      // Notifie la fenêtre d'un changement de comptage
+      TâcheParallèleExécute(NotifieFenêtre, (FluxRSS.IDFluxRSS,1), tpoThreadPrincipal)
+     type : 458752
+   -
+     name : MarqueLu_Billet
+     procedure_id : 1591871886728276499
+     type_code : 15
+     code : |1-
+      // Résumé : Marque un billet comme lu
+      // Syntaxe :
+      //MarqueLu_Billet (<nIDBillet> est entier sur 8 octets [, <bNotifieFenêtre> est booléen])
+      //
+      // Paramètres :
+      //	nIDBillet (entier sur 8 octets) :Identifiant du billet
+      // 	bNotifieFenêtre (booléen - valeur par défaut=1) : Vrai pour notifier la fenêtre du changement, Faux autrement
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE MarqueLu_Billet(LOCAL nIDBillet est un entier sur 8, LOCAL bNotifieFenêtre est un booleen = vrai)
+      
+      nPosition est un entier = hsauveposition(billet, hsauverubriques)
+      
+      // Le billet doit être valide
+      hlitrecherchepremier(billet, IDBillet, nIDBillet)
+      si htrouve(Billet) = faux alors retour
+      // Si le billet est déjà lu, ne rien faire
+      si billet.lu alors retour
+      
+      // Lit le flux RSS correspondant
+      HLitRecherchePremier(FluxRSS, IDFluxRSS, Billet.IDFluxRSS)
+      
+      // Marque le billet comme lu
+      billet.Lu = vrai
+      si hmodifie(billet) = faux alors retour
+      
+      // Décrémente le tableau des comptages
+      sectioncritiquedebut(EVT_COMPTAGE)
+      gtaComptage[fluxrss.IDFluxRSS]--
+      si FluxRSS.IDDossier > 0 alors gtaComptage[PREFIX_DOSSIER+fluxrss.IDDossier]--
+      gtaComptage[IDABONNEMENT]--
+      gtaComptage[IDNONLUS] = gtaComptage[IDABONNEMENT]
+      SI Billet.DatePublication..PartieDate = DateDuJour() ALORS gtaComptage[IDAUJOURDHUI]--
+      SI Billet.DatePublication..PartieDate = Hier() ALORS gtaComptage[IDHIER]--
+      sectioncritiquefin(EVT_COMPTAGE)
+      
+      // Notifie la fenêtre d'un changement de comptage
+      si bNotifieFenêtre alors 
+      	TâcheParallèleExécute(NotifieFenêtre,(FluxRSS.IDFluxRSS,1), tpoThreadPrincipal)
+      Fin
+      
+      fin : 
+      hretourposition(nPosition)
+     type : 458752
+   -
+     name : Billet_ChangeEtatFavoris
+     procedure_id : 1591888826076048824
+     type_code : 15
+     code : |1-
+      PROCEDURE Billet_ChangeEtatFavoris(LOCAL nIDBillet est un entier sur 8)
+      
+      // Le billet doit être valide
+      HLitRecherchePremier(Billet, IDBillet, nIDBillet)
+      SI HTrouve(Billet) = Faux ALORS RETOUR
+      
+      // Inverse l'état favoris
+      Billet.Favoris = pas Billet.Favoris
+      HModifie(Billet)
+     type : 458752
+   -
+     name : Billet_ListeTagsAssociés
+     procedure_id : 1591964202765186942
+     type_code : 15
+     code : |1+
+      // Résumé : Liste des tags associés à un billet (séparés par ";")
+      // Syntaxe :
+      //[ <Résultat> = ] Billet_ListeTagsAssociés (<nIDBillet> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDBillet (entier sur 8 octets) :Identifiant du billet
+      // Valeur de retour :
+      // 	chaîne ANSI : Liste des tags
+      //
+      PROCEDURE Billet_ListeTagsAssociés(LOCAL nIDBillet est un entier sur 8) : chaine
+      
+      sListeTags 	est une chaine
+      
+      // Paramètre la requête
+      REQ_ListeTagsBillet.pIDBillet = nIDBillet
+      // Exécute la requête
+      si hexecuterequete(REQ_ListeTagsBillet) = faux alors renvoyer ""
+      
+      // Mémorise les différents tags
+      pour TOUT REQ_ListeTagsBillet
+      	sListeTags += [";"] + REQ_ListeTagsBillet.Libellé
+      FIN
+      
+      renvoyer sListeTags
+     type : 458752
+   -
+     name : OptionsCharge
+     procedure_id : 1593382436080097087
+     type_code : 15
+     code : |1-
+      // Résumé : Charge les options
+      // Syntaxe :
+      //OptionsCharge ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE OptionsCharge()
+      
+      // Charge les options de l'application
+      gtaOptions[OPTION_ALERTE_TEMPORISATION] 		= ChargeParamètre(OPTION_ALERTE_TEMPORISATION, gtaOptionsDéfaut[OPTION_ALERTE_TEMPORISATION])
+      gtaOptions[OPTION_ALERTE_SEULEMENTSIREDUIT ] 	= ChargeParamètre(OPTION_ALERTE_SEULEMENTSIREDUIT, gtaOptionsDéfaut[OPTION_ALERTE_SEULEMENTSIREDUIT])
+      gtaOptions[OPTION_ARCHIVAGE_NBBILLETS_ACTIF]	= ChargeParamètre(OPTION_ARCHIVAGE_NBBILLETS_ACTIF, gtaOptionsDéfaut[OPTION_ARCHIVAGE_NBBILLETS_ACTIF])
+      gtaOptions[OPTION_ARCHIVAGE_NBBILLETS]			= ChargeParamètre(OPTION_ARCHIVAGE_NBBILLETS, gtaOptionsDéfaut[OPTION_ARCHIVAGE_NBBILLETS])
+      gtaOptions[OPTION_ARCHIVAGE_NBJOURS_ACTIF]		= ChargeParamètre(OPTION_ARCHIVAGE_NBJOURS_ACTIF, gtaOptionsDéfaut[OPTION_ARCHIVAGE_NBJOURS_ACTIF])
+      gtaOptions[OPTION_ARCHIVAGE_NBJOURS] 			= ChargeParamètre(OPTION_ARCHIVAGE_NBJOURS, gtaOptionsDéfaut[OPTION_ARCHIVAGE_NBJOURS])
+      gtaOptions[OPTION_IHM_DEROULERDOSSIERAUTO]		= ChargeParamètre(OPTION_IHM_DEROULERDOSSIERAUTO, gtaOptionsDéfaut[OPTION_IHM_DEROULERDOSSIERAUTO])
+      gtaOptions[OPTION_IHM_NOEUDCOURANT]				= ChargeParamètre(OPTION_IHM_NOEUDCOURANT, gtaOptionsDéfaut[OPTION_IHM_NOEUDCOURANT])
+      gtaOptions[OPTION_IHM_NOEUDSDEROULES]			= ChargeParamètre(OPTION_IHM_NOEUDSDEROULES, gtaOptionsDéfaut[OPTION_IHM_NOEUDSDEROULES])
+      gtaOptions[OPTION_IHM_MODE]						= ChargeParamètre(OPTION_IHM_MODE, gtaOptionsDéfaut[OPTION_IHM_MODE])
+      gtaOptions[OPTION_LANCEMENTAUTO]				= ChargeParamètre(OPTION_LANCEMENTAUTO, gtaOptionsDéfaut[OPTION_LANCEMENTAUTO])
+      gtaOptions[OPTION_CONFIRMERMARQUAGELU]			= ChargeParamètre(OPTION_CONFIRMERMARQUAGELU, gtaOptionsDéfaut[OPTION_CONFIRMERMARQUAGELU])
+      gtaOptions[OPTION_IHM_TAGACTIF]					= ChargeParamètre(OPTION_IHM_TAGACTIF, gtaOptionsDéfaut[OPTION_IHM_TAGACTIF])
+      gtaOptions[OPTION_IHM_PARTAGEACTIF]				= ChargeParamètre(OPTION_IHM_PARTAGEACTIF, gtaOptionsDéfaut[OPTION_IHM_PARTAGEACTIF])
+      gtaOptions[OPTION_IHM_COULEUR]					= ChargeParamètre(OPTION_IHM_COULEUR, gtaOptionsDéfaut[OPTION_IHM_COULEUR])
+     type : 458752
+   -
+     name : OptionsSauve
+     procedure_id : 1593382985835972689
+     type_code : 15
+     code : |1-
+      // Résumé : Sauve les options
+      // Syntaxe :
+      //OptionsSauve ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE OptionsSauve()
+      
+      // Sauve les options de l'application
+      Sauveparamètre(OPTION_ALERTE_TEMPORISATION, 		gtaOptions[OPTION_ALERTE_TEMPORISATION])
+      Sauveparamètre(OPTION_ALERTE_SEULEMENTSIREDUIT, 	gtaOptions[OPTION_ALERTE_SEULEMENTSIREDUIT ])
+      Sauveparamètre(OPTION_ARCHIVAGE_NBBILLETS_ACTIF, 	gtaOptions[OPTION_ARCHIVAGE_NBBILLETS_ACTIF])
+      Sauveparamètre(OPTION_ARCHIVAGE_NBBILLETS, 			gtaOptions[OPTION_ARCHIVAGE_NBBILLETS])
+      Sauveparamètre(OPTION_ARCHIVAGE_NBJOURS_ACTIF, 		gtaOptions[OPTION_ARCHIVAGE_NBJOURS_ACTIF])
+      Sauveparamètre(OPTION_ARCHIVAGE_NBJOURS, 			gtaOptions[OPTION_ARCHIVAGE_NBJOURS])
+      Sauveparamètre(OPTION_IHM_DEROULERDOSSIERAUTO, 		gtaOptions[OPTION_IHM_DEROULERDOSSIERAUTO])
+      Sauveparamètre(OPTION_IHM_NOEUDCOURANT, 			gtaOptions[OPTION_IHM_NOEUDCOURANT])
+      SauveParamètre(OPTION_IHM_NOEUDSDEROULES, 			gtaOptions[OPTION_IHM_NOEUDSDEROULES])
+      SauveParamètre(OPTION_IHM_MODE, 					gtaOptions[OPTION_IHM_MODE])
+      SauveParamètre(OPTION_LANCEMENTAUTO, 				gtaOptions[OPTION_LANCEMENTAUTO])
+      SauveParamètre(OPTION_CONFIRMERMARQUAGELU, 			gtaOptions[OPTION_CONFIRMERMARQUAGELU])
+      sauveParamètre(OPTION_IHM_TAGACTIF, 				gtaOptions[OPTION_IHM_TAGACTIF])
+      SauveParamètre(OPTION_IHM_PARTAGEACTIF, 			gtaOptions[OPTION_IHM_PARTAGEACTIF])
+      SauveParamètre(OPTION_IHM_COULEUR, 					gtaOptions[OPTION_IHM_COULEUR])
+     type : 458752
+   -
+     name : OptionLit
+     procedure_id : 1593385648715792328
+     type_code : 15
+     code : |1-
+      // Résumé : Lit la valeur d'une option
+      // Syntaxe :
+      //[ <Résultat> = ] OptionLit (<sNomOption> est chaîne)
+      //
+      // Paramètres :
+      //	sNomOption (chaîne ANSI) :Nom de l'option
+      // Valeur de retour :
+      // 	chaîne ANSI : Valeur de l'option
+      //
+      
+      PROCEDURE OptionLit(LOCAL sNomOption est une chaine)
+      
+      // Si l'option n'est pas définie
+      si gtaOptions[sNomOption]..existe = faux ALORS
+      	// Renvoie la valeur par défaut
+      	si gtaOptionsDéfaut[sNomOption]..existe = faux ALORS
+      		renvoyer ""
+      	SINON
+      		renvoyer gtaOptionsDéfaut[sNomOption]
+      	FIN
+      FIN
+      
+      // Renvoie la valeur de l'option
+      renvoyer gtaOptions[sNomOption]
+     type : 458752
+   -
+     name : OptionEcrit
+     internal_properties : CAAAAAgAAACXYYFZN5s3Oq69yDK9oYxj0IXNuDEm9KmFd/a62NXPJ8HkVuDrCNl9+EMDBJCe9e5/CjpwEHTeEJKZHPGshHLQua1Qp8EgtJS4+lZAovbMtrnwTCkGcNrcDea5KQqArtZHjumq1WnRF6e6azA=
+     procedure_id : 1593386061032683536
+     type_code : 15
+     code : |1+
+      // Résumé : Ecrit la valeur d'une option
+      // Syntaxe :
+      //OptionEcrit (<sNomOption> est chaîne, <vValeur>)
+      //
+      // Paramètres :
+      //	sNomOption (chaîne ANSI) :Nom de l'option
+      //	vValeur :Valeur
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE OptionEcrit(LOCAL sNomOption est une chaine, LOCAL vValeur)
+      
+      // Affecte l'option
+      gtaOptions[sNomOption] = vValeur
+     type : 458752
+   -
+     name : Billet_SupprimeImageCache
+     internal_properties : CAAAAAgAAACeGZr8kfvEKYQEu4m2OBNatcKOcvZ1gUaOQFCZyW7y5xCNGzp5aJSpTgbC0PYk4UruHpa7zlRRo36q8bY8+vw9VSZw9HBsa14UTB7lrZrRut/czIq+oyg3xeqFVVCdxaDcO1zAJaZqFWnUz+CheZR9EmBmAw0W0WYZhiUxNu6eT4tVje+c30470b6AqA1pfPYVSNOqZW4=
+     procedure_id : 1593393044658735023
+     type_code : 15
+     code : |1+
+      // Résumé : Supprime l'image d'un billet dans le cache
+      // Syntaxe :
+      //[ <Résultat> = ] Billet_SupprimeImageCache (<nIDBillet> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDBillet (entier sur 8 octets) :Identifiant du billet
+      // Valeur de retour :
+      // 	booléen : Vrai si la suppression est effective, Faux autrement
+      //
+      
+      PROCEDURE Billet_SupprimeImageCache(LOCAL nIDBillet est un entier sur 8) : booleen
+      
+      sImage est une chaine
+      
+      // Définit le chemin de l'image
+      sImage = gsRépertoireCache +["\"]+ "billet" +["\"]+ nIDBillet+".jpg"
+      
+      // Si cette image existe, il faut la supprimer
+      si fFichierExiste(sImage) alors renvoyer fsupprime(sImage, frLectureSeule)
+      renvoyer vrai
+     type : 458752
+   -
+     name : Archivage_NbBillets
+     procedure_id : 1593394109810675339
+     type_code : 15
+     code : |1-
+      PROCEDURE Archivage_NbBillets()
+      
+      bModification est un booleen
+      
+      // L'option doit être active
+      SI Val(OptionLit(OPTION_ARCHIVAGE_NBBILLETS_ACTIF)) = Faux ALORS renvoyer faux
+      
+      // Parcourt les flux
+      pour tout fluxrss
+      	// Lance la procédure d'archivage
+      	si Archivage_NbBillets(fluxrss.IDFluxRSS) ALORS
+      		bModification = vrai
+      	FIN
+      FIN
+      
+      renvoyer bModification
+     type : 458752
+   -
+     name : Archivage_NbBillets
+     procedure_id : 1593394109810675339
+     type_code : 15
+     code : |1+
+      PROCEDURE Archivage_NbBillets(LOCAL nIDFluxRSS est un entier sur 8) : booléen
+      
+      nLimite 		est un entier
+      bModification 	est un booléen
+      bArchivé 		est un booléen
+      bArchivable 	est un booléen
+      sRaison 		est une chaîne
+      
+      // L'option doit être active
+      SI Val(OptionLit(OPTION_ARCHIVAGE_NBBILLETS_ACTIF)) = Faux ALORS RENVOYER Faux
+      
+      // Lit la limite
+      nLimite = Val(OptionLit(OPTION_ARCHIVAGE_NBBILLETS))
+      
+      // Parcourt les billets du flux
+      POUR TOUT Billet SUR DatePublication AVEC "IDFluxRSS = "+nIDFluxRSS DEPUISFIN
+      		
+      	// Si le billet ne peut pas être archivé, passe au billet suivant
+      	
+      	(bArchivable, sRaison) = Archivage_BilletEstArchivable()
+      	SI bArchivable = Faux ALORS CONTINUER
+      	
+      	// Enlève un élément à la limite
+      	nLimite--
+      	
+      	// Si le billet dépasse le quota
+      	SI nLimite < 0 ALORS
+      		
+      		// Archive le billet
+      		(bArchivé, sRaison) = Archivage_Billet()
+      		SI bArchivé ALORS
+      			
+      			// L'archivage a provoqué une modification
+      			bModification = Vrai
+      			
+      		FIN
+      		
+      	FIN
+      	
+      FIN
+      
+      RENVOYER bModification
+     type : 458753
+   -
+     name : Archivage_Date
+     internal_properties : CAAAAAgAAAAAIvnD0DMWTx0clMYZvBf7tqypCmjL/4uDoJ49kV0IVPrt4wb4Fzdx2V0f9vcOXAbTvCLZfR6RBURAs5TjkOiiURH3Md4TeBcf7r9zn7IOIJBAbxGaqSv7ZoeoifqlhgDP06s/Bb63n0wjBAzJRytrVXY7yDfAzqTKs6j52ky18ZyT7LK0G403thdnco/RgUoLbNCNpQ==
+     procedure_id : 1593395269451918292
+     type_code : 15
+     code : |1-
+      // Résumé : Archive les billets dont la date de publication dépasse la limite
+      // Syntaxe :
+      //[ <Résultat> = ] Archivage_Date ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	booléen : Vrai si l'archivage a provoqué une modification, Faux autrement
+      //
+      PROCEDURE Archivage_Date() : booleen
+      
+      nLimite 		est un entier
+      bModification 	est un booleen
+      bArchivé 		est un booleen
+      sRaison 		est une chaine
+      
+      // L'option doit être active
+      si val(optionlit(OPTION_ARCHIVAGE_NBJOURS_ACTIF)) = faux alors renvoyer faux
+      
+      // Lit la limite
+      nLimite = val(optionlit(OPTION_ARCHIVAGE_NBJOURS))
+      
+      // Définit la dateheure limite
+      dhLimite est une dateheure
+      dhLimite..Jour -= nLimite
+      dhLimite..PartieHeure = "235900"
+      
+      // Parcourt les billets
+      POUR TOUT Billet AVEC DatePublication <= dhLimite
+      	
+      	// Archive le billet
+      	(bArchivé, sRaison) = Archivage_Billet()
+      	si bArchivé ALORS
+      		// L'archivage a provoqué une modification
+      		bModification = Vrai
+      	FIN
+      		
+      FIN
+      
+      
+      renvoyer bModification
+     type : 458752
+   -
+     name : Billet_RécupèreImage
+     internal_properties : CAAAAAgAAADqBQozBAuOEFXfalDCIW7D+9Stp9eL7Gjj5mgKvZpL4TFID/R/peDikf5jvazz7SJj9mGK9DK0/i3waVRw00c3TxzpyNYE5AvM3NCN1W1OmiZOqJPLHB68hY+RcO/5+RjV378Aqg+PjwFhAeXZ4/nWKcXBI2nQzW3EJ034FmtxmAYS4RmR8/EF/HhGGVMgCF1AQdDt3ynUQL5jngHgep63LYVcTwWQMKdeuw0pCUvfgCk06odGOSTvGDx/qZQqn2erkx+oQc5YMqDK4wHBHk2LIwPTFFIGJ14Y9Kuzu68I53+eZe+kPDrcgjA9NvUa6qiJjCfQ
+     procedure_id : 1594508747678553475
+     type_code : 15
+     code : |1-
+      // Résumé : Récupère l'image d'un image
+      // Syntaxe :
+      //[ <Résultat> = ] Billet_RécupèreImage (<nIDBillet> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDBillet (entier sur 8 octets) :Identifiant du billet
+      // Valeur de retour :
+      // 	chaîne ANSI : Chemin de l'image dans le cache
+      //
+      PROCEDURE Billet_RécupèreImage(LOCAL nIDBillet est un entier sur 8)
+      
+      nPosition est un entier = -1
+      
+      
+      nPosition = hsauveposition(billet, hsauverubriques)
+      
+      HLitRecherchePremier(billet, IDBillet, nIDBillet)
+      si htrouve(billet) = faux alors renvoyer ""
+      
+      // Interroge l'URL de l'image
+      SI Billet.Image <> "" ALORS
+      	
+      	// L'URL doit être formatée
+      	sURL est une chaine = URLEncode(ChaîneVersUTF8(Billet.Image))
+      	// Interroge l'URL de l'image
+      	SI HTTPRequête(sURL) ALORS
+      		// Récupère le buffer
+      		bufImage est un buffer = HTTPDonneRésultat(httpRésultat)
+      	FIN
+      	
+      SINON
+      	
+      	// Tente de récupérer l'image depuis la page du billet
+      	sURL = billet.Lien
+      	// Interroge l'URL du lien
+      	SI HTTPRequeteRedirection(sURL) <> "" ALORS
+      		// Récupère le buffer
+      		bufImage = HTTPDonneRésultat(httpRésultat)
+      		// Extrait le contenu de l'attribut "content" pour la balise meta ayant pour autre attribut "og:image" (balise utilisée par le partage Facebook)
+      		nDebut est un entier = position(bufImage,"property=""og:image""", 1, sanscasse)
+      		SI nDebut > 0 ALORS
+      			nDebut = Position(bufImage, "<", nDebut, DepuisFin)
+      			nfin est un entier = position(bufImage, ">", nDebut)
+      			bufImage = bufImage[[nDebut A nfin]]
+      			bufImage = ExtraitChaîne(bufImage, 2, "content=""")
+      			bufImage = ExtraitChaîne(bufImage, 1, """")
+      			// Le "content" n'est pas vide
+      			SI bufImage <> "" ALORS
+      				// Interroge l'adresse de l’image
+      				sURL = bufImage
+      				SI HTTPRequeteRedirection(sURL) <> "" ALORS
+      					// Récupère le buffer
+      					bufImage  = HTTPDonneRésultat(httpRésultat)
+      				FIN
+      			FIN
+      			
+      		SINON
+      			// Pas d'image dans la page du billet, vide le buffer
+      			bufImage = ""
+      		FIN
+      		
+      	FIN
+      	
+      FIN
+      
+      
+      // Si l'image a été trouvée
+      si bufImage ~= "" alors
+      	HLitRecherchePremier(Billet, IDBillet, nIDBillet)
+      	Billet.Image = ""
+      	HModifie(Billet)
+      	RENVOYER ""
+      FIN
+      
+      // Vérifie qu'il s'agisse bien d'une image valide
+      MonImage est une image = bufImage
+      SI MonImage.Valide _et_ MonImage..largeur > 1 _et_ MonImage..hauteur > 1 ALORS
+      	
+      	// Réduit l'image (pour éviter de faire grossir le cache et de faire ralentir l'application)
+      	dRedimensionne(MonImage, 192, 138, drHomothétiqueEtendu+drHauteQualité)
+      	
+      	// Définit le nom du fichier
+      	sFichier est une chaine = gsRépertoireCache +["\"]+ "billet" +["\"]+ Billet.IDBillet+".jpg"
+      	// Supprime l'ancienne image si elle existe
+      	si ffichierexiste(sFichier) alors fsupprime(sFichier)
+      	// Sauve ce buffer dans un fichier physique
+      	dSauveImageJPEG(MonImage, sFichier, 100)
+      	// Renvoie le chemin de l'image
+      	renvoyer gsRépertoireCache +["\"]+ "billet" +["\"]+ Billet.IDBillet+".jpg"
+      	
+      SINON // Sinon, supprime l'image (on ne la retrouvera pas)
+      	
+      	HLitRecherchePremier(Billet, IDBillet, nIDBillet)
+      	Billet.Image = ""
+      	HModifie(Billet)
+      	RENVOYER ""	
+      FIN
+      
+      
+      
+      fin :
+      si nPosition <> -1 alors hretourposition(nPosition)
+     type : 458752
+   -
+     name : _MouseWheel
+     internal_properties : CAAAAAgAAABa6xM8u6YkAdro/YTzmR8oYBtWp5J5xQjt/bRw3NkIPWJpGQPDXXVgRUQ1pQyg3sdIafUi2pp+gSza94NWEawnauhsuf8F8J9o+3l2wvEKn0RZdF+YC6QFN8dse1LBsnn8MW9eWXZPgLG8fmWB
+     procedure_id : 1595978266475119019
+     type_code : 15
+     code : |1-
+      // Résumé : Procédure appelée lors d'un événement WM_MOUSEWHEEL
+      PROCEDURE PRIVEE _MouseWheel(nMessage <utile>, wParam <utile>, lParam <utile>)
+      
+      nPositionX est un entier
+      nPositionY est un entier
+      nHandle est un entier système
+      
+      // Récupération de la position de la souris
+      nPositionX = poidsfaible(lParam)
+      nPositionY = poidsfort(lParam)
+      
+      // Récupération du champ en dessous du curseur
+      nHandle = API("user32","WindowFromPoint",nPositionX,nPositionY)
+      
+      // Si le handle du champ est valide et que le champ situé en dessous de la souris n'est pas celui qui a reçu le message (celui qui a le focus)
+      si nHandle <> 0 ALORS
+      	
+      	// Désactive la roulette au survol (pour éviter de revenir ici)
+      	RouletteAuSurvol_Désactive()
+        	
+        	// On renvoie le message au champ situé en dessous de la souris
+        	Sendmessage(nHandle,nMessage,wParam,lParam)
+        	
+        	// Réactive la roulette au survol
+      	RouletteAuSurvol_Active()
+      	
+      	// On considère qu'on a traité le message	
+      	renvoyer vrai
+      FIN
+      
+      // On considère qu'on n'a pas traité le message, comme ca Windows va faire suivre à qui de droit.
+      renvoyer faux
+     type : 458752
+   -
+     name : RouletteAuSurvol_Active
+     procedure_id : 1595978266475184851
+     type_code : 15
+     code : |1-
+      // Résumé : Active le renvoi de l’événement au champ qui a le survol (et non à celui qui a le focus)
+      PROCEDURE RouletteAuSurvol_Active()
+      
+      // Si l'événement est déjà activé, on l'enlève
+      si gnIDEvenementSurvol <> -1 ALORS
+      	retour
+      FIN
+      
+      // On pose un événement sur la roulette (WM_MOUSEWHEEL), sur toutes les fenêtres de l'application (*.*)
+      // Cet événement appellera la procédure _MouseWheel
+      gnIDEvenementSurvol = Evenement(_MouseWheel,"*.*",WM_MOUSEWHEEL)
+     type : 458752
+   -
+     name : RouletteAuSurvol_Désactive
+     procedure_id : 1595978575712901773
+     type_code : 15
+     code : |1-
+      // Résumé : Désactive la roulette au survol
+      PROCEDURE RouletteAuSurvol_Désactive()
+      
+      // Stoppe la gestion de l'événement WM_MOUSEWHEEL
+      FinEvénement(gnIDEvenementSurvol)
+      
+      // On repositionne l'identifiant de l'événement à -1
+      gnIDEvenementSurvol = -1
+     type : 458752
+   -
+     name : MAJ_Compteur_Abonnement
+     procedure_id : 1596707062243768550
+     type_code : 15
+     code : |1-
+      // Résumé : Met à jour le compteur du dossier "Abonnements" (racine)
+      // Syntaxe :
+      //MAJ_Compteur_Abonnement ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MAJ_Compteur_Abonnement()
+      
+      
+      // Nombre de billets
+      REQ_NbBilletsNonLus.pIDDossier = null
+      REQ_NbBilletsNonLus.pIDFlux = Null
+      REQ_NbBilletsNonLus.pDébut = Null
+      REQ_NbBilletsNonLus.pFin = Null
+      si HExécuteRequête(REQ_NbBilletsNonLus) = faux alors retour
+      HLitPremier(REQ_NbBilletsNonLus)
+      si hendehors(REQ_NbBilletsNonLus) alors retour
+      
+      // Mémorise le nombre de billets
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      gtaComptage[IDABONNEMENT] = REQ_NbBilletsNonLus.NbBillets
+      gtaComptage[IDNONLUS] = REQ_NbBilletsNonLus.NbBillets
+      SectionCritiquefin(EVT_COMPTAGE)
+     type : 458752
+   -
+     name : MAJ_Compteur_Aujourdhui
+     internal_properties : CAAAAAgAAADII9SyOMRvIbbGOyVqmos+w/DkPFKP+S50bgBFhSCSHxKHAYzJlsRlPGRWSHaileqIcDQlNkIBAySwAb586CzRA3SqAgTe05KqIv4W4ClaASL/ZcGZ4td0MJ34Mpdw4ktHji2/YKUpYlTHwukQFBX8if+LzjTJbJNMQYDqad1j0rpkFk47amnUuB0PLWAgmTjW8gX4K6A=
+     procedure_id : 1596707066538801617
+     type_code : 15
+     code : |1+
+      // Résumé : Met à jour le compteur "Aujourd'hui"
+      // Syntaxe :
+      //MAJ_Compteur_Aujourdhui ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MAJ_Compteur_Aujourdhui()
+      
+      
+      // Nombre de billets non lus pour le dossier "aujourd’hui"
+      REQ_NbBilletsNonLus.pIDDossier = Null
+      REQ_NbBilletsNonLus.pIDFlux = Null
+      REQ_NbBilletsNonLus.pDébut = datedujour()+"000000"
+      REQ_NbBilletsNonLus.pFin = datedujour()+"235959"
+      SI HExécuteRequête(REQ_NbBilletsNonLus) = Faux ALORS RETOUR
+      HLitPremier(REQ_NbBilletsNonLus)
+      SI HEnDehors(REQ_NbBilletsNonLus) ALORS RETOUR
+      
+      // Mémorise le nombre de billets
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      gtaComptage[IDAUJOURDHUI] = REQ_NbBilletsNonLus.NbBillets
+      SectionCritiquefin(EVT_COMPTAGE)
+     type : 458752
+   -
+     name : MAJ_Compteur_Dossier
+     procedure_id : 1596707066538867231
+     type_code : 15
+     code : |1+
+      // Résumé : Met à jour le compteur d'un dossier
+      // Syntaxe :
+      //MAJ_Compteur_Dossier (<nIDDossier> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDDossier (entier sur 8 octets) :Identifiant du dossier
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MAJ_Compteur_Dossier(LOCAL nIDDossier est un entier sur 8)
+      
+      
+      // Nombre de billets
+      REQ_NbBilletsNonLus.pIDDossier = nIDDossier
+      REQ_NbBilletsNonLus.pIDFlux = Null
+      REQ_NbBilletsNonLus.pDébut = Null
+      REQ_NbBilletsNonLus.pfin = Null
+      SI HExécuteRequête(REQ_NbBilletsNonLus) = Faux ALORS RETOUR
+      HLitPremier(REQ_NbBilletsNonLus)
+      SI HEnDehors(REQ_NbBilletsNonLus) ALORS RETOUR
+      
+      // Mémorise le nombre de billets
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      gtaComptage[PREFIX_DOSSIER+nIDDossier] = REQ_NbBilletsNonLus.NbBillets
+      SectionCritiquefin(EVT_COMPTAGE)
+     type : 458752
+   -
+     name : MAJ_Compteur_Favoris
+     procedure_id : 1596707066538932845
+     type_code : 15
+     code : |1+
+      // Résumé : Met à jour le compteur des favoris
+      // Syntaxe :
+      //MAJ_Compteur_Favoris ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MAJ_Compteur_Favoris()
+      
+      
+      // Nombre de billets
+      SI HExécuteRequête(REQ_NbBilletsFavoris) = Faux ALORS RETOUR
+      HLitPremier(REQ_NbBilletsFavoris)
+      SI HEnDehors(REQ_NbBilletsFavoris) ALORS RETOUR
+      
+      // Mémorise le nombre de billets
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      gtaComptage[IDFAVORIS] = REQ_NbBilletsFavoris.NbBillets
+      SectionCritiquefin(EVT_COMPTAGE)
+     type : 458752
+   -
+     name : MAJ_Compteur_FluxRSS
+     procedure_id : 1596707066538998459
+     type_code : 15
+     code : |1+
+      // Résumé : Met à jour les compteurs d'un flux
+      // Syntaxe :
+      //MAJ_Compteur_FluxRSS (<nIDFluxRSS> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFluxRSS (entier sur 8 octets) :Identifiant du flux RSS
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MAJ_Compteur_FluxRSS(LOCAL nIDFluxRSS est un entier sur 8)
+      
+      
+      // Nombre de billets
+      REQ_NbBilletsNonLus.pIDDossier = null
+      REQ_NbBilletsNonLus.pIDFlux = nIDFluxRSS
+      REQ_NbBilletsNonLus.pDébut = Null
+      REQ_NbBilletsNonLus.pFin = Null
+      SI HExécuteRequête(REQ_NbBilletsNonLus) = Faux ALORS RETOUR
+      HLitPremier(REQ_NbBilletsNonLus)
+      SI HEnDehors(REQ_NbBilletsNonLus) ALORS RETOUR
+      
+      // Mémorise le nombre de billets
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      gtaComptage[nIDFluxRSS] = REQ_NbBilletsNonLus.NbBillets
+      SectionCritiquefin(EVT_COMPTAGE)
+     type : 458752
+   -
+     name : MAJ_Compteur_Hier
+     procedure_id : 1596707066539064104
+     type_code : 15
+     code : |1+
+      // Résumé : Met à jour le compteur pour "Hier"
+      // Syntaxe :
+      //MAJ_Compteur_Hier ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MAJ_Compteur_Hier()
+      
+      
+      // Nombre de billets non lus pour le dossier "hier"
+      REQ_NbBilletsNonLus.pIDDossier = Null
+      REQ_NbBilletsNonLus.pIDFlux = Null
+      REQ_NbBilletsNonLus.pDébut = hier()+"000000"
+      REQ_NbBilletsNonLus.pFin = Hier()+"235959"
+      SI HExécuteRequête(REQ_NbBilletsNonLus) = Faux ALORS RETOUR
+      HLitPremier(REQ_NbBilletsNonLus)
+      SI HEnDehors(REQ_NbBilletsNonLus) ALORS RETOUR
+      
+      // Mémorise le nombre de billets
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      gtaComptage[IDHIER] = REQ_NbBilletsNonLus.NbBillets
+      SectionCritiquefin(EVT_COMPTAGE)
+     type : 458752
+   -
+     name : MAJ_Compteur_Tag
+     procedure_id : 1596707066539195364
+     type_code : 15
+     code : |1+
+      // Résumé : Met à jour le compteur d'un tag
+      // Syntaxe :
+      //MAJ_Compteur_Tag (<nIDTag> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDTag (entier sur 8 octets) :Identifiant du tag
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MAJ_Compteur_Tag(LOCAL nIDTag est un entier sur 8)
+      
+      // Nombre de billets non lus pour le flux
+      REQ_NbBilletsTag.pIDTag = nIDTag
+      SI HExécuteRequête(REQ_NbBilletsTag) = Faux ALORS RETOUR
+      HLitPremier(REQ_NbBilletsTag)
+      SI HEnDehors(REQ_NbBilletsTag) ALORS RETOUR
+      
+      // Mémorise le nombre de billets
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      gtaComptage[PREFIX_TAG+nIDTag] = REQ_NbBilletsTag.NbBillets
+      SectionCritiquefin(EVT_COMPTAGE)
+     type : 458752
+   -
+     name : _ZoneVersDécalage
+     procedure_id : 1598197888243063758
+     type_code : 15
+     code : |1-
+      // Résumé : Converti une zone de temps en décalage
+      // Syntaxe :
+      //[ <Résultat> = ] _ZoneVersDécalage (<sZone> est chaîne)
+      //
+      // Paramètres :
+      //	sZone (chaîne ANSI) :Libellé de la zone
+      // Valeur de retour :
+      // 	durée : Information de décalage
+      //
+      PROCEDURE PRIVE _ZoneVersDécalage(LOCAL sZone est une chaine) : durée
+      
+      duDuréeDécalage est une durée
+      
+      selon sZone
+      	CAS "ACDT"
+      		duDuréeDécalage = "0103000000"
+      	CAS "ACST"
+      		duDuréeDécalage = "0093000000"
+      	CAS "ACT"
+      		duDuréeDécalage = "-0050000000"
+      	CAS "ADT"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "AEDT"
+      		duDuréeDécalage = "0110000000"
+      	CAS "AEST"
+      		duDuréeDécalage = "0100000000"
+      	CAS "AFT"
+      		duDuréeDécalage = "0043000000"
+      	CAS "AKDT"
+      		duDuréeDécalage = "-0080000000"
+      	CAS "AKST"
+      		duDuréeDécalage = "-0090000000"
+      	CAS "AMST"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "AMT"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "ART"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "AST"
+      		duDuréeDécalage = "0030000000"
+      	CAS "AWDT"
+      		duDuréeDécalage = "0090000000"
+      	CAS "AWST"
+      		duDuréeDécalage = "0080000000"
+      	CAS "AZOST"
+      		duDuréeDécalage = "-0010000000"
+      	CAS "AZT"
+      		duDuréeDécalage = "0040000000"
+      	CAS "BDT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "BIOT"
+      		duDuréeDécalage = "0060000000"
+      	CAS "BIT"
+      		duDuréeDécalage = "-0120000000"
+      	CAS "BOT"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "BRST"
+      		duDuréeDécalage = "-0020000000"
+      	CAS "BRT"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "BST"
+      		duDuréeDécalage = "0060000000"
+      	CAS "BTT"
+      		duDuréeDécalage = "0060000000"
+      	CAS "CAT"
+      		duDuréeDécalage = "0020000000"
+      	CAS "CCT"
+      		duDuréeDécalage = "0063000000"
+      	CAS "CDT"
+      		duDuréeDécalage = "-0050000000"
+      	CAS "CEDT"
+      		duDuréeDécalage = "0020000000"
+      	CAS "CEST"
+      		duDuréeDécalage = "0020000000"
+      	CAS "CET"
+      		duDuréeDécalage = "0010000000"
+      	CAS "CHADT"
+      		duDuréeDécalage = "0134500000"
+      	CAS "CHAST"
+      		duDuréeDécalage = "0124500000"
+      	CAS "CHOT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "ChST"
+      		duDuréeDécalage = "0100000000"
+      	CAS "CHUT"
+      		duDuréeDécalage = "0100000000"
+      	CAS "CIST"
+      		duDuréeDécalage = "-0080000000"
+      	CAS "CIT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "CKT"
+      		duDuréeDécalage = "-0100000000"
+      	CAS "CLST"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "CLT"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "COST"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "COT"
+      		duDuréeDécalage = "-0050000000"
+      	CAS "CST"
+      		duDuréeDécalage = "-0060000000"
+      	CAS "CT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "CVT"
+      		duDuréeDécalage = "-0010000000"
+      	CAS "CWST"
+      		duDuréeDécalage = "0084500000"
+      	CAS "CXT"
+      		duDuréeDécalage = "0070000000"
+      	CAS "DAVT"
+      		duDuréeDécalage = "0070000000"
+      	CAS "DDUT"
+      		duDuréeDécalage = "0100000000"
+      	CAS "DFT"
+      		duDuréeDécalage = "0010000000"
+      	CAS "EASST"
+      		duDuréeDécalage = "-0050000000"
+      	CAS "EAST"
+      		duDuréeDécalage = "-0060000000"
+      	CAS "EAT"
+      		duDuréeDécalage = "0030000000"
+      	CAS "ECT"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "EDT"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "EEDT"
+      		duDuréeDécalage = "0030000000"
+      	CAS "EEST"
+      		duDuréeDécalage = "0030000000"
+      	CAS "EET"
+      		duDuréeDécalage = "0020000000"
+      	CAS "EGST"
+      		duDuréeDécalage = "0000000000"
+      	CAS "EGT"
+      		duDuréeDécalage = "-0010000000"
+      	CAS "EIT"
+      		duDuréeDécalage = "0090000000"
+      	CAS "EST"
+      		duDuréeDécalage = "-0050000000"
+      	CAS "FET"
+      		duDuréeDécalage = "0030000000"
+      	CAS "FJT"
+      		duDuréeDécalage = "0120000000"
+      	CAS "FKST"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "FKT"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "FNT"
+      		duDuréeDécalage = "-0020000000"
+      	CAS "GALT"
+      		duDuréeDécalage = "-0060000000"
+      	CAS "GAMT"
+      		duDuréeDécalage = "-0090000000"
+      	CAS "GET"
+      		duDuréeDécalage = "0040000000"
+      	CAS "GFT"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "GILT"
+      		duDuréeDécalage = "0120000000"
+      	CAS "GIT"
+      		duDuréeDécalage = "-0090000000"
+      	CAS "GMT"
+      		duDuréeDécalage = "0000000000"
+      	CAS "GST"
+      		duDuréeDécalage = "-0020000000"
+      	CAS "GYT"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "HADT"
+      		duDuréeDécalage = "-0090000000"
+      	CAS "HAEC"
+      		duDuréeDécalage = "0020000000"
+      	CAS "HAST"
+      		duDuréeDécalage = "-0100000000"
+      	CAS "HKT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "HMT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "HOVT"
+      		duDuréeDécalage = "0070000000"
+      	CAS "HST"
+      		duDuréeDécalage = "-0100000000"
+      	CAS "IBST"
+      		duDuréeDécalage = "0000000000"
+      	CAS "ICT"
+      		duDuréeDécalage = "0070000000"
+      	CAS "IDT"
+      		duDuréeDécalage = "0030000000"
+      	CAS "IOT"
+      		duDuréeDécalage = "0030000000"
+      	CAS "IRDT"
+      		duDuréeDécalage = "0043000000"
+      	CAS "IRKT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "IRST"
+      		duDuréeDécalage = "0033000000"
+      	CAS "IST"
+      		duDuréeDécalage = "0053000000"
+      	CAS "JST"
+      		duDuréeDécalage = "0090000000"
+      	CAS "KGT"
+      		duDuréeDécalage = "0060000000"
+      	CAS "KOST"
+      		duDuréeDécalage = "0110000000"
+      	CAS "KRAT"
+      		duDuréeDécalage = "0070000000"
+      	CAS "KST"
+      		duDuréeDécalage = "0090000000"
+      	CAS "LHST"
+      		duDuréeDécalage = "0103000000"
+      	CAS "LINT"
+      		duDuréeDécalage = "0140000000"
+      	CAS "MAGT"
+      		duDuréeDécalage = "0120000000"
+      	CAS "MART"
+      		duDuréeDécalage = "-0093000000"
+      	CAS "MAWT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "MDT"
+      		duDuréeDécalage = "-0060000000"
+      	CAS "MET"
+      		duDuréeDécalage = "0010000000"
+      	CAS "MEST"
+      		duDuréeDécalage = "0020000000"
+      	CAS "MHT"
+      		duDuréeDécalage = "0120000000"
+      	CAS "MIST"
+      		duDuréeDécalage = "0110000000"
+      	CAS "MIT"
+      		duDuréeDécalage = "-0093000000"
+      	CAS "MMT"
+      		duDuréeDécalage = "0063000000"
+      	CAS "MSK"
+      		duDuréeDécalage = "0030000000"
+      	CAS "MST"
+      		duDuréeDécalage = "0080000000"
+      	CAS "MUT"
+      		duDuréeDécalage = "0040000000"
+      	CAS "MVT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "MYT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "NCT"
+      		duDuréeDécalage = "0110000000"
+      	CAS "NDT"
+      		duDuréeDécalage = "-0023000000"
+      	CAS "NFT"
+      		duDuréeDécalage = "0110000000"
+      	CAS "NPT"
+      		duDuréeDécalage = "0054500000"
+      	CAS "NST"
+      		duDuréeDécalage = "-0033000000"
+      	CAS "NT"
+      		duDuréeDécalage = "-0033000000"
+      	CAS "NUT"
+      		duDuréeDécalage = "-0110000000"
+      	CAS "NZDT"
+      		duDuréeDécalage = "0130000000"
+      	CAS "NZST"
+      		duDuréeDécalage = "0120000000"
+      	CAS "OMST"
+      		duDuréeDécalage = "0060000000"
+      	CAS "ORAT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "PDT"
+      		duDuréeDécalage = "-0070000000"
+      	CAS "PET"
+      		duDuréeDécalage = "-0050000000"
+      	CAS "PETT"
+      		duDuréeDécalage = "0120000000"
+      	CAS "PGT"
+      		duDuréeDécalage = "0100000000"
+      	CAS "PHOT"
+      		duDuréeDécalage = "0130000000"
+      	CAS "PKT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "PMDT"
+      		duDuréeDécalage = "-0020000000"
+      	CAS "PMST"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "PONT"
+      		duDuréeDécalage = "0110000000"
+      	CAS "PST"
+      		duDuréeDécalage = "-0080000000"
+      	CAS "PYST"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "PYT"
+      		duDuréeDécalage = "-0040000000"
+      	CAS "RET"
+      		duDuréeDécalage = "0040000000"
+      	CAS "ROTT"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "SAKT"
+      		duDuréeDécalage = "0110000000"
+      	CAS "SAMT"
+      		duDuréeDécalage = "0040000000"
+      	CAS "SAST"
+      		duDuréeDécalage = "0020000000"
+      	CAS "SBT"
+      		duDuréeDécalage = "0110000000"
+      	CAS "SCT"
+      		duDuréeDécalage = "0040000000"
+      	CAS "SGT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "SLST"
+      		duDuréeDécalage = "0053000000"
+      	CAS "SRET"
+      		duDuréeDécalage = "0110000000"
+      	CAS "SRT"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "SST"
+      		duDuréeDécalage = "-0110000000"
+      	CAS "SYOT"
+      		duDuréeDécalage = "0030000000"
+      	CAS "TAHT"
+      		duDuréeDécalage = "-0100000000"
+      	CAS "THA"
+      		duDuréeDécalage = "0070000000"
+      	CAS "TFT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "TJT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "TKT"
+      		duDuréeDécalage = "0130000000"
+      	CAS "TLT"
+      		duDuréeDécalage = "0090000000"
+      	CAS "TMT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "TOT"
+      		duDuréeDécalage = "0130000000"
+      	CAS "TVT"
+      		duDuréeDécalage = "0120000000"
+      	CAS "UCT"
+      		duDuréeDécalage = "0000000000"
+      	CAS "ULAT"
+      		duDuréeDécalage = "0080000000"
+      	CAS "USZ1"
+      		duDuréeDécalage = "0020000000"
+      	CAS "UTC"
+      		duDuréeDécalage = "0000000000"
+      	CAS "UYST"
+      		duDuréeDécalage = "-0020000000"
+      	CAS "UYT"
+      		duDuréeDécalage = "-0030000000"
+      	CAS "UZT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "VET"
+      		duDuréeDécalage = "-0043000000"
+      	CAS "VLAT"
+      		duDuréeDécalage = "0100000000"
+      	CAS "VOLT"
+      		duDuréeDécalage = "0040000000"
+      	CAS "VOST"
+      		duDuréeDécalage = "0060000000"
+      	CAS "VUT"
+      		duDuréeDécalage = "0110000000"
+      	CAS "WAKT"
+      		duDuréeDécalage = "0120000000"
+      	CAS "WAST"
+      		duDuréeDécalage = "0020000000"
+      	CAS "WAT"
+      		duDuréeDécalage = "0010000000"
+      	CAS "WEDT"
+      		duDuréeDécalage = "0010000000"
+      	CAS "WEST"
+      		duDuréeDécalage = "0010000000"
+      	CAS "WET"
+      		duDuréeDécalage = "0000000000"
+      	CAS "WIT"
+      		duDuréeDécalage = "0070000000"
+      	CAS "WST"
+      		duDuréeDécalage = "0080000000"
+      	CAS "YAKT"
+      		duDuréeDécalage = "0090000000"
+      	CAS "YEKT"
+      		duDuréeDécalage = "0050000000"
+      	CAS "Z"
+      		duDuréeDécalage = "0000000000"
+      	AUTRE CAS
+      		duDuréeDécalage = "0000000000"
+      FIN
+      
+      
+      
+      renvoyer duDuréeDécalage
+     type : 458752
+   -
+     name : NotifieFenêtre
+     procedure_id : 1599033749027648916
+     type_code : 15
+     code : |1-
+      // Résumé : Notifie la fenêtre principale d'un changement de comptage
+      // Syntaxe :
+      //NotifieFenêtre (<nIDFluxRSS> est entier sur 8 octets [, <nMAJSelection> est entier])
+      //
+      // Paramètres :
+      //	nIDFluxRSS (entier sur 8 octets) :Identifiant du flux
+      //	nMAJSelection (entier - valeur par défaut=0) : 1 pour mettre à jour la sélection, Faux autrement
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE NotifieFenêtre(LOCAL nIDFluxRSS est un entier sur 8, LOCAL nMAJSelection est un entier = 1)
+      
+      PostMessage(gnHandleFenêtre, EVT_COMPTAGE, nIDFluxRSS, nMAJSelection)
+     type : 458752
+   -
+     name : MarqueLu_Tout
+     procedure_id : 1599062173143495323
+     type_code : 15
+     code : |1-
+      // Résumé : Marque tous les billets comme lu
+      // Syntaxe :
+      //MarqueLu_Tout ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MarqueLu_Tout()
+      
+      // Exécute la requête de mise à jour
+      si hexecuterequete(REQ_MarqueLu_tout) = faux alors retour
+      
+      // Vide le tableau des comptages
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      pour tout element nCompteur, sIdentifiant de gtaComptage
+      	// Il ne faut pas vider le comptage des favoris ou des tags (qui sont un comptage de marquage et pas de lecture)
+      	si sidentifiant = IDFAVORIS _ou_ sidentifiant [= prefix_tag alors continuer
+      	gtaComptage[sIdentifiant] = 0
+      FIN
+      SectionCritiqueFin(EVT_COMPTAGE)
+      
+      // Notifie la fenêtre d'un changement de comptage
+      TâcheParallèleExécute(NotifieFenêtre, (FluxRSS.IDFluxRSS,1), tpoThreadPrincipal)
+     type : 458752
+   -
+     name : MarqueLu_Dossier
+     procedure_id : 1599065377189385262
+     type_code : 15
+     code : |1-
+      // Résumé : Marque les flux d'un dossier comme lu
+      // Syntaxe :
+      //MarqueLu_Dossier (<nIDDossier> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDDossier (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE MarqueLu_Dossier(LOCAL nIDDossier est un entier sur 8)
+      
+      // Le dossier doit être valide
+      hlitrecherchepremier(dossier, IDDossier, nIDDossier)
+      si htrouve(Dossier) = faux alors retour
+      
+      // Parcours les flux du dossier
+      pour tout fluxrss avec IDDossier = nIDDossier
+      	
+      	// Paramètre la requête de mise à jour
+      	REQ_MarqueLu_FluxRSS.pIDFluxRSS = FluxRSS.idfluxrss
+      	// Exécute la requête de mise à jour
+      	SI HExécuteRequête(REQ_MarqueLu_FluxRSS) = Faux ALORS CONTINUER
+      	
+      	// Décrémente le tableau des comptages
+      	SectionCritiqueDébut(EVT_COMPTAGE)
+      	nNbNonLus est un entier = gtaComptage[FluxRSS.IDFluxRSS]
+      	gtaComptage[FluxRSS.IDFluxRSS] = 0
+      	SI FluxRSS.IDDossier > 0 ALORS gtaComptage[PREFIX_DOSSIER+FluxRSS.IDDossier]-=nNbNonLus
+      	gtaComptage[IDABONNEMENT]-=nNbNonLus
+      	gtaComptage[IDNONLUS] = gtaComptage[IDABONNEMENT]
+      	MAJ_Compteur_Aujourdhui()
+      	MAJ_Compteur_Hier()
+      	SectionCritiqueFin(EVT_COMPTAGE)
+      	
+      FIN
+      
+      // Notifie la fenêtre d'un changement de comptage
+      TâcheParallèleExécute(NotifieFenêtre, (0,1), tpoThreadPrincipal)
+     type : 458752
+   -
+     name : MarqueLu_Favoris
+     procedure_id : 1599066914787969115
+     type_code : 15
+     code : |1-
+      // Résumé : Marque tous les billets favoris comme lu
+      // Syntaxe :
+      //MarqueLu_Favoris ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MarqueLu_Favoris()
+      
+      // Exécute la requête de mise à jour
+      SI HExécuteRequête(REQ_MarqueLu_Favoris) = Faux ALORS RETOUR
+      
+      // Réinitialise le comptage
+      ComptageInitialise()
+      
+      // Notifie la fenêtre d'un changement de comptage
+      TâcheParallèleExécute(NotifieFenêtre, (0,1), tpoThreadPrincipal)
+     type : 458752
+   -
+     name : ComptageInitialise
+     procedure_id : 1599067799553404328
+     type_code : 15
+     code : |1+
+      // Résumé : Initialise l'arbre de comptage
+      // Syntaxe :
+      // ComptageInitialise ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE ComptageInitialise()
+      
+      // Supprime toutes les entrées
+      supprimetout(gtaComptage)
+      
+      SectionCritiqueDébut(EVT_COMPTAGE)
+      
+      MAJ_Compteur_Abonnement()
+      
+      pour tout dossier
+      	MAJ_Compteur_Dossier(Dossier.IDDossier)
+      Fin
+      
+      POUR TOUT Fluxrss
+      	MAJ_Compteur_FluxRSS(FluxRSS.IDFluxRSS)
+      FIN
+      
+      MAJ_Compteur_Aujourdhui()
+      MAJ_Compteur_Hier()
+      MAJ_Compteur_Favoris()
+      MAJ_Compteur_Tags()
+      
+      SectionCritiqueFin(EVT_COMPTAGE)
+     type : 458752
+   -
+     name : MarqueLu_Hier
+     procedure_id : 1599069186830196052
+     type_code : 15
+     code : |1-
+      // Résumé : Marque tous les billets d'hier comme lu
+      // Syntaxe :
+      //MarqueLu_Hier ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MarqueLu_Hier()
+      
+      // Paramètre la requête
+      REQ_MarqueLu_Date.pDatePublication = hier()
+      
+      // Exécute la requête de mise à jour
+      SI HExécuteRequête(REQ_MarqueLu_Date) = Faux ALORS RETOUR
+      
+      // Réinitialise le comptage
+      ComptageInitialise()
+      
+      // Notifie la fenêtre d'un changement de comptage
+      TâcheParallèleExécute(NotifieFenêtre, (0,1), tpoThreadPrincipal)
+     type : 458752
+   -
+     name : MarqueLu_Aujourdhui
+     procedure_id : 1599069818190535048
+     type_code : 15
+     code : |1-
+      // Résumé : Marque tous les billets du jour comme lu
+      // Syntaxe :
+      //MarqueLu_Aujourdhui ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MarqueLu_Aujourdhui()
+      
+      // Paramètre la requête
+      REQ_MarqueLu_Date.pDatePublication = datedujour()
+      
+      // Exécute la requête de mise à jour
+      SI HExécuteRequête(REQ_MarqueLu_Date) = Faux ALORS RETOUR
+      
+      // Réinitialise le comptage
+      ComptageInitialise()
+      
+      // Notifie la fenêtre d'un changement de comptage
+      TâcheParallèleExécute(NotifieFenêtre, (0,1), tpoThreadPrincipal)
+     type : 458752
+   -
+     name : MarqueLu_Tags
+     procedure_id : 1599070148903094574
+     type_code : 15
+     code : |1-
+      // Résumé : Marque les billets associés à un tag comme lu
+      // Syntaxe :
+      //MarqueLu_Tags (<nIDTag> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDTag (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE MarqueLu_Tags(LOCAL nIDTag est un entier sur 8)
+      
+      // Le dossier doit être valide
+      hlitrecherchepremier(tag, IDTag, nIDTag)
+      si htrouve(Tag) = faux alors retour
+      
+      // Pour tous les billets associés au tag
+      POUR TOUT Association AVEC IDTag = nIDTag
+      
+      	// Marque le billet comme lu
+      	MarqueLu_Billet(Association.IDBillet, faux)
+      	
+      FIN
+      
+      // Réinitialise le comptage
+      ComptageInitialise()
+      
+      // Notifie la fenêtre d'un changement de comptage
+      TâcheParallèleExécute(NotifieFenêtre, (0,1), tpoThreadPrincipal)
+     type : 458752
+   -
+     name : MAJ_Compteur_Tags
+     procedure_id : 1599302424997134446
+     type_code : 15
+     code : |1-
+      // Résumé : Met à jour le compteur de tous les tags
+      // Syntaxe :
+      //MAJ_Compteur_Tags ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE MAJ_Compteur_Tags()
+      
+      // Parcourt les tags
+      pour TOUT Tag 
+      	maj_compteur_tag(tag.idtag)
+      FIN
+     type : 458752
+   -
+     name : InitialiseDonnées
+     procedure_id : 1599780691921742015
+     type_code : 15
+     code : |1-
+      // Résumé : Initialise les données
+      // Syntaxe :
+      // InitialiseDonnées ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      PROCEDURE InitialiseDonnées()
+      
+      // Définit le répertoire des fichiers et de cache
+      gsRépertoireFichier = SysRep(srAppData)+["\"]+"WD Lecteur RSS"
+      SI EnModeTest() ALORS
+      	// En mode test, localise les fichiers dans un répertoire spécifique
+      	gsRépertoireFichier = SysRep(srAppData)+["\"]+"WD Lecteur RSS (test)"
+      	// Prévient le développeur
+      	ToastAffiche("Attention"+RC+"En mode test (Go), les fichiers de données sont localisées dans un répertoire spécifique !", toastLong, cvMilieu, chCentre)	
+      FIN
+      
+      // Définit le répertoire de cache
+      gsRépertoireCache = gsRépertoireFichier +["\"]+ "Cache"
+      
+      // Définit le répertoire des données (avec création si nécessaire)
+      HChangeRep("*", gsRépertoireFichier)
+      fRepCrée(gsRépertoireFichier)
+      
+      // Modification de structure si besoin
+      si HModifieStructure("*") = faux ALORS
+      	Erreur(<§@15939788000396920004§>, herreurinfo(herrmessage))
+      	finprogramme()
+      FIN
+      
+      // Création des fichiers de données (si nécessaire)
+      HCréationSiInexistant("*")
+      
+      // Crée les répertoires de cache
+      fRepCrée(gsRépertoireCache)
+      fRepCrée(gsRépertoireCache +["\"]+ "flux")
+      fRepCrée(gsRépertoireCache +["\"]+ "billet")
+      
+      // Crée le répertoire pour les aperçus de billets
+      frepsupprime(COL_Globales.gsRépertoireAperçus, frLectureSeule+frRécursif)
+      frepcree(COL_Globales.gsRépertoireAperçus)
+     type : 458752
+   -
+     name : Archivage_Billet
+     procedure_id : 1601674260596164457
+     type_code : 15
+     code : |1+
+      // Résumé : Archive le billet en cours
+      // Syntaxe :
+      //[ <Résultat> = ] Archivage_Billet ( [<nIDBillet> est entier sur 8 octets])
+      //
+      // Paramètres :
+      //	nIDBillet (entier sur 8 octets) :Identifiant du billet à archiver
+      // Valeur de retour :
+      // 	multi-valeur : Vrai si le billet a été archivé, Faux autrement
+      //
+      PROCEDURE Archivage_Billet(LOCAL nIDBillet est un entier sur 8 = billet.IDBillet) : (booleen, chaine)
+      
+      bArchivable est un booleen
+      sRaison est une chaine
+      
+      // Si le billet peut être archivé uniquement
+      (bArchivable, sRaison) = Archivage_BilletEstArchivable(nIDBillet)
+      si bArchivable = faux alors renvoyer (faux, sRaison)
+      
+      // Supprime le cache du billet
+      Billet_SupprimeImageCache(nIDBillet)
+      
+      // Paramètre la requête d'archivage
+      REQ_Archive.pIDBillet = nIDBillet
+      // Exécute la requête
+      si HExécuteRequête(REQ_Archive) = faux alors
+      	renvoyer (faux, <§@15939788000396920005§>)
+      FIN
+      renvoyer (vrai, "")
+      
+     type : 458752
+   -
+     name : Archivage_BilletEstArchivable
+     internal_properties : CAAAAAgAAADsF4ju+oADMYrKZ1XKdktid5RUjIrTpf6w2lS1NZwK64YTsQTBkjB9IBg6+M6WNY5s3Lz1No41UxiUrS6kZIw9N4h6omxKb2oGXuooipu0p7QJ54/7XOH+iifCPPESbNFhQNddoteDvM4JJCPiXk+ySznNRN5LDrW++7q0Mx+NgPzG8FQdXMOeWnd5nxKaw96QNsG8V3w=
+     procedure_id : 1601675171129311887
+     type_code : 15
+     code : |1-
+      // Résumé : Détermine si le billet en cours peut être archivé
+      // Syntaxe :
+      //[ <Résultat> = ] Archivage_BilletEstArchivable ( [<nIDBillet> est entier sur 8 octets])
+      //
+      // Paramètres :
+      //	nIDBillet (entier sur 8 octets) :Identifiant du billet
+      // Valeur de retour :
+      // 	multi-valeur : Vrai si le billet est archivable, Faux autrement / Raison
+      //
+      PROCEDURE Archivage_BilletEstArchivable(LOCAL nIDBillet est un entier sur 8 = billet.IDBillet) : (booleen, chaine)
+      
+      nPosition est un entier = -1
+      
+      // Si le billet en cours n'est pas celui demandé
+      si billet.IDBillet <> nIDBillet ALORS
+      	// Mémorise la position
+      	nPosition = hsauveposition(billet, hSauveRubriques)
+      	// Lit le billet demandé
+      	HLitRecherchePremier(billet, idbillet, nIDBillet)
+      	si htrouve(billet) = faux alors renvoyer (faux, <§@15939788000396920006§>)
+      FIN
+      
+      // Il ne faut pas archiver :
+      // - les billets favoris
+      SI Billet.Favoris ALORS renvoyer (faux, <§@15939788000396920007§>)
+      
+      // - les billets marqués d'un tag
+      HRecherchePremier(Association, IDBillet, Billet.IDBillet)
+      SI HTrouve(Association) ALORS RENVOYER (Faux, <§@15939788000396920008§>)
+      
+      // Dans les autres cas, le billet peut être archivé
+      renvoyer (vrai, "")
+      
+      FIN :
+      si nPosition <> -1 alors hretourposition(nPosition)
+     type : 458752
+   -
+     name : RemplaceJoker
+     procedure_id : 1606830583569600944
+     type_code : 15
+     code : |1+
+      // Résumé : Remplace un ensemble de caractère désigné par le joker "*"
+      // Syntaxe :
+      // [ <Résultat> = ] RemplaceJoker (<sChaîneSource>, <sChaîneARemplacer>, <sChaîneRemplacement> [, <nOptions>])
+      //
+      // Paramètres :
+      // 	sChaîneSource : Chaîne source
+      // 	sChaîneARemplacer : Chaîne à remplacer. Cette chaîne peut contenir le caractère "*"
+      // 	sChaîneRemplacement : Chaîne de remplacement
+      // 	nOptions (valeur par défaut=0) : Options de remplacement
+      // Valeur de retour :
+      // 	chaîne ANSI : Chaîne avec remplacement
+      //
+      PROCEDURE RemplaceJoker(sChaîneSource,sChaîneARemplacer,sChaîneRemplacement,nOptions = 0) : chaine
+      
+      
+      sChaîneRetour est une chaine = sChaîneSource // La chaîne que l'on va retourner
+      nPosition est un entier	// La position du premier bloc
+      nPositionPremierJoker est un entier // La position du premier joker (pour l'instant on en gère qu'un)
+      nPositionFinBlocRecherché est un entier // La position de la fin du bloc (le bloc qu'il y a après le joker)
+      sChaineAvantJoker est une chaine		// La chaîne qui est située avant le caractère joker
+      sChaineAprèsJoker est une chaine		// La chaîne qui est située après le caractère joker
+      
+      // Recherche le caractère joker
+      nPositionPremierJoker = Position(sChaîneARemplacer, "*")
+      
+      // Récupération de la chaîne située avant le caractère Joker
+      sChaineAvantJoker = sChaîneARemplacer[[ A nPositionPremierJoker -1]]
+      // Récupération de la chaîne située après le caractère Joker
+      sChaineAprèsJoker = sChaîneARemplacer[[nPositionPremierJoker +1 A ]]
+      
+      // On recherche dans la chaine source la chaîne qu'il y a avant le premier joker
+      nPosition = Position(sChaîneRetour,sChaineAvantJoker, 0, nOptions)
+      TANTQUE nPosition > 0
+      	
+      	// On a une position, on recherche la position de la chaîne qu'il y a après le Joker
+      	nPositionFinBlocRecherché = Position(sChaîneRetour,sChaineAprèsJoker, nPosition+1, nOptions)
+      	SI nPositionFinBlocRecherché > 0 ALORS
+      		// On a trouvé une position, on la remplace par la chaîne de remplacement
+      		// On remplace dans la chaîne
+      		sChaîneRetour[[nPosition A nPositionFinBlocRecherché + Taille(sChaineAprèsJoker)-1]] = sChaîneRemplacement
+      		
+      		// Recalcule la position (on enlève tout le bloc que l'on vient de remplacer)
+      		nPosition = Max(0, nPosition - (nPositionFinBlocRecherché + Taille(sChaineAprèsJoker)-1 - nPosition))
+      		// puis on ajoute la taille de la chaîne de remplacement
+      		nPosition += Taille(sChaîneRemplacement)
+      		
+      	FIN
+      	
+      	// Recherche la position suivante
+      	nPosition = Position(sChaîneRetour,sChaineAvantJoker, nPosition+1 , nOptions)	
+      FIN
+      
+      RENVOYER sChaîneRetour
+     type : 458752
+   -
+     name : TP_rssSupprimeFlux
+     procedure_id : 1655724336639332446
+     type_code : 15
+     code : |1-
+      // Résumé : Lance la suppression d'un flux (et de ses billets)
+      // Syntaxe :
+      //[ <Résultat> = ] TP_rssSupprimeFlux (<nIDFlux> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFlux (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	booléen : ID flux / Nombre de nouveaux messages récupérés
+      //
+      
+      PROCEDURE TP_rssSupprimeFlux(LOCAL nIDFlux est un entier sur 8) : booleen
+      
+      
+      // Se positionne sur le flux
+      HLitRecherchePremier(fluxrss, IDFluxRSS, nIDFlux)
+      si htrouve(FluxRSS) = faux ALORS renvoyer faux
+      
+      // Parcourt les billets du flux
+      pour tout billet avec IDFluxRSS = nIDFlux
+      	
+      	// Supprime le cache du billet
+      	Billet_SupprimeImageCache(Billet.idbillet)
+      	// Supprime le billet
+      	hsupprime(billet)
+      		
+      FIN
+      
+      // Supprime le flux
+      si hsupprime(fluxrss) = faux ALORS
+      	renvoyer faux
+      FIN
+      
+      // Notifie la fenêtre de la mise à jour
+      TâcheParallèleExécute(NotifieFenêtreSuppression, (nIDFlux), tpoThreadPrincipal)
+      
+      renvoyer vrai
+     type : 458752
+   -
+     name : NotifieFenêtreSuppression
+     procedure_id : 1655725560705100135
+     type_code : 15
+     code : |1-
+      // Résumé : Notifie la fenêtre principale d'une suppression de flux
+      // Syntaxe :
+      //NotifieFenêtreSuppression (<nIDFluxRSS> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFluxRSS (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      PROCEDURE NotifieFenêtreSuppression(LOCAL nIDFluxRSS est un entier sur 8)
+      
+      PostMessage(gnHandleFenêtre, EVT_SUPPRESSION, nIDFluxRSS, 0)
+     type : 458752
+   -
+     name : TP_rssVérifieFlux
+     procedure_id : 1664669289062686752
+     type_code : 15
+     code : |1-
+      // Résumé : Lance la récupération des billets d'un flux RSS
+      // Syntaxe :
+      //[ <Résultat> = ] TP_rssVérifieFlux (<nIDFlux> est entier sur 8 octets)
+      //
+      // Paramètres :
+      //	nIDFlux (entier sur 8 octets) :Identifiant du flux
+      // Valeur de retour :
+      // 	multi-valeur : Identifiant du flux / Vrai ou Faux selon la validité du flux / Message d'erreur
+      //
+      
+      PROCEDURE TP_rssVérifieFlux(LOCAL nIDFlux est un entier sur 8) : (entier sur 8, booleen, chaine)
+      
+      MaRequête est un httpRequête
+      MaRéponse est un httpreponse
+      
+      // Se positionne sur le flux
+      HLitRecherchePremier(fluxrss, IDFluxRSS, nIDFlux)
+      si htrouve(FluxRSS) = faux ALORS renvoyer (nIDFlux, faux, <§@15939788000396920009§>)
+      
+      // Définit l'URL
+      MaRequête..URL = FluxRSS.Adresse
+      MaRequête..IgnoreErreur = httpIgnoreRenvoiHTTPS
+      
+      // Interroge l'URL
+      MaRéponse = HTTPEnvoie(MaRequête)
+      SI ErreurDétectée ALORS
+      	renvoyer (nIDFlux, faux, erreurinfo(errMessagesysteme))
+      FIN
+      
+      
+      renvoyer (nIDFlux, vrai, "")
+     type : 458752
+   -
+     name : HTTPRequeteRedirection
+     procedure_id : 1737050959867664575
+     type_code : 15
+     code : |1+
+      // Résumé : Effectue une requête HTTP en parcourant les redirections et renvoie l'URL finalement trouvée
+      // Syntaxe :
+      //[ <Résultat> = ] HTTPRequeteRedirection (<sURL> est chaîne)
+      //
+      // Paramètres :
+      //	sURL (chaîne ANSI) : URL à tester
+      // Valeur de retour :
+      // 	chaîne ANSI : URL finale
+      //
+      PROCEDURE HTTPRequeteRedirection(LOCAL sURL est une chaîne) : chaine
+      
+      MaRequête 		est un httprequete
+      MaRéponse 		est un httpreponse
+      
+      // Définit l'URL
+      MaRequête..URL = sURL
+      MaRequête..IgnoreErreur = httpIgnoreRenvoiHTTPS
+      // Interroge l'URL
+      MaRéponse = HTTPEnvoie(MaRequête)
+      SI ErreurDétectée ALORS
+      	// Remonte l'erreur
+      	ErreurPropage(ErreurInfo(errMessage))
+      	RENVOYER ""
+      FIN
+      
+      // Analyse le code résultat
+      SELON MaRéponse.CodeEtat
+      	// 200 : Requête traitée avec succès
+      	CAS 200
+      		renvoyer sURL
+      		
+      	// 301 / 302 : Document déplacé / à rediriger de façon permanente / temporaire
+      	CAS 301, 302, 307, 308
+      		// Il faut récupérer l'URL de redirection et refaire le chargement
+      		sURLRedirection est une chaine = MaRéponse.Entête["Location"]
+      		renvoyer HTTPRequeteRedirection(sURLRedirection)
+      		
+      	// Autres cas : serveur inaccessible, erreur interne, etc.
+      	AUTRES CAS
+      		ErreurDéclenche(1, MaRéponse..DescriptionCodeEtat)
+      		RENVOYER ""
+      FIN
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : COL_SansNom1
+resources :
+ string_res :
+  identifier : 0x1593978800039692
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      fr-FR : Le format du flux semble invalide
+     index : 0
+   -
+     text :
+      fr-FR : Impossible d'ajouter le dossier %1
+     index : 1
+   -
+     text :
+      fr-FR : Impossible d'ajouter le flux %1
+     index : 2
+   -
+     text :
+      fr-FR : Impossible de déterminer la version du flux à partir de son contenu.
+     index : 3
+   -
+     text :
+      fr-FR : Impossible de modifier la structure des fichiers
+     index : 4
+   -
+     text :
+      fr-FR : Le billet n'a pas pu être marqué en base
+     index : 5
+   -
+     text :
+      fr-FR : Le billet est introuvable
+     index : 6
+   -
+     text :
+      fr-FR : Le billet est un favori
+     index : 7
+   -
+     text :
+      fr-FR : Le billet possède un tag associé
+     index : 8
+   -
+     text :
+      fr-FR : Flux inconnu en base
+     index : 9
+   -
+     text :
+      fr-FR : WD Lecteur RSS\
+     index : 10
+   -
+     text :
+      fr-FR : WD Lecteur RSS\
+     index : 11
+   -
+     text :
+      fr-FR : Cache\
+     index : 12
+   -
+     text :
+      fr-FR : apercu_billet
+     index : 13
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ
